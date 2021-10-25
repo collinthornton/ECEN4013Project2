@@ -1,0 +1,13 @@
+Sensor.h:11:7:constexpr Sensor::Sensor(const Sensor&)	16	static
+IMU.h:13:7:constexpr IMU::IMU(const IMU&)	16	static
+main.cpp:94:5:int main()	16	static
+main.cpp:180:6:void SystemClock_Config()	88	static
+main.cpp:230:13:void MX_ADC1_Init()	24	static
+main.cpp:275:13:void MX_I2C1_Init()	8	static
+main.cpp:309:13:void MX_RTC_Init()	24	static
+main.cpp:377:13:void MX_SPI1_Init()	8	static
+main.cpp:415:13:void MX_WWDG_Init()	8	static
+main.cpp:445:13:void MX_GPIO_Init()	40	static
+main.cpp:478:6:void StartDefaultTask(void*)	16	static
+main.cpp:499:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
+main.cpp:516:6:void Error_Handler()	4	static,ignoring_inline_asm

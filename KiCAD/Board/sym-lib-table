@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Custom)(type Legacy)(uri "/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/KiCAD/Board/RF_Amplifier.lib")(options "")(descr ""))
+  (lib (name Board-rescue)(type Legacy)(uri ${KIPRJMOD}/Board-rescue.lib)(options "")(descr ""))
+)
