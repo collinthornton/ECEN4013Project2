@@ -1379,7 +1379,7 @@ NoConn ~ 6200 7750
 NoConn ~ 6200 7650
 NoConn ~ 6200 7350
 $Comp
-L Custom:MLX90393 U9
+L Board-rescue:MLX90393-Custom U9
 U 1 1 619B305F
 P 13550 6300
 F 0 "U9" H 13550 6875 50  0000 C CNN
@@ -1513,7 +1513,7 @@ F 3 "" H 8950 7400 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Custom:DS-32-BLE4.2 U4
+L Board-rescue:DS-32-BLE4.2-Custom U4
 U 1 1 61A0AC83
 P 7050 7350
 F 0 "U4" H 7025 8315 50  0000 C CNN
@@ -1527,7 +1527,7 @@ F 6 "C516258" H 7050 7350 50  0001 C CNN "LSCS"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom:ATGM336H-1N U6
+L Board-rescue:ATGM336H-1N-Custom U6
 U 1 1 61A1EDCB
 P 10250 8200
 F 0 "U6" H 10250 8775 50  0000 C CNN
@@ -1938,7 +1938,7 @@ Connection ~ 2750 4200
 Wire Wire Line
 	2750 4200 2850 4200
 $Comp
-L Custom:Micro_SD_TF-15 U8
+L Board-rescue:Micro_SD_TF-15-Custom U8
 U 1 1 61749C2A
 P 12950 1750
 F 0 "U8" H 13928 1951 50  0000 L CNN

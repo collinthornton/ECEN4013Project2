@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>E:\local\college\classes\2021bF\ECEN4013\Project 2\ECEN4013Project2\KiCAD\Board\Board.sch</source>
-    <date>10/23/2021 7:55:45 PM</date>
-    <tool>Eeschema (5.1.10)-1</tool>
+    <source>/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/KiCAD/Board/Board.sch</source>
+    <date>Tue 26 Oct 2021 01:49:36 PM CDT</date>
+    <tool>Eeschema 5.1.10-88a1d61d58~90~ubuntu20.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -1428,37 +1428,37 @@
   </libparts>
   <libraries>
     <library logical="Battery_Management">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Battery_Management.lib</uri>
+      <uri>/usr/share/kicad/library/Battery_Management.lib</uri>
     </library>
     <library logical="Board-rescue">
-      <uri>E:\local\college\classes\2021bF\ECEN4013\Project 2\ECEN4013Project2\KiCAD\Board/Board-rescue.lib</uri>
+      <uri>/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/KiCAD/Board/Board-rescue.lib</uri>
     </library>
     <library logical="Connector">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Connector.lib</uri>
+      <uri>/usr/share/kicad/library/Connector.lib</uri>
     </library>
     <library logical="Connector_Generic">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+      <uri>/usr/share/kicad/library/Connector_Generic.lib</uri>
     </library>
     <library logical="Device">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+      <uri>/usr/share/kicad/library/Device.lib</uri>
     </library>
     <library logical="MCU_ST_STM32L1">
-      <uri>C:\Program Files\KiCad\share\kicad\library/MCU_ST_STM32L1.lib</uri>
+      <uri>/usr/share/kicad/library/MCU_ST_STM32L1.lib</uri>
     </library>
     <library logical="Mechanical">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Mechanical.lib</uri>
+      <uri>/usr/share/kicad/library/Mechanical.lib</uri>
     </library>
     <library logical="Power_Protection">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Power_Protection.lib</uri>
+      <uri>/usr/share/kicad/library/Power_Protection.lib</uri>
     </library>
     <library logical="Regulator_Linear">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Regulator_Linear.lib</uri>
+      <uri>/usr/share/kicad/library/Regulator_Linear.lib</uri>
     </library>
     <library logical="Sensor_Motion">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Sensor_Motion.lib</uri>
+      <uri>/usr/share/kicad/library/Sensor_Motion.lib</uri>
     </library>
     <library logical="Switch">
-      <uri>C:\Program Files\KiCad\share\kicad\library/Switch.lib</uri>
+      <uri>/usr/share/kicad/library/Switch.lib</uri>
     </library>
   </libraries>
   <nets>
