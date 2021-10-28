@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/KiCAD/Board/Board.sch</source>
-    <date>Tue 26 Oct 2021 01:49:36 PM CDT</date>
+    <date>Wed 27 Oct 2021 06:03:47 PM CDT</date>
     <tool>Eeschema 5.1.10-88a1d61d58~90~ubuntu20.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -24,7 +24,7 @@
       <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
       <datasheet>https://www.st.com/resource/en/datasheet/usblc6-2.pdf</datasheet>
       <fields>
-        <field name="LCSC">C4190</field>
+        <field name="LCSC">c2827654</field>
         <field name="LCSC Part #">c2827654</field>
         <field name="LSCS">c2827654</field>
       </fields>
@@ -270,6 +270,11 @@
       <value>ME6211A28M3G-N</value>
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <datasheet>https://www.torexsemi.com/file/xc6206/XC6206.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C236676</field>
+        <field name="LCSC Part #">C236676</field>
+        <field name="LSCS">C236676</field>
+      </fields>
       <libsource lib="Regulator_Linear" part="XC6206PxxxMR" description="Positive 60-250mA Low Dropout Regulator, Fixed Output, SOT-23"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>617A15EC</tstamp>
@@ -460,11 +465,6 @@
       <value>MLX90393</value>
       <footprint>Package_DFN_QFN:QFN-16-1EP_5x5mm_P0.8mm_EP2.7x2.7mm</footprint>
       <datasheet>https://www.mouser.com/datasheet/2/734/MLX90393_Datasheet_Melexis-953267.pdf</datasheet>
-      <fields>
-        <field name="LCSC">C236676</field>
-        <field name="LCSC Part #">C236676</field>
-        <field name="LSCS">C236676</field>
-      </fields>
       <libsource lib="Board-rescue" part="MLX90393-Custom" description=""/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>619B305F</tstamp>
