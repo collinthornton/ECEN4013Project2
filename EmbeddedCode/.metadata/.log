@@ -967,3 +967,18 @@ java.lang.IllegalStateException: Call stack for thread main
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-03 22:23:57.461
 !MESSAGE ST-LINK firmware verification, No latest info found: -1
+!SESSION 2021-11-03 22:36:13.446 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-03 22:36:33.348
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-03 22:36:33.429
+!MESSAGE Log4j initialized with config file C:\Users\loeff\Downloads\ECEN4013Project2\EmbeddedCode\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-03 22:36:42.246
+!MESSAGE Started RMI Server, listening on port 41337
