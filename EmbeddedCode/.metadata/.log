@@ -982,3 +982,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-03 22:36:42.246
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-11-04 11:05:04.090 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-04 11:05:10.081
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-04 11:05:10.238
+!MESSAGE Log4j initialized with config file /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-04 11:05:15.232
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-04 11:33:40.500
+!MESSAGE ST-LINK firmware verification, Check required failed
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-04 11:33:40.501
+!MESSAGE ST-LINK firmware verification, No latest info found: -1
