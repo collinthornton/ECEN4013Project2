@@ -1,0 +1,29 @@
+/*
+ * UART.h
+ *
+ *  Created on: Nov 4, 2021
+ *      Author: cthornton
+ */
+
+#ifndef UART_H_
+#define UART_H_
+
+#include "stm32f7xx_hal.h"
+
+
+class UART {
+public:
+	UART();
+	int init(USART_TypeDef *port, int baud);
+	bool isData();
+	short sendData(uint8_t &data, int timeout=10);
+	uint8_t& getData();
+	virtual ~UART();
+
+private:
+	uint8_t buff[1024];
+	UART_HandleTypeDef handle;
+	bool dataReady;
+};
+
+#endif /* UART_H_ */

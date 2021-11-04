@@ -1,10 +1,32 @@
-11:33:40 **** Incremental Build of configuration Debug for project BackupPlan ****
+17:00:30 **** Incremental Build of configuration Debug for project BackupPlan ****
 make -j12 all 
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.cpp: In function 'void StartTask02(void*)':
+../Src/main.cpp:533:10: warning: unused variable 'buff' [-Wunused-variable]
+  533 |  uint8_t buff[1024] = "";
+      |          ^~~~
+../Src/main.cpp: At global scope:
+../Src/main.cpp:365:13: warning: 'void MX_USART2_UART_Init()' defined but not used [-Wunused-function]
+  365 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Src/main.cpp:330:13: warning: 'void MX_USART3_UART_Init()' defined but not used [-Wunused-function]
+  330 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: BackupPlan.elf
+ 
 arm-none-eabi-size   BackupPlan.elf 
+arm-none-eabi-objdump -h -S  BackupPlan.elf  > "BackupPlan.list"
+arm-none-eabi-objcopy  -O binary  BackupPlan.elf  "BackupPlan.bin"
    text	   data	    bss	    dec	    hex	filename
-  47440	    532	  28580	  76552	  12b08	BackupPlan.elf
+  55320	    548	  28780	  84648	  14aa8	BackupPlan.elf
 Finished building: default.size.stdout
  
+Finished building: BackupPlan.bin
+ 
+Finished building: BackupPlan.list
+ 
 
-11:33:41 Build Finished. 0 errors, 0 warnings. (took 323ms)
+17:00:31 Build Finished. 0 errors, 3 warnings. (took 979ms)
 

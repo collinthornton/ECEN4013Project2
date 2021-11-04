@@ -26,6 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "UART.h"
 
 /* USER CODE END Includes */
 
@@ -51,6 +52,8 @@ SPI_HandleTypeDef hspi1;
 
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart2;
+
+UART usb, ble;
 
 /* Definitions for blinkLED01 */
 osThreadId_t blinkLED01Handle;
@@ -117,12 +120,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART3_UART_Init();
-  MX_USART2_UART_Init();
+  //MX_USART3_UART_Init();
+  //MX_USART2_UART_Init();
   MX_FATFS_Init();
   MX_SPI1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  usb.init(USART3, 115200, 8);
+  ble.init(USART2, 9600, 8);
 
   /* USER CODE END 2 */
 
@@ -387,6 +392,14 @@ static void MX_USART2_UART_Init(void)
 
 }
 
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	std::map<UART_HandleTypeDef*, UART*>::iterator it;
+	it = UART::objectMap.find(huart);
+	if(it != UART::objectMap.end())
+		it->second->memberIRQ();
+}
+
 /**
   * @brief GPIO Initialization Function
   * @param None
@@ -517,15 +530,21 @@ void StartTask02(void *argument)
   /* USER CODE BEGIN StartTask02 */
   /* Infinite loop */
 
-	unit8_t buff[1024] = "";
+	uint8_t buff[1024] = "";
 	for(;;)
 	{
 	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-	  HAL usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
-	  uint8_t msg[10] = "hello\r\n";
-	  HAL_UART_Transmit(&huart3, msg, 10, 1);
-	  HAL_UART_Transmit(&huart2, msg, 10, 1);
-	  osDelay(500);
+	  //HAL usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
+
+
+		if(ble.hasData()) {
+			usb.sendData(ble.getData(), 10);
+		}
+	  //uint8_t msg[10] = "hello\r\n";
+	  //usb.sendData(msg, 1);
+	  //HAL_UART_Transmit(&huart3, msg, 10, 1);
+	  //HAL_UART_Transmit(&huart2, msg, 10, 1);
+	  osDelay(50);
 	}
 	/* USER CODE END StartTask02 */
 }

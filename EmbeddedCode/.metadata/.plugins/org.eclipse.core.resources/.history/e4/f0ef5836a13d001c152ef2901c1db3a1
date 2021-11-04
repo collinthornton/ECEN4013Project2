@@ -1,0 +1,40 @@
+/*
+ * UART.cpp
+ *
+ *  Created on: Nov 4, 2021
+ *      Author: cthornton
+ */
+
+#include "UART.h"
+
+UART::UART(USART_TypeDef *port, int baud) {
+	// TODO Auto-generated constructor stub
+	buff = {0};
+	handle.Instance = port;
+	handle.Init.BaudRate = baud;
+	handle.Init.WordLength = UART_WORDLENGTH_8B;
+	handle.Init.StopBits = UART_STOPBITS_1;
+	handle.Init.Parity = UART_PARITY_NONE;
+	handle.Init.Mode = UART_MODE_TX_RX;
+	handle.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	handle.Init.OverSampling = UART_OVERSAMPLING_16;
+	handle.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+	handle.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+	if (HAL_UART_Init(&huart3) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	  /* USER CODE BEGIN USART3_Init 2 */
+}
+
+UART::~UART() {
+	// TODO Auto-generated destructor stub
+}
+
+bool UART::isData() {
+	return dataReady;
+}
+
+short UART::sendData(uint8_t &data, timeout=10) {
+	HAL_UART_Transmit(&this->handle, data, sizeof(data)/sizeof(data[0]), timeout);
+}
