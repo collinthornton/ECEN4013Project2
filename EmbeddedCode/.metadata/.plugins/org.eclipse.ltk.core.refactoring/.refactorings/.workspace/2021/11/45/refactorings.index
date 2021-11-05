@@ -5,5 +5,8 @@
 1636093762274	Delete resource 'BackupPlan/Src/main.c'
 1636079467649	Delete resource 'BackupPlan/Src/main.c'
 1636080259909	Delete resource 'BackupPlan/Src/main.c'
+<<<<<<< HEAD
 1636095536969	Delete resource 'BackupPlan/Src/main.c'
 1636095598413	Delete resource 'BackupPlan/Src/main.c'
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
