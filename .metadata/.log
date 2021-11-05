@@ -1,0 +1,3 @@
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-05 12:17:28.250
+!MESSAGE Indexed 'BackupPlan' (56 sources, 269 headers) in 7.34 sec: 23,276 declarations; 103,789 references; 2 unresolved inclusions; 320 syntax errors; 948 unresolved names (0.74%)
