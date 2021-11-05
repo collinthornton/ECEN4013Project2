@@ -24,10 +24,11 @@
 #include "usb_device.h"
 #include "usb_device.h"
 
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "UART.h"
-
+#include <string.h>
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,12 +51,7 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
 
-
-
-UART usb, ble;
-
 UART_HandleTypeDef huart3;
-UART_HandleTypeDef huart2;
 
 /* Definitions for blinkLED01 */
 osThreadId_t blinkLED01Handle;
@@ -71,7 +67,17 @@ const osThreadAttr_t blinkLED02_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for i2c_gyro */
+osThreadId_t i2c_gyroHandle;
+const osThreadAttr_t i2c_gyro_attributes = {
+  .name = "i2c_gyro",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
+static const uint8_t GYRO_ADDR = 0b1101000 <<1; // GYRO  7 bit address (1101001 if SDO =HI)
+static const uint8_t GYRO_CTRL = 0x20; 			//GYRO REGISTERS
+static const uint8_t GYRO_OUT = 0xA8;
 
 /* USER CODE END PV */
 
@@ -79,11 +85,11 @@ const osThreadAttr_t blinkLED02_attributes = {
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_USART2_UART_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
 void StartTask02(void *argument);
+void StartGyro(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -122,18 +128,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  //MX_USART3_UART_Init();
-  //MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
   MX_FATFS_Init();
   MX_SPI1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
-
-  usb.init(USART3, 115200, 10);
-  ble.init(USART2, 9600, 10);
-  huart3 = usb.handle;
-  huart2 = ble.handle;
 
   /* USER CODE END 2 */
 
@@ -162,6 +161,9 @@ int main(void)
 
   /* creation of blinkLED02 */
   blinkLED02Handle = osThreadNew(StartTask02, NULL, &blinkLED02_attributes);
+
+  /* creation of i2c_gyro */
+  i2c_gyroHandle = osThreadNew(StartGyro, NULL, &i2c_gyro_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -364,51 +366,6 @@ static void MX_USART3_UART_Init(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART3_Init 0 */
-
-  /* USER CODE END USART3_Init 0 */
-
-  /* USER CODE BEGIN USART3_Init 1 */
-
-  /* USER CODE END USART3_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 9600;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART3_Init 2 */
-
-  /* USER CODE END USART3_Init 2 */
-
-}
-
-
-
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	std::map<USART_TypeDef*, UART*>::iterator it;
-	it = UART::objectMap.find(huart->Instance);
-	if(it != UART::objectMap.end())
-		it->second->memberIRQ();
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -535,25 +492,66 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTask02 */
 void StartTask02(void *argument)
 {
+
   /* USER CODE BEGIN StartTask02 */
+
   /* Infinite loop */
+  for(;;)
+  {
+  	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+  	  HAL_usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
+  	  uint8_t msg[10] = "hello\r\n";
+  	  HAL_UART_Transmit(&huart3, msg, 10, 1);
+  	  HAL_UART_Transmit(&huart2, msg, 10, 1);
+  	  osDelay(500);
+  	}
+  /* USER CODE END StartTask02 */
+}
 
-	for(;;)
-	{
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-	  //HAL usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
+/* USER CODE BEGIN Header_StartGyro */
+/**
+* @brief Function implementing the i2c_gyro thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartGyro */
+void StartGyro(void *argument)
+{
+  /* USER CODE BEGIN StartGyro */
+	HAL_StatusTypeDef ret;
+	uint8_t buf[12];
+	uint8_t val[3]; //calculations from gyro
+  /* Infinite loop */
+  for(;;)
+  {
+	  buf[0]=GYRO_OUT;
+	 	  ret = HAL_I2C_Master_Transmit(&hi2c1, GYRO_ADDR, buf, 1, HAL_MAX_DELAY);
+	 	  if ( ret != HAL_OK ) {
+	 		  strcpy((char*)buf, "Error Tx\r\n");
+	 	  }
+	 	  else {
+
+	 	        // Read 1 byte from the  register
+	 	  ret = HAL_I2C_Master_Receive(&hi2c1, GYRO_ADDR, buf, 6, HAL_MAX_DELAY);
+	 	  if ( ret != HAL_OK ) {
+	 		  strcpy((char*)buf, "Error Rx\r\n");
+	 	  }
+	 	  else {
+
+	 	          //Combine the bytes
+	 	          val[0] = ((buf[0]<<4)|buf[1]);
+	 	          val[1] = ((buf[2]<<4)|buf[3]);
+	 	          val[2] = ((buf[4]<<4)|buf[5]);
+
+	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert to rad/s somehow?
 
 
-	  if(usb.hasData()) {
-		usb.sendData(usb.getData(), 10);
-	  }
-	  //uint8_t msg[10] = "hello\r\n";
-	  //usb.sendData(msg, 10);
-	  //HAL_UART_Transmit(&huart3, msg, 10, 1);
-	  //HAL_UART_Transmit(&huart2, msg, 10, 1);
-	  osDelay(50);
-	}
-	/* USER CODE END StartTask02 */
+	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert temperature to decimal format
+
+	 	      }
+	 	  }
+  }
+  /* USER CODE END StartGyro */
 }
 
 /**
