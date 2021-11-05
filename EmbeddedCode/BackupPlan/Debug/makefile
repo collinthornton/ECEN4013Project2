@@ -85,53 +85,8 @@ all: main-build
 main-build: BackupPlan.elf secondary-outputs
 
 # Tool invocations
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 BackupPlan.elf: $(OBJS) $(USER_OBJS) C:\Users\loeff\Downloads\ECEN4013Project2\EmbeddedCode\BackupPlan\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\loeff\Downloads\ECEN4013Project2\EmbeddedCode\BackupPlan\STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
-=======
-BackupPlan.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
->>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
