@@ -1350,6 +1350,7 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-11-04 22:24:16.356
 !MESSAGE Existing sessions are:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-04 23:56:05.644
 !MESSAGE ST-LINK firmware verification, Check required failed
@@ -1602,5 +1603,7 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-05 02:14:39.996
 !MESSAGE ST-LINK firmware verification, No latest info found: -1
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)

@@ -12,7 +12,10 @@
 
 #include <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <vector>
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 #include <cstring>
@@ -20,6 +23,7 @@
 
 class UART {
 public:
+<<<<<<< HEAD
 <<<<<<< HEAD
 	UART(UART_HandleTypeDef *handle);
 	int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
@@ -36,6 +40,8 @@ private:
 	std::vector<uint8_t> msgBuff;
 	uint8_t *uartBuff;
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 	UART();
 	int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
 	bool hasData();
@@ -49,6 +55,9 @@ private:
 
 private:
 	uint8_t *buff, *safeBuff;
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 	int packetSize_Bytes;
 	bool dataReady;

@@ -8,9 +8,15 @@ CDefines=USE_HAL_DRIVER;STM32F746xx;USE_HAL_DRIVER;USE_HAL_DRIVER;
 
 [PreviousGenFiles]
 <<<<<<< HEAD
+<<<<<<< HEAD
 HeaderPath=/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
 HeaderFiles=FreeRTOSConfig.h;ffconf.h;user_diskio.h;fatfs.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_cdc_if.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;
 SourcePath=/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Src
+=======
+HeaderPath=E:/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
+HeaderFiles=FreeRTOSConfig.h;ffconf.h;user_diskio.h;fatfs.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_cdc_if.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;
+SourcePath=E:/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Src
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 HeaderPath=E:/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
 HeaderFiles=FreeRTOSConfig.h;ffconf.h;user_diskio.h;fatfs.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_cdc_if.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;

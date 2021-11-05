@@ -59,8 +59,13 @@
 /* External variables --------------------------------------------------------*/
 extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
+=======
+UART_HandleTypeDef huart3;
+UART_HandleTypeDef huart2;
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart2;

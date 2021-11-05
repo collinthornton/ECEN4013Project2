@@ -35,8 +35,11 @@ Archive member included to satisfy reference by file (symbol)
 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
                               ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o (memcpy)
 <<<<<<< HEAD
+<<<<<<< HEAD
 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
                               ./Src/UART.o (memmove)
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
@@ -6096,6 +6099,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6103,6 +6107,8 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6110,6 +6116,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+<<<<<<< HEAD
 =======
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6130,6 +6137,9 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+ .group         0x0000000000000000        0xc ./Src/UART.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6137,6 +6147,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
@@ -6153,6 +6164,10 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
@@ -6161,6 +6176,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
@@ -6187,11 +6203,20 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6203,6 +6228,12 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
 <<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/UART.o
+=======
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6212,6 +6243,7 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
+<<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
@@ -6222,6 +6254,8 @@ Discarded input sections
 =======
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6236,6 +6270,7 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6254,10 +6289,13 @@ Discarded input sections
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
+<<<<<<< HEAD
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0x8 ./Src/UART.o
@@ -6273,6 +6311,12 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
 =======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0x8 ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
+ .group         0x0000000000000000        0xc ./Src/UART.o
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/UART.o
  .group         0x0000000000000000        0xc ./Src/UART.o
@@ -6868,8 +6912,11 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/main.o
  .group         0x0000000000000000        0xc ./Src/main.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .group         0x0000000000000000        0xc ./Src/main.o
  .group         0x0000000000000000        0xc ./Src/main.o
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .group         0x0000000000000000        0xc ./Src/main.o
@@ -6989,11 +7036,17 @@ Discarded input sections
  .rodata._ZStL6ignore
                 0x0000000000000000        0x1 ./Src/main.o
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .text._ZL19MX_USART3_UART_Initv
                 0x0000000000000000       0x68 ./Src/main.o
  .text._ZL19MX_USART2_UART_Initv
                 0x0000000000000000       0x68 ./Src/main.o
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .text._ZNSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEC2Ev
                 0x0000000000000000       0x1c ./Src/main.o
@@ -7175,8 +7228,11 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x241 ./Src/main.o
  .debug_macro   0x0000000000000000       0x17 ./Src/main.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .debug_macro   0x0000000000000000       0x2d ./Src/main.o
  .debug_macro   0x0000000000000000       0x26 ./Src/main.o
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_macro   0x0000000000000000       0x8e ./Src/main.o
@@ -8772,6 +8828,11 @@ Discarded input sections
  .text.unlikely._ZSt24__throw_invalid_argumentPKc
                 0x0000000000000000        0x6 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functexcept.o)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ .text.unlikely._ZSt20__throw_length_errorPKc
+                0x0000000000000000        0x6 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functexcept.o)
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
  .text.unlikely._ZSt20__throw_length_errorPKc
                 0x0000000000000000        0x6 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functexcept.o)
@@ -8803,6 +8864,9 @@ Discarded input sections
                 0x0000000000000000       0x82 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(snprintf_lite.o)
  .debug_frame   0x0000000000000000       0x78 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(snprintf_lite.o)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .ARM.attributes
                 0x0000000000000000       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(snprintf_lite.o)
  .text          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(new_handler.o)
@@ -8827,6 +8891,7 @@ Discarded input sections
  .text.exit     0x0000000000000000       0x28 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
  .debug_frame   0x0000000000000000       0x28 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
  .ARM.attributes
+<<<<<<< HEAD
 =======
  .ARM.attributes
                 0x0000000000000000       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(snprintf_lite.o)
@@ -8852,6 +8917,8 @@ Discarded input sections
  .text.exit     0x0000000000000000       0x28 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
  .debug_frame   0x0000000000000000       0x28 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
  .ARM.attributes
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x0000000000000000       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
  .text          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
@@ -8906,9 +8973,12 @@ Discarded input sections
  .data          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
  .bss           0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
 <<<<<<< HEAD
+<<<<<<< HEAD
  .text          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
  .data          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
  .bss           0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memmove.o)
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .text          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
@@ -8959,6 +9029,7 @@ Discarded input sections
                 0x0000000000000000        0x8 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
  .debug_frame   0x0000000000000000       0x88 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
 <<<<<<< HEAD
+<<<<<<< HEAD
  .ARM.attributes
                 0x0000000000000000       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
  .text          0x0000000000000000       0x10 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
@@ -8966,12 +9037,17 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
  .ARM.attributes
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .ARM.attributes
                 0x0000000000000000       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
  .text          0x0000000000000000       0x10 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
  .data          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
  .bss           0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
  .ARM.attributes
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x0000000000000000       0x17 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strlen.o)
  .text          0x0000000000000000        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-writer.o)
@@ -9135,7 +9211,11 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x00000000080001c8                . = ALIGN (0x4)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .text           0x00000000080001d0     0xe1b4
+=======
+.text           0x00000000080001d0     0xd64c
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 .text           0x00000000080001d0     0xd64c
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -9847,6 +9927,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x000000000800a95a       0x1a ./Src/UART.o
                 0x000000000800a95a                std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::~map()
                 0x000000000800a95a                std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::~map()
+<<<<<<< HEAD
 <<<<<<< HEAD
  .text._ZNSt12_Vector_baseIhSaIhEE12_Vector_implD2Ev
                 0x000000000800a974       0x18 ./Src/UART.o
@@ -11142,6 +11223,279 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .text._ZL12MX_I2C1_Initv
                 0x000000000800baa4       0x9c ./Src/main.o
  .text._ZL12MX_SPI1_Initv
+=======
+ .text._ZN4UARTC2Ev
+                0x000000000800a974       0x30 ./Src/UART.o
+                0x000000000800a974                UART::UART()
+                0x000000000800a974                UART::UART()
+ .text._ZN4UARTD2Ev
+                0x000000000800a9a4       0x98 ./Src/UART.o
+                0x000000000800a9a4                UART::~UART()
+                0x000000000800a9a4                UART::~UART()
+ .text._ZN4UARTD0Ev
+                0x000000000800aa3c       0x20 ./Src/UART.o
+                0x000000000800aa3c                UART::~UART()
+ .text._ZN4UART4initEP13USART_TypeDefii
+                0x000000000800aa5c      0x12c ./Src/UART.o
+                0x000000000800aa5c                UART::init(USART_TypeDef*, int, int)
+ .text._ZN4UART7hasDataEv
+                0x000000000800ab88       0x3c ./Src/UART.o
+                0x000000000800ab88                UART::hasData()
+ .text._ZN4UART7getDataEv
+                0x000000000800abc4       0x58 ./Src/UART.o
+                0x000000000800abc4                UART::getData()
+ .text._ZN4UART8sendDataEPhi
+                0x000000000800ac1c       0x2a ./Src/UART.o
+                0x000000000800ac1c                UART::sendData(unsigned char*, int)
+ .text._ZN4UART9memberIRQEv
+                0x000000000800ac46       0x40 ./Src/UART.o
+                0x000000000800ac46                UART::memberIRQ()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE13_Rb_tree_implISA_Lb1EEC2Ev
+                0x000000000800ac86       0x2a ./Src/UART.o
+                0x000000000800ac86                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_Rb_tree_impl<std::less<USART_TypeDef*>, true>::_Rb_tree_impl()
+                0x000000000800ac86                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_Rb_tree_impl<std::less<USART_TypeDef*>, true>::_Rb_tree_impl()
+ .text._ZNSaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEED2Ev
+                0x000000000800acb0       0x18 ./Src/UART.o
+                0x000000000800acb0                std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::~allocator()
+                0x000000000800acb0                std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::~allocator()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EED2Ev
+                0x000000000800acc8       0x2a ./Src/UART.o
+                0x000000000800acc8                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::~_Rb_tree()
+                0x000000000800acc8                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::~_Rb_tree()
+ .text._ZNSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEC2Ev
+                0x000000000800acf2       0x1c ./Src/UART.o
+                0x000000000800acf2                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_iterator()
+                0x000000000800acf2                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_iterator()
+ .text._ZNSt3mapIP13USART_TypeDefP4UARTSt4lessIS1_ESaISt4pairIKS1_S3_EEE4findERS7_
+                0x000000000800ad0e       0x1e ./Src/UART.o
+                0x000000000800ad0e                std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::find(USART_TypeDef* const&)
+ .text._ZNSt3mapIP13USART_TypeDefP4UARTSt4lessIS1_ESaISt4pairIKS1_S3_EEE3endEv
+                0x000000000800ad2c       0x1a ./Src/UART.o
+                0x000000000800ad2c                std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::end()
+ .text._ZStneRKSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEES9_
+                0x000000000800ad46       0x28 ./Src/UART.o
+                0x000000000800ad46                std::operator!=(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&, std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&)
+ .text._ZNSt3mapIP13USART_TypeDefP4UARTSt4lessIS1_ESaISt4pairIKS1_S3_EEE5eraseB5cxx11ESt17_Rb_tree_iteratorIS8_E
+                0x000000000800ad6e       0x1e ./Src/UART.o
+                0x000000000800ad6e                std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::erase[abi:cxx11](std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >)
+ .text._ZNSt4pairIP13USART_TypeDefP4UARTEC2IRS1_S3_Lb1EEEOT_OT0_
+                0x000000000800ad8c       0x32 ./Src/UART.o
+                0x000000000800ad8c                std::pair<USART_TypeDef*, UART*>::pair<USART_TypeDef*&, UART*, true>(USART_TypeDef*&, UART*&&)
+                0x000000000800ad8c                std::pair<USART_TypeDef*, UART*>::pair<USART_TypeDef*&, UART*, true>(USART_TypeDef*&, UART*&&)
+ .text._ZNSt3mapIP13USART_TypeDefP4UARTSt4lessIS1_ESaISt4pairIKS1_S3_EEE6insertIS6_IS1_S3_EEENSt9enable_ifIXsrSt16is_constructibleIS8_JT_EE5valueES6_ISt17_Rb_tree_iteratorIS8_EbEE4typeEOSF_
+                0x000000000800adbe       0x28 ./Src/UART.o
+                0x000000000800adbe                std::enable_if<std::is_constructible<std::pair<USART_TypeDef* const, UART*>, std::pair<USART_TypeDef*, UART*> >::value, std::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool> >::type std::map<USART_TypeDef*, UART*, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::insert<std::pair<USART_TypeDef*, UART*> >(std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZNSaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEC2Ev
+                0x000000000800ade6       0x18 ./Src/UART.o
+                0x000000000800ade6                std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::allocator()
+                0x000000000800ade6                std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::allocator()
+ .text._ZNSt20_Rb_tree_key_compareISt4lessIP13USART_TypeDefEEC2Ev
+                0x000000000800adfe       0x16 ./Src/UART.o
+                0x000000000800adfe                std::_Rb_tree_key_compare<std::less<USART_TypeDef*> >::_Rb_tree_key_compare()
+                0x000000000800adfe                std::_Rb_tree_key_compare<std::less<USART_TypeDef*> >::_Rb_tree_key_compare()
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEED2Ev
+                0x000000000800ae14       0x16 ./Src/UART.o
+                0x000000000800ae14                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::~new_allocator()
+                0x000000000800ae14                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::~new_allocator()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE8_M_eraseEPSt13_Rb_tree_nodeIS6_E
+                0x000000000800ae2a       0x3e ./Src/UART.o
+                0x000000000800ae2a                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_erase(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE8_M_beginEv
+                0x000000000800ae68       0x18 ./Src/UART.o
+                0x000000000800ae68                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_begin()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE4findERS3_
+                0x000000000800ae80       0x7e ./Src/UART.o
+                0x000000000800ae80                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::find(USART_TypeDef* const&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE3endEv
+                0x000000000800aefe       0x22 ./Src/UART.o
+                0x000000000800aefe                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::end()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE5eraseB5cxx11ESt17_Rb_tree_iteratorIS6_E
+                0x000000000800af20       0x38 ./Src/UART.o
+                0x000000000800af20                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::erase[abi:cxx11](std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >)
+ .text._ZSt7forwardIRP13USART_TypeDefEOT_RNSt16remove_referenceIS3_E4typeE
+                0x000000000800af58       0x16 ./Src/UART.o
+                0x000000000800af58                USART_TypeDef*& std::forward<USART_TypeDef*&>(std::remove_reference<USART_TypeDef*&>::type&)
+ .text._ZSt7forwardIP4UARTEOT_RNSt16remove_referenceIS2_E4typeE
+                0x000000000800af6e       0x16 ./Src/UART.o
+                0x000000000800af6e                UART*&& std::forward<UART*>(std::remove_reference<UART*>::type&)
+ .text._ZSt7forwardISt4pairIP13USART_TypeDefP4UARTEEOT_RNSt16remove_referenceIS6_E4typeE
+                0x000000000800af84       0x16 ./Src/UART.o
+                0x000000000800af84                std::pair<USART_TypeDef*, UART*>&& std::forward<std::pair<USART_TypeDef*, UART*> >(std::remove_reference<std::pair<USART_TypeDef*, UART*> >::type&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE17_M_emplace_uniqueIJS2_IS1_S5_EEEES2_ISt17_Rb_tree_iteratorIS6_EbEDpOT_
+                0x000000000800af9a       0x94 ./Src/UART.o
+                0x000000000800af9a                std::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool> std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_emplace_unique<std::pair<USART_TypeDef*, UART*> >(std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEC2Ev
+                0x000000000800b02e       0x16 ./Src/UART.o
+                0x000000000800b02e                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::new_allocator()
+                0x000000000800b02e                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::new_allocator()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE8_S_rightEPSt18_Rb_tree_node_base
+                0x000000000800b044       0x18 ./Src/UART.o
+                0x000000000800b044                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_S_right(std::_Rb_tree_node_base*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE7_S_leftEPSt18_Rb_tree_node_base
+                0x000000000800b05c       0x18 ./Src/UART.o
+                0x000000000800b05c                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_S_left(std::_Rb_tree_node_base*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE12_M_drop_nodeEPSt13_Rb_tree_nodeIS6_E
+                0x000000000800b074       0x22 ./Src/UART.o
+                0x000000000800b074                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_drop_node(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE6_M_endEv
+                0x000000000800b096       0x18 ./Src/UART.o
+                0x000000000800b096                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_end()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE14_M_lower_boundEPSt13_Rb_tree_nodeIS6_EPSt18_Rb_tree_node_baseRS3_
+                0x000000000800b0ae       0x66 ./Src/UART.o
+                0x000000000800b0ae                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*, std::_Rb_tree_node_base*, USART_TypeDef* const&)
+ .text._ZSteqRKSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEES9_
+                0x000000000800b114       0x28 ./Src/UART.o
+                0x000000000800b114                std::operator==(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&, std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE6_S_keyEPKSt18_Rb_tree_node_base
+                0x000000000800b13c       0x18 ./Src/UART.o
+                0x000000000800b13c                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_S_key(std::_Rb_tree_node_base const*)
+ .text._ZNKSt4lessIP13USART_TypeDefEclES1_S1_
+                0x000000000800b154       0x26 ./Src/UART.o
+                0x000000000800b154                std::less<USART_TypeDef*>::operator()(USART_TypeDef*, USART_TypeDef*) const
+ .text._ZNSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEC2EPSt18_Rb_tree_node_base
+                0x000000000800b17a       0x1e ./Src/UART.o
+                0x000000000800b17a                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_iterator(std::_Rb_tree_node_base*)
+                0x000000000800b17a                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_iterator(std::_Rb_tree_node_base*)
+ .text._ZNSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEppEv
+                0x000000000800b198       0x22 ./Src/UART.o
+                0x000000000800b198                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::operator++()
+ .text._ZNSt23_Rb_tree_const_iteratorISt4pairIKP13USART_TypeDefP4UARTEEC2ERKSt17_Rb_tree_iteratorIS6_E
+                0x000000000800b1ba       0x20 ./Src/UART.o
+                0x000000000800b1ba                std::_Rb_tree_const_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&)
+                0x000000000800b1ba                std::_Rb_tree_const_iterator<std::pair<USART_TypeDef* const, UART*> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > const&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE12_M_erase_auxESt23_Rb_tree_const_iteratorIS6_E
+                0x000000000800b1da       0x34 ./Src/UART.o
+                0x000000000800b1da                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<USART_TypeDef* const, UART*> >)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE14_M_create_nodeIJS2_IS1_S5_EEEEPSt13_Rb_tree_nodeIS6_EDpOT_
+                0x000000000800b20e       0x2e ./Src/UART.o
+                0x000000000800b20e                std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >* std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_create_node<std::pair<USART_TypeDef*, UART*> >(std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE24_M_get_insert_unique_posERS3_
+                0x000000000800b23c      0x114 ./Src/UART.o
+                0x000000000800b23c                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_get_insert_unique_pos(USART_TypeDef* const&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE6_S_keyEPKSt13_Rb_tree_nodeIS6_E
+                0x000000000800b350       0x26 ./Src/UART.o
+                0x000000000800b350                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_S_key(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > const*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE14_M_insert_nodeEPSt18_Rb_tree_node_baseSE_PSt13_Rb_tree_nodeIS6_E
+                0x000000000800b376       0x7e ./Src/UART.o
+                0x000000000800b376                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_insert_node(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*)
+ .text._ZNSt4pairISt17_Rb_tree_iteratorIS_IKP13USART_TypeDefP4UARTEEbEC2IS7_bLb1EEEOT_OT0_
+                0x000000000800b3f4       0x32 ./Src/UART.o
+                0x000000000800b3f4                std::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool>::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool, true>(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >&&, bool&&)
+                0x000000000800b3f4                std::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool>::pair<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >, bool, true>(std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >&&, bool&&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE15_M_destroy_nodeEPSt13_Rb_tree_nodeIS6_E
+                0x000000000800b426       0x2a ./Src/UART.o
+                0x000000000800b426                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_destroy_node(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS6_E
+                0x000000000800b450       0x24 ./Src/UART.o
+                0x000000000800b450                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_put_node(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE11_M_get_nodeEv
+                0x000000000800b474       0x22 ./Src/UART.o
+                0x000000000800b474                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_get_node()
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE17_M_construct_nodeIJS2_IS1_S5_EEEEvPSt13_Rb_tree_nodeIS6_EDpOT_
+                0x000000000800b496       0x40 ./Src/UART.o
+                0x000000000800b496                void std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_construct_node<std::pair<USART_TypeDef*, UART*> >(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*, std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE5beginEv
+                0x000000000800b4d6       0x22 ./Src/UART.o
+                0x000000000800b4d6                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::begin()
+ .text._ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRPSt13_Rb_tree_nodeIS_IKP13USART_TypeDefP4UARTEERS1_Lb1EEEOT_OT0_
+                0x000000000800b4f8       0x32 ./Src/UART.o
+                0x000000000800b4f8                std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&, std::_Rb_tree_node_base*&, true>(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&, std::_Rb_tree_node_base*&)
+                0x000000000800b4f8                std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&, std::_Rb_tree_node_base*&, true>(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&, std::_Rb_tree_node_base*&)
+ .text._ZNSt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEmmEv
+                0x000000000800b52a       0x22 ./Src/UART.o
+                0x000000000800b52a                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >::operator--()
+ .text._ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRS1_Lb1EEEOT_RKS1_
+                0x000000000800b54c       0x2c ./Src/UART.o
+                0x000000000800b54c                std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair<std::_Rb_tree_node_base*&, true>(std::_Rb_tree_node_base*&, std::_Rb_tree_node_base* const&)
+                0x000000000800b54c                std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair<std::_Rb_tree_node_base*&, true>(std::_Rb_tree_node_base*&, std::_Rb_tree_node_base* const&)
+ .text._ZNKSt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEE9_M_valptrEv
+                0x000000000800b578       0x1c ./Src/UART.o
+                0x000000000800b578                std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >::_M_valptr() const
+ .text._ZNKSt10_Select1stISt4pairIKP13USART_TypeDefP4UARTEEclERKS6_
+                0x000000000800b594       0x18 ./Src/UART.o
+                0x000000000800b594                std::_Select1st<std::pair<USART_TypeDef* const, UART*> >::operator()(std::pair<USART_TypeDef* const, UART*> const&) const
+ .text._ZSt7forwardISt17_Rb_tree_iteratorISt4pairIKP13USART_TypeDefP4UARTEEEOT_RNSt16remove_referenceIS9_E4typeE
+                0x000000000800b5ac       0x16 ./Src/UART.o
+                0x000000000800b5ac                std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> >&& std::forward<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > >(std::remove_reference<std::_Rb_tree_iterator<std::pair<USART_TypeDef* const, UART*> > >::type&)
+ .text._ZSt7forwardIbEOT_RNSt16remove_referenceIS0_E4typeE
+                0x000000000800b5c2       0x16 ./Src/UART.o
+                0x000000000800b5c2                bool&& std::forward<bool>(std::remove_reference<bool>::type&)
+ .text._ZNSt8_Rb_treeIP13USART_TypeDefSt4pairIKS1_P4UARTESt10_Select1stIS6_ESt4lessIS1_ESaIS6_EE21_M_get_Node_allocatorEv
+                0x000000000800b5d8       0x16 ./Src/UART.o
+                0x000000000800b5d8                std::_Rb_tree<USART_TypeDef*, std::pair<USART_TypeDef* const, UART*>, std::_Select1st<std::pair<USART_TypeDef* const, UART*> >, std::less<USART_TypeDef*>, std::allocator<std::pair<USART_TypeDef* const, UART*> > >::_M_get_Node_allocator()
+ .text._ZNSt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEE9_M_valptrEv
+                0x000000000800b5ee       0x1c ./Src/UART.o
+                0x000000000800b5ee                std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >::_M_valptr()
+ .text._ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEE7destroyIS7_EEvRS9_PT_
+                0x000000000800b60a       0x1a ./Src/UART.o
+                0x000000000800b60a                void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > > >::destroy<std::pair<USART_TypeDef* const, UART*> >(std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >&, std::pair<USART_TypeDef* const, UART*>*)
+ .text._ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEE10deallocateERS9_PS8_j
+                0x000000000800b624       0x1e ./Src/UART.o
+                0x000000000800b624                std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > > >::deallocate(std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >&, std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*, unsigned int)
+ .text._ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEE8allocateERS9_j
+                0x000000000800b642       0x1e ./Src/UART.o
+                0x000000000800b642                std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >&, unsigned int)
+ .text._ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEE9constructIS7_JS1_IS3_S6_EEEEvRS9_PT_DpOT0_
+                0x000000000800b660       0x26 ./Src/UART.o
+                0x000000000800b660                void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > > >::construct<std::pair<USART_TypeDef* const, UART*>, std::pair<USART_TypeDef*, UART*> >(std::allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >&, std::pair<USART_TypeDef* const, UART*>*, std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZSt7forwardIRPSt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEEOT_RNSt16remove_referenceISB_E4typeE
+                0x000000000800b686       0x16 ./Src/UART.o
+                0x000000000800b686                std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*& std::forward<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&>(std::remove_reference<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*&>::type&)
+ .text._ZSt7forwardIRPSt18_Rb_tree_node_baseEOT_RNSt16remove_referenceIS3_E4typeE
+                0x000000000800b69c       0x16 ./Src/UART.o
+                0x000000000800b69c                std::_Rb_tree_node_base*& std::forward<std::_Rb_tree_node_base*&>(std::remove_reference<std::_Rb_tree_node_base*&>::type&)
+ .text._ZNK9__gnu_cxx16__aligned_membufISt4pairIKP13USART_TypeDefP4UARTEE6_M_ptrEv
+                0x000000000800b6b2       0x18 ./Src/UART.o
+                0x000000000800b6b2                __gnu_cxx::__aligned_membuf<std::pair<USART_TypeDef* const, UART*> >::_M_ptr() const
+ .text._ZN9__gnu_cxx16__aligned_membufISt4pairIKP13USART_TypeDefP4UARTEE6_M_ptrEv
+                0x000000000800b6ca       0x18 ./Src/UART.o
+                0x000000000800b6ca                __gnu_cxx::__aligned_membuf<std::pair<USART_TypeDef* const, UART*> >::_M_ptr()
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEE7destroyIS8_EEvPT_
+                0x000000000800b6e2       0x16 ./Src/UART.o
+                0x000000000800b6e2                void __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::destroy<std::pair<USART_TypeDef* const, UART*> >(std::pair<USART_TypeDef* const, UART*>*)
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEE10deallocateEPS9_j
+                0x000000000800b6f8       0x1a ./Src/UART.o
+                0x000000000800b6f8                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::deallocate(std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> >*, unsigned int)
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEE8allocateEjPKv
+                0x000000000800b712       0x42 ./Src/UART.o
+                0x000000000800b712                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::allocate(unsigned int, void const*)
+ .text._ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEE9constructIS8_JS2_IS4_S7_EEEEvPT_DpOT0_
+                0x000000000800b754       0x30 ./Src/UART.o
+                0x000000000800b754                void __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::construct<std::pair<USART_TypeDef* const, UART*>, std::pair<USART_TypeDef*, UART*> >(std::pair<USART_TypeDef* const, UART*>*, std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZNK9__gnu_cxx16__aligned_membufISt4pairIKP13USART_TypeDefP4UARTEE7_M_addrEv
+                0x000000000800b784       0x16 ./Src/UART.o
+                0x000000000800b784                __gnu_cxx::__aligned_membuf<std::pair<USART_TypeDef* const, UART*> >::_M_addr() const
+ .text._ZN9__gnu_cxx16__aligned_membufISt4pairIKP13USART_TypeDefP4UARTEE7_M_addrEv
+                0x000000000800b79a       0x16 ./Src/UART.o
+                0x000000000800b79a                __gnu_cxx::__aligned_membuf<std::pair<USART_TypeDef* const, UART*> >::_M_addr()
+ .text._ZNK9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKP13USART_TypeDefP4UARTEEE8max_sizeEv
+                0x000000000800b7b0       0x1c ./Src/UART.o
+                0x000000000800b7b0                __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<USART_TypeDef* const, UART*> > >::max_size() const
+ .text._ZNSt4pairIKP13USART_TypeDefP4UARTEC2IS1_S4_Lb1EEEOS_IT_T0_E
+                0x000000000800b7cc       0x36 ./Src/UART.o
+                0x000000000800b7cc                std::pair<USART_TypeDef* const, UART*>::pair<USART_TypeDef*, UART*, true>(std::pair<USART_TypeDef*, UART*>&&)
+                0x000000000800b7cc                std::pair<USART_TypeDef* const, UART*>::pair<USART_TypeDef*, UART*, true>(std::pair<USART_TypeDef*, UART*>&&)
+ .text._ZSt7forwardIP13USART_TypeDefEOT_RNSt16remove_referenceIS2_E4typeE
+                0x000000000800b802       0x16 ./Src/UART.o
+                0x000000000800b802                USART_TypeDef*&& std::forward<USART_TypeDef*>(std::remove_reference<USART_TypeDef*>::type&)
+ .text._Z41__static_initialization_and_destruction_0ii
+                0x000000000800b818       0x54 ./Src/UART.o
+ .text._GLOBAL__sub_I__ZN4UART9objectMapE
+                0x000000000800b86c       0x10 ./Src/UART.o
+ .text._GLOBAL__sub_D__ZN4UART9objectMapE
+                0x000000000800b87c       0x10 ./Src/UART.o
+ .text.MX_FATFS_Init
+                0x000000000800b88c       0x24 ./Src/fatfs.o
+                0x000000000800b88c                MX_FATFS_Init
+ .text.main     0x000000000800b8b0       0xb4 ./Src/main.o
+                0x000000000800b8b0                main
+ .text._Z18SystemClock_Configv
+                0x000000000800b964      0x140 ./Src/main.o
+                0x000000000800b964                SystemClock_Config()
+ .text._ZL12MX_I2C1_Initv
+                0x000000000800baa4       0x9c ./Src/main.o
+ .text._ZL12MX_SPI1_Initv
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x000000000800bb40       0x84 ./Src/main.o
  .text.HAL_UART_RxCpltCallback
                 0x000000000800bbc4       0x60 ./Src/main.o
@@ -11665,6 +12019,9 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x000000000800d984                _sidata = LOADADDR (.data)
 
 .data           0x0000000020000000      0x20c load address 0x000000000800d984
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
@@ -11731,17 +12088,23 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x000000002000020c                _edata = .
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .igot.plt       0x000000002000020c        0x0 load address 0x000000000800e714
  .igot.plt      0x000000002000020c        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x000000002000020c                . = ALIGN (0x4)
 
 .bss            0x000000002000020c     0x69fc load address 0x000000000800e714
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 .igot.plt       0x000000002000020c        0x0 load address 0x000000000800db90
  .igot.plt      0x000000002000020c        0x0 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x000000002000020c                . = ALIGN (0x4)
 
 .bss            0x000000002000020c     0x6aec load address 0x000000000800db90
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x000000002000020c                _sbss = .
                 0x000000002000020c                __bss_start__ = _sbss
@@ -11844,6 +12207,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020004c18                hi2c1
  .bss.hspi1     0x0000000020004c64       0x64 ./Src/main.o
                 0x0000000020004c64                hspi1
+<<<<<<< HEAD
 <<<<<<< HEAD
  .bss.huart3    0x0000000020004cc8       0x84 ./Src/main.o
                 0x0000000020004cc8                huart3
@@ -11968,12 +12332,75 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020006cf8      0x600 load address 0x000000000800db90
                 0x0000000020006cf8                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
+=======
+ .bss.usb       0x0000000020004cc8       0x98 ./Src/main.o
+                0x0000000020004cc8                usb
+ .bss.ble       0x0000000020004d60       0x98 ./Src/main.o
+                0x0000000020004d60                ble
+ .bss.huart3    0x0000000020004df8       0x84 ./Src/main.o
+                0x0000000020004df8                huart3
+ .bss.huart2    0x0000000020004e7c       0x84 ./Src/main.o
+                0x0000000020004e7c                huart2
+ .bss.blinkLED01Handle
+                0x0000000020004f00        0x4 ./Src/main.o
+                0x0000000020004f00                blinkLED01Handle
+ .bss.blinkLED02Handle
+                0x0000000020004f04        0x4 ./Src/main.o
+                0x0000000020004f04                blinkLED02Handle
+ .bss.__sbrk_heap_end
+                0x0000000020004f08        0x4 ./Src/sysmem.o
+ .bss.__lock___malloc_recursive_mutex
+                0x0000000020004f0c        0xc ./ThreadSafe/newlib_lock_glue.o
+                0x0000000020004f0c                __lock___malloc_recursive_mutex
+ .bss._ZN12_GLOBAL__N_113__new_handlerE
+                0x0000000020004f18        0x4 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(new_handler.o)
+ .bss.__malloc_free_list
+                0x0000000020004f1c        0x4 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020004f1c                __malloc_free_list
+ .bss.__malloc_sbrk_start
+                0x0000000020004f20        0x4 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020004f20                __malloc_sbrk_start
+ *(COMMON)
+ COMMON         0x0000000020004f24        0x4 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+                0x0000000020004f24                uwTick
+ COMMON         0x0000000020004f28       0x40 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+                0x0000000020004f28                xQueueRegistry
+ COMMON         0x0000000020004f68      0x46c ./Src/fatfs.o
+                0x0000000020004f68                USERPath
+                0x0000000020004f6c                retUSER
+                0x0000000020004f70                USERFile
+                0x00000000200051a0                USERFatFS
+ COMMON         0x00000000200053d4       0x4c ./Src/stm32f7xx_hal_timebase_tim.o
+                0x00000000200053d4                htim14
+ COMMON         0x0000000020005420      0x2d0 ./Src/usb_device.o
+                0x0000000020005420                hUsbDeviceFS
+ COMMON         0x00000000200056f0     0x1000 ./Src/usbd_cdc_if.o
+                0x00000000200056f0                UserRxBufferFS
+                0x0000000020005ef0                UserTxBufferFS
+ COMMON         0x00000000200066f0      0x404 ./Src/usbd_conf.o
+                0x00000000200066f0                hpcd_USB_OTG_FS
+ COMMON         0x0000000020006af4      0x200 ./Src/usbd_desc.o
+                0x0000000020006af4                USBD_StrDesc
+ COMMON         0x0000000020006cf4        0x4 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-reent.o)
+                0x0000000020006cf4                errno
+                0x0000000020006cf8                . = ALIGN (0x4)
+                0x0000000020006cf8                _ebss = .
+                0x0000000020006cf8                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x0000000020006cf8      0x600 load address 0x000000000800db90
+                0x0000000020006cf8                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x0000000020006cf8                PROVIDE (_end = .)
                 0x0000000020006ef8                . = (. + _Min_Heap_Size)
  *fill*         0x0000000020006cf8      0x200 
                 0x00000000200072f8                . = (. + _Min_Stack_Size)
  *fill*         0x0000000020006ef8      0x400 
                 0x00000000200072f8                . = ALIGN (0x8)
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 
 /DISCARD/
@@ -12046,6 +12473,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x00000000000005ce       0x34 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .ARM.attributes
                 0x0000000000000602       0x34 ./Src/UART.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .ARM.attributes
                 0x0000000000000636       0x34 ./Src/fatfs.o
@@ -12191,6 +12619,65 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .ARM.attributes
                 0x0000000000000b9d       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-malloc.o)
  .ARM.attributes
+=======
+ .ARM.attributes
+                0x0000000000000636       0x34 ./Src/fatfs.o
+ .ARM.attributes
+                0x000000000000066a       0x34 ./Src/main.o
+ .ARM.attributes
+                0x000000000000069e       0x34 ./Src/stm32f7xx_hal_msp.o
+ .ARM.attributes
+                0x00000000000006d2       0x34 ./Src/stm32f7xx_hal_timebase_tim.o
+ .ARM.attributes
+                0x0000000000000706       0x34 ./Src/stm32f7xx_it.o
+ .ARM.attributes
+                0x000000000000073a       0x34 ./Src/syscalls.o
+ .ARM.attributes
+                0x000000000000076e       0x34 ./Src/sysmem.o
+ .ARM.attributes
+                0x00000000000007a2       0x34 ./Src/system_stm32f7xx.o
+ .ARM.attributes
+                0x00000000000007d6       0x34 ./Src/usb_device.o
+ .ARM.attributes
+                0x000000000000080a       0x34 ./Src/usbd_cdc_if.o
+ .ARM.attributes
+                0x000000000000083e       0x34 ./Src/usbd_conf.o
+ .ARM.attributes
+                0x0000000000000872       0x34 ./Src/usbd_desc.o
+ .ARM.attributes
+                0x00000000000008a6       0x34 ./Src/user_diskio.o
+ .ARM.attributes
+                0x00000000000008da       0x21 ./Startup/startup_stm32f746zgtx.o
+ .ARM.attributes
+                0x00000000000008fb       0x34 ./ThreadSafe/newlib_lock_glue.o
+ .ARM.attributes
+                0x000000000000092f       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(del_op.o)
+ .ARM.attributes
+                0x0000000000000963       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(del_ops.o)
+ .ARM.attributes
+                0x0000000000000997       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(new_op.o)
+ .ARM.attributes
+                0x00000000000009cb       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(tree.o)
+ .ARM.attributes
+                0x00000000000009ff       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functexcept.o)
+ .ARM.attributes
+                0x0000000000000a33       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(new_handler.o)
+ .ARM.attributes
+                0x0000000000000a67       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-abort.o)
+ .ARM.attributes
+                0x0000000000000a9b       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-calloc.o)
+ .ARM.attributes
+                0x0000000000000acf       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000000000000b03       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x0000000000000b37       0x32 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000b69       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000000000000b9d       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-malloc.o)
+ .ARM.attributes
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                 0x0000000000000bd1       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
                 0x0000000000000c05       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
@@ -12218,6 +12705,9 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000e2b       0x1e /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
                 0x0000000000000e49       0x1e /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtn.o
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 OUTPUT(BackupPlan.elf elf32-littlearm)
 LOAD linker stubs
@@ -12226,7 +12716,11 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .debug_info     0x0000000000000000    0x49c01
+=======
+.debug_info     0x0000000000000000    0x4692a
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 .debug_info     0x0000000000000000    0x4692a
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -12259,6 +12753,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_info    0x00000000000230d1      0xd4d ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_info    0x0000000000023e1e      0xc77 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .debug_info    0x0000000000024a95     0xdae8 ./Src/UART.o
  .debug_info    0x000000000003257d      0xe71 ./Src/fatfs.o
  .debug_info    0x00000000000333ee     0xa135 ./Src/main.o
@@ -12278,6 +12773,8 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
 
 .debug_abbrev   0x0000000000000000     0x7d0c
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_info    0x0000000000024a95     0xa819 ./Src/UART.o
  .debug_info    0x000000000002f2ae      0xe71 ./Src/fatfs.o
  .debug_info    0x000000000003011f     0xa121 ./Src/main.o
@@ -12296,6 +12793,9 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_info    0x000000000004594e      0xfdc ./ThreadSafe/newlib_lock_glue.o
 
 .debug_abbrev   0x0000000000000000     0x7c86
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_abbrev  0x0000000000000000      0x1ed ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
  .debug_abbrev  0x00000000000001ed      0x33c ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
@@ -12326,6 +12826,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_abbrev  0x0000000000004162      0x34b ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_abbrev  0x00000000000044ad      0x2d3 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .debug_abbrev  0x0000000000004780      0xc70 ./Src/UART.o
  .debug_abbrev  0x00000000000053f0      0x209 ./Src/fatfs.o
  .debug_abbrev  0x00000000000055f9      0xbaf ./Src/main.o
@@ -12344,6 +12845,26 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_abbrev  0x00000000000079d8      0x334 ./ThreadSafe/newlib_lock_glue.o
 
 .debug_aranges  0x0000000000000000     0x28c8
+=======
+ .debug_abbrev  0x0000000000004780      0xbd7 ./Src/UART.o
+ .debug_abbrev  0x0000000000005357      0x209 ./Src/fatfs.o
+ .debug_abbrev  0x0000000000005560      0xbaf ./Src/main.o
+ .debug_abbrev  0x000000000000610f      0x1fe ./Src/stm32f7xx_hal_msp.o
+ .debug_abbrev  0x000000000000630d      0x1bf ./Src/stm32f7xx_hal_timebase_tim.o
+ .debug_abbrev  0x00000000000064cc      0x1da ./Src/stm32f7xx_it.o
+ .debug_abbrev  0x00000000000066a6      0x286 ./Src/syscalls.o
+ .debug_abbrev  0x000000000000692c      0x1bf ./Src/sysmem.o
+ .debug_abbrev  0x0000000000006aeb      0x165 ./Src/system_stm32f7xx.o
+ .debug_abbrev  0x0000000000006c50      0x204 ./Src/usb_device.o
+ .debug_abbrev  0x0000000000006e54      0x30c ./Src/usbd_cdc_if.o
+ .debug_abbrev  0x0000000000007160      0x317 ./Src/usbd_conf.o
+ .debug_abbrev  0x0000000000007477      0x29b ./Src/usbd_desc.o
+ .debug_abbrev  0x0000000000007712      0x22e ./Src/user_diskio.o
+ .debug_abbrev  0x0000000000007940       0x12 ./Startup/startup_stm32f746zgtx.o
+ .debug_abbrev  0x0000000000007952      0x334 ./ThreadSafe/newlib_lock_glue.o
+
+.debug_aranges  0x0000000000000000     0x26b0
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
  .debug_abbrev  0x0000000000004780      0xbd7 ./Src/UART.o
  .debug_abbrev  0x0000000000005357      0x209 ./Src/fatfs.o
@@ -12422,6 +12943,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000001d38       0x50 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_aranges
 <<<<<<< HEAD
+<<<<<<< HEAD
                 0x0000000000001d88      0x510 ./Src/UART.o
  .debug_aranges
                 0x0000000000002298       0x28 ./Src/fatfs.o
@@ -12490,6 +13012,41 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
 
 .debug_ranges   0x0000000000000000     0x2428
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+                0x0000000000001d88      0x2e8 ./Src/UART.o
+ .debug_aranges
+                0x0000000000002070       0x28 ./Src/fatfs.o
+ .debug_aranges
+                0x0000000000002098      0x158 ./Src/main.o
+ .debug_aranges
+                0x00000000000021f0       0x50 ./Src/stm32f7xx_hal_msp.o
+ .debug_aranges
+                0x0000000000002240       0x30 ./Src/stm32f7xx_hal_timebase_tim.o
+ .debug_aranges
+                0x0000000000002270       0x68 ./Src/stm32f7xx_it.o
+ .debug_aranges
+                0x00000000000022d8       0xa8 ./Src/syscalls.o
+ .debug_aranges
+                0x0000000000002380       0x20 ./Src/sysmem.o
+ .debug_aranges
+                0x00000000000023a0       0x28 ./Src/system_stm32f7xx.o
+ .debug_aranges
+                0x00000000000023c8       0x20 ./Src/usb_device.o
+ .debug_aranges
+                0x00000000000023e8       0x48 ./Src/usbd_cdc_if.o
+ .debug_aranges
+                0x0000000000002430      0x110 ./Src/usbd_conf.o
+ .debug_aranges
+                0x0000000000002540       0x68 ./Src/usbd_desc.o
+ .debug_aranges
+                0x00000000000025a8       0x40 ./Src/user_diskio.o
+ .debug_aranges
+                0x00000000000025e8       0x28 ./Startup/startup_stm32f746zgtx.o
+ .debug_aranges
+                0x0000000000002610       0xa0 ./ThreadSafe/newlib_lock_glue.o
+
+.debug_ranges   0x0000000000000000     0x2428
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_ranges  0x0000000000000000       0xf0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
  .debug_ranges  0x00000000000000f0      0x108 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
  .debug_ranges  0x00000000000001f8       0x80 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
@@ -12519,6 +13076,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x0000000000001b48       0x70 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_ranges  0x0000000000001bb8       0x40 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .debug_ranges  0x0000000000001bf8      0x500 ./Src/UART.o
  .debug_ranges  0x00000000000020f8       0x18 ./Src/fatfs.o
  .debug_ranges  0x0000000000002110      0x138 ./Src/main.o
@@ -12538,6 +13096,8 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
 
 .debug_macro    0x0000000000000000    0x31942
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_ranges  0x0000000000001bf8      0x2d8 ./Src/UART.o
  .debug_ranges  0x0000000000001ed0       0x18 ./Src/fatfs.o
  .debug_ranges  0x0000000000001ee8      0x148 ./Src/main.o
@@ -12556,6 +13116,9 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x0000000000002398       0x90 ./ThreadSafe/newlib_lock_glue.o
 
 .debug_macro    0x0000000000000000    0x3186f
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_macro   0x0000000000000000      0x240 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
  .debug_macro   0x0000000000000240      0xaae ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
@@ -12688,6 +13251,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000029821      0x221 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_macro   0x0000000000029a42      0x1c0 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 <<<<<<< HEAD
+<<<<<<< HEAD
  .debug_macro   0x0000000000029c02      0x8ad ./Src/UART.o
  .debug_macro   0x000000000002a4af      0xb86 ./Src/UART.o
  .debug_macro   0x000000000002b035       0x1c ./Src/UART.o
@@ -12780,6 +13344,8 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
 
 .debug_line     0x0000000000000000    0x2e559
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_macro   0x0000000000029c02      0x86d ./Src/UART.o
  .debug_macro   0x000000000002a46f      0xb86 ./Src/UART.o
  .debug_macro   0x000000000002aff5       0x1c ./Src/UART.o
@@ -12867,6 +13433,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x000000000003170e      0x118 ./ThreadSafe/newlib_lock_glue.o
  .debug_macro   0x0000000000031826       0x22 ./ThreadSafe/newlib_lock_glue.o
  .debug_macro   0x0000000000031848       0x27 ./ThreadSafe/newlib_lock_glue.o
+<<<<<<< HEAD
 
 .debug_line     0x0000000000000000    0x2dc7f
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -13005,6 +13572,38 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
                                          0xa5 (size before relaxing)
  .debug_str     0x0000000000117e0e     0x15a4 ./ThreadSafe/newlib_lock_glue.o
 =======
+=======
+
+.debug_line     0x0000000000000000    0x2dc7f
+ .debug_line    0x0000000000000000      0xa7d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_line    0x0000000000000a7d      0xd03 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_line    0x0000000000001780      0xfd1 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o
+ .debug_line    0x0000000000002751      0xbff ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_line    0x0000000000003350     0x335b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o
+ .debug_line    0x00000000000066ab      0x8a8 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o
+ .debug_line    0x0000000000006f53     0x1370 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.o
+ .debug_line    0x00000000000082c3      0x87e ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.o
+ .debug_line    0x0000000000008b41      0x981 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o
+ .debug_line    0x00000000000094c2      0xec0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_line    0x000000000000a382      0xe79 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_line    0x000000000000b1fb     0x1f86 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o
+ .debug_line    0x000000000000d181     0x3bbd ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o
+ .debug_line    0x0000000000010d3e     0x1b4b ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o
+ .debug_line    0x0000000000012889     0x1d63 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_line    0x00000000000145ec     0x1931 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o
+ .debug_line    0x0000000000015f1d      0xe04 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_line    0x0000000000016d21      0xe81 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_line    0x0000000000017ba2     0x1149 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_line    0x0000000000018ceb      0xb01 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_line    0x00000000000197ec      0xb12 ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o
+ .debug_line    0x000000000001a2fe     0x24a0 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_line    0x000000000001c79e      0x71f ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_line    0x000000000001cebd     0x1744 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_line    0x000000000001e601     0x1d7a ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_line    0x000000000002037b      0xd5e ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_line    0x00000000000210d9      0x8cb ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
+ .debug_line    0x00000000000219a4      0x8eb ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_line    0x000000000002228f     0x2019 ./Src/UART.o
  .debug_line    0x00000000000242a8      0xa7f ./Src/fatfs.o
  .debug_line    0x0000000000024d27     0x1c1a ./Src/main.o
@@ -13110,6 +13709,9 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_str     0x0000000000114a70       0x31 ./Startup/startup_stm32f746zgtx.o
                                          0xa5 (size before relaxing)
  .debug_str     0x0000000000114aa1     0x15a4 ./ThreadSafe/newlib_lock_glue.o
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
                                        0xd1ff (size before relaxing)
 
@@ -13160,7 +13762,11 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .comment       0x0000000000000053       0x54 ./ThreadSafe/newlib_lock_glue.o
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .debug_frame    0x0000000000000000     0xb520
+=======
+.debug_frame    0x0000000000000000     0xaaf8
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 .debug_frame    0x0000000000000000     0xaaf8
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -13192,6 +13798,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_frame   0x0000000000007900      0x3dc ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .debug_frame   0x0000000000007cdc      0x1a8 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_frame   0x0000000000007e84      0x108 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+<<<<<<< HEAD
 <<<<<<< HEAD
  .debug_frame   0x0000000000007f8c     0x177c ./Src/UART.o
  .debug_frame   0x0000000000009708       0x4c ./Src/fatfs.o
@@ -13234,6 +13841,8 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_frame   0x000000000000b4c0       0x2c /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .debug_frame   0x000000000000b4ec       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
  .debug_frame   0x0000000000007f8c      0xd44 ./Src/UART.o
  .debug_frame   0x0000000000008cd0       0x4c ./Src/fatfs.o
  .debug_frame   0x0000000000008d1c      0x5a4 ./Src/main.o
@@ -13273,4 +13882,7 @@ LOAD /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_frame   0x000000000000aa68       0x30 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
  .debug_frame   0x000000000000aa98       0x2c /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .debug_frame   0x000000000000aac4       0x34 /home/cthornton/st/stm32cubeide_1.7.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)

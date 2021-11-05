@@ -6,7 +6,11 @@
 eclipse.preferences.version=1
 org.eclipse.debug.core.PREF_BREAKPOINT_MANAGER_ENABLED_STATE=true
 <<<<<<< HEAD
+<<<<<<< HEAD
 prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n    <expression enabled\="true" text\="huart3"/>\n    <expression enabled\="true" text\="*((huart3).pRxBuffPtr)"/>\n    <expression enabled\="true" text\="buff"/>\n    <expression enabled\="true" text\="rxBuff"/>\n</watchExpressions>\n
+=======
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions/>\n
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions/>\n
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
