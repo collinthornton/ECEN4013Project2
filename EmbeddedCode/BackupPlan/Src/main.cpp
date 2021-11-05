@@ -129,7 +129,7 @@ int main(void)
 
 
   usb.init(USART3, 115200, 1);
-  ble.init(USART2, 9600, 10);
+  ble.init(USART2, 115200, 1);
 
 
 
@@ -477,6 +477,11 @@ void StartTask02(void *argument)
 
 	  if(usb.hasData()) {
 		  int len = usb.getData(buff);
+		  usb.sendData(buff, len, 2);
+		  ble.sendData(buff, len, 2);
+	  }
+	  if(ble.hasData()) {
+		  int len = ble.getData(buff);
 		  usb.sendData(buff, len, 2);
 	  }
 	  osDelay(100);
