@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 02:41:55 **** Incremental Build of configuration Debug for project BackupPlan ****
 make -j12 all 
 arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 =======
+=======
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 22:31:10 **** Incremental Build of configuration Debug for project BackupPlan ****
@@ -71,6 +74,9 @@ arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" -mc
 arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o"
 arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -83,7 +89,11 @@ arm-none-eabi-objcopy  -O binary  BackupPlan.elf  "BackupPlan.bin"
    text	   data	    bss	    dec	    hex	filename
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   58600	    548	  28668	  87816	  15708	BackupPlan.elf
+=======
+  55652	    548	  28908	  85108	  14c74	BackupPlan.elf
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
   55652	    548	  28908	  85108	  14c74	BackupPlan.elf
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -132,7 +142,11 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 02:41:56 Build Finished. 0 errors, 0 warnings. (took 977ms)
+=======
+22:31:12 Build Finished. 0 errors, 2 warnings. (took 2s.318ms)
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 22:31:12 Build Finished. 0 errors, 2 warnings. (took 2s.318ms)
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)

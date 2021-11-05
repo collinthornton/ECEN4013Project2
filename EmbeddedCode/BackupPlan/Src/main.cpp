@@ -29,8 +29,13 @@
 /* USER CODE BEGIN Includes */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "UART.h"
 
+=======
+#include <string.h>
+#include <stdio.h>
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 #include <string.h>
 #include <stdio.h>
@@ -522,6 +527,52 @@ void StartTask02(void *argument)
   	}
   /* USER CODE END StartTask02 */
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+}
+
+/* USER CODE BEGIN Header_StartGyro */
+/**
+* @brief Function implementing the i2c_gyro thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartGyro */
+void StartGyro(void *argument)
+{
+  /* USER CODE BEGIN StartGyro */
+	HAL_StatusTypeDef ret;
+	uint8_t buf[12];
+	uint8_t val[3]; //calculations from gyro
+  /* Infinite loop */
+  for(;;)
+  {
+	  buf[0]=GYRO_OUT;
+	 	  ret = HAL_I2C_Master_Transmit(&hi2c1, GYRO_ADDR, buf, 1, HAL_MAX_DELAY);
+	 	  if ( ret != HAL_OK ) {
+	 		  strcpy((char*)buf, "Error Tx\r\n");
+	 	  }
+	 	  else {
+
+	 	        // Read 1 byte from the  register
+	 	  ret = HAL_I2C_Master_Receive(&hi2c1, GYRO_ADDR, buf, 6, HAL_MAX_DELAY);
+	 	  if ( ret != HAL_OK ) {
+	 		  strcpy((char*)buf, "Error Rx\r\n");
+	 	  }
+	 	  else {
+
+	 	          //Combine the bytes
+	 	          val[0] = ((buf[0]<<4)|buf[1]);
+	 	          val[1] = ((buf[2]<<4)|buf[3]);
+	 	          val[2] = ((buf[4]<<4)|buf[5]);
+
+	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert to rad/s somehow?
+
+
+	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert temperature to decimal format
+
+	 	      }
+	 	  }
+  }
+  /* USER CODE END StartGyro */
 }
 
 /* USER CODE BEGIN Header_StartGyro */
