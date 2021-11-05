@@ -27,6 +27,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "UART.h"
+
+#include <string.h>
+#include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,7 +54,16 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
 
+<<<<<<< HEAD
 UART_HandleTypeDef huart3;
+=======
+
+
+UART usb, ble;
+
+UART_HandleTypeDef huart3;
+UART_HandleTypeDef huart2;
+>>>>>>> parent of d0a4466 (uart working well)
 
 /* Definitions for blinkLED01 */
 osThreadId_t blinkLED01Handle;
@@ -66,6 +80,9 @@ const osThreadAttr_t blinkLED02_attributes = {
   .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
+static const uint8_t GYRO_ADDR = 0b1101000 <<1; // GYRO  7 bit address (1101001 if SDO =HI)
+static const uint8_t GYRO_CTRL = 0x20; 			//GYRO REGISTERS
+static const uint8_t GYRO_OUT = 0xA8;
 
 /* USER CODE END PV */
 
@@ -73,6 +90,10 @@ const osThreadAttr_t blinkLED02_attributes = {
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
+<<<<<<< HEAD
+=======
+static void MX_USART2_UART_Init(void);
+>>>>>>> parent of d0a4466 (uart working well)
 static void MX_SPI1_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
@@ -115,11 +136,22 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+<<<<<<< HEAD
   MX_USART3_UART_Init();
+=======
+  //MX_USART3_UART_Init();
+  //MX_USART2_UART_Init();
+>>>>>>> parent of d0a4466 (uart working well)
   MX_FATFS_Init();
   MX_SPI1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+
+
+  usb.init(USART3, 115200, 10);
+  ble.init(USART2, 9600, 10);
+  huart3 = usb.handle;
+  huart2 = ble.handle;
 
   /* USER CODE END 2 */
 
@@ -325,6 +357,8 @@ static void MX_USART3_UART_Init(void)
   /* USER CODE BEGIN USART3_Init 0 */
 
   /* USER CODE END USART3_Init 0 */
+<<<<<<< HEAD
+=======
 
   /* USER CODE BEGIN USART3_Init 1 */
 
@@ -347,6 +381,75 @@ static void MX_USART3_UART_Init(void)
 
   /* USER CODE END USART3_Init 2 */
 
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART3_Init 0 */
+
+  /* USER CODE END USART3_Init 0 */
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
+
+}
+
+
+>>>>>>> parent of d0a4466 (uart working well)
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 115200;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
+
+<<<<<<< HEAD
+=======
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	std::map<USART_TypeDef*, UART*>::iterator it;
+	it = UART::objectMap.find(huart->Instance);
+	if(it != UART::objectMap.end())
+		it->second->memberIRQ();
+>>>>>>> parent of d0a4466 (uart working well)
 }
 
 /**
@@ -461,7 +564,8 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+	  osDelay(500);
   }
   /* USER CODE END 5 */
 }
@@ -476,11 +580,29 @@ void StartDefaultTask(void *argument)
 void StartTask02(void *argument)
 {
   /* USER CODE BEGIN StartTask02 */
+
   /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+	uint8_t buff[10] = {0};
+=======
+>>>>>>> parent of d0a4466 (uart working well)
+
+	for(;;)
+	{
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+	  //HAL usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
+
+
+	  if(usb.hasData()) {
+		usb.sendData(usb.getData(), 10);
+	  }
+	  //uint8_t msg[10] = "hello\r\n";
+	  //usb.sendData(msg, 10);
+	  //HAL_UART_Transmit(&huart3, msg, 10, 1);
+	  //HAL_UART_Transmit(&huart2, msg, 10, 1);
+	  osDelay(50);
+	}
   /* USER CODE END StartTask02 */
 }
 

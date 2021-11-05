@@ -1,0 +1,60 @@
+12:57:09 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+../ThreadSafe/newlib_lock_glue.c:38:10: fatal error: cmsis_compiler.h: No such file or directory
+   38 | #include <cmsis_compiler.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:11:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   11 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/fatfs.c:19:
+../Inc/fatfs.h:26:10: fatal error: ff.h: No such file or directory
+   26 | #include "ff.h"
+      |          ^~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_hal_msp.c:23:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/fatfs.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+make: *** [ThreadSafe/subdir.mk:19: ThreadSafe/newlib_lock_glue.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_msp.o] Error 1
+../Src/stm32f7xx_hal_timebase_tim.c:22:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   22 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_it.c:22:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+../Src/freertos.c:22:10: fatal error: task.h: No such file or directory
+   22 | #include "task.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/freertos.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_timebase_tim.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_it.o] Error 1
+In file included from ../Src/main.cpp:21:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:65: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+12:57:09 Build Failed. 17 errors, 0 warnings. (took 687ms)
+

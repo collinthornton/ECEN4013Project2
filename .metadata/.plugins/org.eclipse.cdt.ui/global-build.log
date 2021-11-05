@@ -1,0 +1,858 @@
+12:18:17 **** Clean-only build of configuration Debug for project BackupPlan ****
+make -j8 clean 
+rm -rf  BackupPlan.list  ./Startup/startup_stm32f746zgtx.d  ./ThreadSafe/newlib_lock_glue.d  ./Src/fatfs.d ./Src/freertos.d ./Src/stm32f7xx_hal_msp.d ./Src/stm32f7xx_hal_timebase_tim.d ./Src/stm32f7xx_it.d ./Src/syscalls.d ./Src/sysmem.d ./Src/system_stm32f7xx.d ./Src/usb_device.d ./Src/usbd_cdc_if.d ./Src/usbd_conf.d ./Src/usbd_desc.d ./Src/user_diskio.d  ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d  ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.d  ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d  ./Middlewares/Third_Party/FreeRTOS/Source/croutine.d ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.d ./Middlewares/Third_Party/FreeRTOS/Source/list.d ./Middlewares/Third_Party/FreeRTOS/Source/queue.d ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d ./Middlewares/Third_Party/FreeRTOS/Source/tasks.d ./Middlewares/Third_Party/FreeRTOS/Source/timers.d  ./Middlewares/Third_Party/FatFs/src/option/syscall.d  ./Middlewares/Third_Party/FatFs/src/diskio.d ./Middlewares/Third_Party/FatFs/src/ff.d ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.d  ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d  ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.d  ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.d ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.d  BackupPlan.bin  default.size.stdout  BackupPlan.elf  ./ThreadSafe/newlib_lock_glue.o  ./Startup/startup_stm32f746zgtx.o  ./Src/fatfs.o ./Src/freertos.o ./Src/main.o ./Src/stm32f7xx_hal_msp.o ./Src/stm32f7xx_hal_timebase_tim.o ./Src/stm32f7xx_it.o ./Src/syscalls.o ./Src/sysmem.o ./Src/system_stm32f7xx.o ./Src/usb_device.o ./Src/usbd_cdc_if.o ./Src/usbd_conf.o ./Src/usbd_desc.o ./Src/user_diskio.o  ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o  ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o  ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o  ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o ./Middlewares/Third_Party/FreeRTOS/Source/list.o ./Middlewares/Third_Party/FreeRTOS/Source/queue.o ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o ./Middlewares/Third_Party/FreeRTOS/Source/timers.o  ./Middlewares/Third_Party/FatFs/src/option/syscall.o  ./Middlewares/Third_Party/FatFs/src/diskio.o ./Middlewares/Third_Party/FatFs/src/ff.o ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o  ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o  ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o  ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o  ./Src/main.d  BackupPlan.elf
+ 
+12:18:17 **** Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-gcc -mcpu=cortex-m7 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f746zgtx.d" -MT"Startup/startup_stm32f746zgtx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f746zgtx.o" "../Startup/startup_stm32f746zgtx.s"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f7xx.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f7xx.d" -MT"Src/system_stm32f7xx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/system_stm32f7xx.o"
+arm-none-eabi-gcc "../Src/usb_device.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usb_device.d" -MT"Src/usb_device.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usb_device.o"
+arm-none-eabi-gcc "../Src/usbd_cdc_if.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usbd_cdc_if.d" -MT"Src/usbd_cdc_if.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usbd_cdc_if.o"
+arm-none-eabi-gcc "../Src/usbd_conf.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usbd_conf.d" -MT"Src/usbd_conf.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usbd_conf.o"
+arm-none-eabi-gcc "../Src/usbd_desc.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/usbd_desc.d" -MT"Src/usbd_desc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/usbd_desc.o"
+arm-none-eabi-gcc "../Src/user_diskio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/user_diskio.d" -MT"Src/user_diskio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/user_diskio.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/croutine.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/croutine.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/croutine.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/event_groups.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/event_groups.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/event_groups.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/list.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/list.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/list.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/list.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/queue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/queue.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/queue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/queue.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/timers.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/timers.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/timers.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/timers.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/syscall.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/syscall.d" -MT"Middlewares/Third_Party/FatFs/src/option/syscall.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/option/syscall.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/diskio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/diskio.d" -MT"Middlewares/Third_Party/FatFs/src/diskio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/diskio.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff.d" -MT"Middlewares/Third_Party/FatFs/src/ff.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/ff.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff_gen_drv.d" -MT"Middlewares/Third_Party/FatFs/src/ff_gen_drv.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/ff_gen_drv.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.o"
+arm-none-eabi-g++ -o "BackupPlan.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\loeff\Downloads\ECEN4013Project2\EmbeddedCode\BackupPlan\STM32F746ZGTX_FLASH.ld" -Wl,-Map="BackupPlan.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: BackupPlan.elf
+ 
+arm-none-eabi-size   BackupPlan.elf 
+arm-none-eabi-objdump -h -S  BackupPlan.elf  > "BackupPlan.list"
+arm-none-eabi-objcopy  -O binary  BackupPlan.elf  "BackupPlan.bin"
+   text	   data	    bss	    dec	    hex	filename
+  48452	    532	  28444	  77428	  12e74	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+Finished building: BackupPlan.bin
+ 
+Finished building: BackupPlan.list
+ 
+12:53:26 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+../Src/stm32f7xx_it.c:61:1: error: version control conflict marker in file
+   61 | <<<<<<< HEAD
+      | ^~~~~~~
+../Src/stm32f7xx_it.c:66:1: error: version control conflict marker in file
+   66 | =======
+      | ^~~~~~~
+../Src/stm32f7xx_it.c:69:1: error: version control conflict marker in file
+   69 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+../Src/stm32f7xx_it.c:69:19: error: invalid suffix "d4b392" on integer constant
+   69 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      |                   ^~~~~~~
+../Src/stm32f7xx_it.c:73:1: error: version control conflict marker in file
+   73 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+../Src/stm32f7xx_it.c:73:19: error: invalid suffix "d4b392" on integer constant
+   73 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      |                   ^~~~~~~
+../Src/stm32f7xx_it.c:77:1: error: version control conflict marker in file
+   77 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+../Src/stm32f7xx_it.c:77:19: error: invalid suffix "d4b392" on integer constant
+   77 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      |                   ^~~~~~~
+../Src/stm32f7xx_it.c: In function 'TIM8_TRG_COM_TIM14_IRQHandler':
+../Src/stm32f7xx_it.c:218:23: error: 'htim14' undeclared (first use in this function)
+  218 |   HAL_TIM_IRQHandler(&htim14);
+      |                       ^~~~~~
+../Src/stm32f7xx_it.c:218:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/main.cpp:31:
+../Src/UART.h:14:1: error: version control conflict marker in file
+   14 | <<<<<<< HEAD
+      | ^~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:66,
+                 from ../Src/UART.h:17,
+                 from ../Src/main.cpp:31:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:83:8: error: '_Construct' is not a member of 'std'
+   83 |   std::_Construct(std::__addressof(*__cur), *__first);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:88:13: error: '_Destroy' is not a member of 'std'
+   88 |        std::_Destroy(__result, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_fill<_TrivialValueType>::__uninit_fill(_ForwardIterator, _ForwardIterator, const _Tp&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:156:8: error: '_Construct' is not a member of 'std'
+  156 |   std::_Construct(std::__addressof(*__cur), __x);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:160:13: error: '_Destroy' is not a member of 'std'
+  160 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_fill_n<_TrivialValueType>::__uninit_fill_n(_ForwardIterator, _Size, const _Tp&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:222:8: error: '_Construct' is not a member of 'std'
+  222 |   std::_Construct(std::__addressof(*__cur), __x);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:227:13: error: '_Destroy' is not a member of 'std'
+  227 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:298:9: error: '_Destroy' is not a member of 'std'
+  298 |    std::_Destroy(__result, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_fill_a(_ForwardIterator, _ForwardIterator, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:347:9: error: '_Destroy' is not a member of 'std'
+  347 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_fill_n_a(_ForwardIterator, _Size, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:374:9: error: '_Destroy' is not a member of 'std'
+  374 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_move(_InputIterator1, _InputIterator1, _InputIterator2, _InputIterator2, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:415:9: error: '_Destroy' is not a member of 'std'
+  415 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_move_copy(_InputIterator1, _InputIterator1, _InputIterator2, _InputIterator2, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:443:9: error: '_Destroy' is not a member of 'std'
+  443 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_fill_move(_ForwardIterator, _ForwardIterator, const _Tp&, _InputIterator, _InputIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:465:9: error: '_Destroy' is not a member of 'std'
+  465 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_move_fill(_InputIterator, _InputIterator, _ForwardIterator, _ForwardIterator, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:490:9: error: '_Destroy' is not a member of 'std'
+  490 |    std::_Destroy(__first2, __mid2, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_default_1<_TrivialValueType>::__uninit_default(_ForwardIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:510:8: error: '_Construct' is not a member of 'std'
+  510 |   std::_Construct(std::__addressof(*__cur));
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:514:13: error: '_Destroy' is not a member of 'std'
+  514 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_default_n_1<_TrivialValueType>::__uninit_default_n(_ForwardIterator, _Size)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:545:8: error: '_Construct' is not a member of 'std'
+  545 |   std::_Construct(std::__addressof(*__cur));
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:550:13: error: '_Destroy' is not a member of 'std'
+  550 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_default_a(_ForwardIterator, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:623:9: error: '_Destroy' is not a member of 'std'
+  623 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_default_n_a(_ForwardIterator, _Size, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:654:9: error: '_Destroy' is not a member of 'std'
+  654 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_default_novalue_1<_TrivialValueType>::__uninit_default_novalue(_ForwardIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:677:8: error: '_Construct_novalue' is not a member of 'std'
+  677 |   std::_Construct_novalue(std::__addressof(*__cur));
+      |        ^~~~~~~~~~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:681:13: error: '_Destroy' is not a member of 'std'
+  681 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_default_novalue_n_1<_TrivialValueType>::__uninit_default_novalue_n(_ForwardIterator, _Size)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:709:8: error: '_Construct_novalue' is not a member of 'std'
+  709 |   std::_Construct_novalue(std::__addressof(*__cur));
+      |        ^~~~~~~~~~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:714:13: error: '_Destroy' is not a member of 'std'
+  714 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_n(_InputIterator, _Size, _ForwardIterator, std::input_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:769:11: error: '_Construct' is not a member of 'std'
+  769 |      std::_Construct(std::__addressof(*__cur), *__first);
+      |           ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:774:9: error: '_Destroy' is not a member of 'std'
+  774 |    std::_Destroy(__result, __cur);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'std::pair<_InputIterator, _ForwardIterator> std::__uninitialized_copy_n_pair(_InputIterator, _Size, _ForwardIterator, std::input_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:797:11: error: '_Construct' is not a member of 'std'
+  797 |      std::_Construct(std::__addressof(*__cur), *__first);
+      |           ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:802:9: error: '_Destroy' is not a member of 'std'
+  802 |    std::_Destroy(__result, __cur);
+      |         ^~~~~~~~
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:14:1: error: version control conflict marker in file
+   14 | <<<<<<< HEAD
+      | ^~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:67,
+                 from ../Src/UART.h:17,
+                 from ../Src/main.cpp:31:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h: In destructor 'std::vector<_Tp, _Alloc>::~vector()':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h:677:7: error: '_Destroy' is not a member of 'std'
+  677 |  std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |       ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:66,
+                 from ../Src/UART.h:17,
+                 from ../Src/UART.cpp:8:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:83:8: error: '_Construct' is not a member of 'std'
+   83 |   std::_Construct(std::__addressof(*__cur), *__first);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:88:13: error: '_Destroy' is not a member of 'std'
+   88 |        std::_Destroy(__result, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_fill<_TrivialValueType>::__uninit_fill(_ForwardIterator, _ForwardIterator, const _Tp&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:156:8: error: '_Construct' is not a member of 'std'
+  156 |   std::_Construct(std::__addressof(*__cur), __x);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h: In member function 'void std::vector<_Tp, _Alloc>::_M_erase_at_end(std::vector<_Tp, _Alloc>::pointer)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h:1793:11: error: '_Destroy' is not a member of 'std'
+ 1793 |      std::_Destroy(__pos, this->_M_impl._M_finish,
+      |           ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:160:13: error: '_Destroy' is not a member of 'std'
+  160 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_fill_n<_TrivialValueType>::__uninit_fill_n(_ForwardIterator, _Size, const _Tp&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:222:8: error: '_Construct' is not a member of 'std'
+  222 |   std::_Construct(std::__addressof(*__cur), __x);
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:227:13: error: '_Destroy' is not a member of 'std'
+  227 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:298:9: error: '_Destroy' is not a member of 'std'
+  298 |    std::_Destroy(__result, __cur, __alloc);
+      |         ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:72,
+                 from ../Src/UART.h:17,
+                 from ../Src/main.cpp:31:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::reserve(std::vector<_Tp, _Alloc>::size_type)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:88:13: error: '_Destroy' is not a member of 'std'
+   88 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:228:13: error: '_Destroy' is not a member of 'std'
+  228 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:238:13: error: '_Destroy' is not a member of 'std'
+  238 |        std::_Destroy(std::copy(__x.begin(), __x.end(), begin()),
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_assign_aux(_ForwardIterator, _ForwardIterator, std::forward_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:310:11: error: '_Destroy' is not a member of 'std'
+  310 |      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |           ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_fill_a(_ForwardIterator, _ForwardIterator, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:347:9: error: '_Destroy' is not a member of 'std'
+  347 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_fill_n_a(_ForwardIterator, _Size, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:374:9: error: '_Destroy' is not a member of 'std'
+  374 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:491:11: error: '_Destroy' is not a member of 'std'
+  491 |      std::_Destroy(__new_start, __new_finish, _M_get_Tp_allocator());
+      |           ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_move(_InputIterator1, _InputIterator1, _InputIterator2, _InputIterator2, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:415:9: error: '_Destroy' is not a member of 'std'
+  415 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:498:7: error: '_Destroy' is not a member of 'std'
+  498 |  std::_Destroy(__old_start, __old_finish, _M_get_Tp_allocator());
+      |       ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_move_copy(_InputIterator1, _InputIterator1, _InputIterator2, _InputIterator2, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:443:9: error: '_Destroy' is not a member of 'std'
+  443 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_fill_move(_ForwardIterator, _ForwardIterator, const _Tp&, _InputIterator, _InputIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:465:9: error: '_Destroy' is not a member of 'std'
+  465 |    std::_Destroy(__result, __mid, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_fill_insert(std::vector<_Tp, _Alloc>::iterator, std::vector<_Tp, _Alloc>::size_type, const value_type&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:586:12: error: '_Destroy' is not a member of 'std'
+  586 |       std::_Destroy(__new_start + __elems_before,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_move_fill(_InputIterator, _InputIterator, _ForwardIterator, _ForwardIterator, const _Tp&, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:490:9: error: '_Destroy' is not a member of 'std'
+  490 |    std::_Destroy(__first2, __mid2, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:590:12: error: '_Destroy' is not a member of 'std'
+  590 |       std::_Destroy(__new_start, __new_finish,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:595:13: error: '_Destroy' is not a member of 'std'
+  595 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_default_1<_TrivialValueType>::__uninit_default(_ForwardIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:510:8: error: '_Construct' is not a member of 'std'
+  510 |   std::_Construct(std::__addressof(*__cur));
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_default_append(std::vector<_Tp, _Alloc>::size_type)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:666:9: error: '_Destroy' is not a member of 'std'
+  666 |    std::_Destroy(__destroy_from, __destroy_from + __n,
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:514:13: error: '_Destroy' is not a member of 'std'
+  514 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:671:10: error: '_Destroy' is not a member of 'std'
+  671 |     std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |          ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_default_n_1<_TrivialValueType>::__uninit_default_n(_ForwardIterator, _Size)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:545:8: error: '_Construct' is not a member of 'std'
+  545 |   std::_Construct(std::__addressof(*__cur));
+      |        ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:550:13: error: '_Destroy' is not a member of 'std'
+  550 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_range_insert(std::vector<_Tp, _Alloc>::iterator, _ForwardIterator, _ForwardIterator, std::forward_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:788:12: error: '_Destroy' is not a member of 'std'
+  788 |       std::_Destroy(__new_start, __new_finish,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'void std::__uninitialized_default_a(_ForwardIterator, _ForwardIterator, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:623:9: error: '_Destroy' is not a member of 'std'
+  623 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:793:8: error: '_Destroy' is not a member of 'std'
+  793 |   std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |        ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_default_n_a(_ForwardIterator, _Size, _Allocator&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:654:9: error: '_Destroy' is not a member of 'std'
+  654 |    std::_Destroy(__first, __cur, __alloc);
+      |         ^~~~~~~~
+In file included from ../Src/main.cpp:31:
+../Src/UART.h: At global scope:
+../Src/UART.h:18:1: error: version control conflict marker in file
+   18 | =======
+      | ^~~~~~~
+In file included from ../Src/main.cpp:31:
+../Src/UART.h:29:1: error: version control conflict marker in file
+   29 | <<<<<<< HEAD
+      | ^~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static void std::__uninitialized_default_novalue_1<_TrivialValueType>::__uninit_default_novalue(_ForwardIterator, _ForwardIterator)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:677:8: error: '_Construct_novalue' is not a member of 'std'
+  677 |   std::_Construct_novalue(std::__addressof(*__cur));
+      |        ^~~~~~~~~~~~~~~~~~
+../Src/UART.h:46:1: error: version control conflict marker in file
+   46 | =======
+      | ^~~~~~~
+../Src/UART.h:52:6: error: 'int UART::init(USART_TypeDef*, int, int)' cannot be overloaded with 'int UART::init(USART_TypeDef*, int, int)'
+   52 |  int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
+      |      ^~~~
+../Src/UART.h:33:6: note: previous declaration 'int UART::init(USART_TypeDef*, int, int)'
+   33 |  int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
+      |      ^~~~
+../Src/UART.h:53:7: error: 'bool UART::hasData()' cannot be overloaded with 'bool UART::hasData()'
+   53 |  bool hasData();
+      |       ^~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:681:13: error: '_Destroy' is not a member of 'std'
+  681 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+../Src/UART.h:34:7: note: previous declaration 'bool UART::hasData()'
+   34 |  bool hasData();
+      |       ^~~~~~~
+../Src/UART.h:56:7: error: 'void UART::memberIRQ()' cannot be overloaded with 'void UART::memberIRQ()'
+   56 |  void memberIRQ();
+      |       ^~~~~~~~~
+../Src/UART.h:37:7: note: previous declaration 'void UART::memberIRQ()'
+   37 |  void memberIRQ();
+      |       ^~~~~~~~~
+../Src/UART.h:57:10: error: 'virtual UART::~UART()' cannot be overloaded with 'virtual UART::~UART()'
+   57 |  virtual ~UART();
+      |          ^
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In static member function 'static _ForwardIterator std::__uninitialized_default_novalue_n_1<_TrivialValueType>::__uninit_default_novalue_n(_ForwardIterator, _Size)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:709:8: error: '_Construct_novalue' is not a member of 'std'
+  709 |   std::_Construct_novalue(std::__addressof(*__cur));
+      |        ^~~~~~~~~~~~~~~~~~
+../Src/UART.h:38:10: note: previous declaration 'virtual UART::~UART()'
+   38 |  virtual ~UART();
+      |          ^
+../Src/UART.h:59:21: error: redeclaration of 'UART_HandleTypeDef UART::handle'
+   59 |  UART_HandleTypeDef handle;
+      |                     ^~~~~~
+../Src/UART.h:40:22: note: previous declaration 'UART_HandleTypeDef* UART::handle'
+   40 |  UART_HandleTypeDef *handle;
+      |                      ^~~~~~
+../Src/UART.h:60:41: error: redeclaration of 'std::map<USART_TypeDef*, UART*> UART::objectMap'
+   60 |  static std::map<USART_TypeDef*, UART*> objectMap;
+      |                                         ^~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:714:13: error: '_Destroy' is not a member of 'std'
+  714 |        std::_Destroy(__first, __cur);
+      |             ^~~~~~~~
+../Src/UART.h:41:41: note: previous declaration 'std::map<USART_TypeDef*, UART*> UART::objectMap'
+   41 |  static std::map<USART_TypeDef*, UART*> objectMap;
+      |                                         ^~~~~~~~~
+../Src/UART.h:64:1: error: version control conflict marker in file
+   64 | <<<<<<< HEAD
+      | ^~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function '_ForwardIterator std::__uninitialized_copy_n(_InputIterator, _Size, _ForwardIterator, std::input_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:769:11: error: '_Construct' is not a member of 'std'
+  769 |      std::_Construct(std::__addressof(*__cur), *__first);
+      |           ^~~~~~~~~~
+../Src/main.cpp:64:17: error: no matching function for call to 'UART::UART(UART_HandleTypeDef*)'
+   64 | UART usb(&huart3), ble(&huart2);
+      |                 ^
+In file included from ../Src/main.cpp:31:
+../Src/UART.h:27:7: note: candidate: 'UART::UART()'
+   27 | class UART {
+      |       ^~~~
+../Src/UART.h:27:7: note:   candidate expects 0 arguments, 1 provided
+../Src/UART.h:27:7: note: candidate: 'UART::UART(const UART&)'
+../Src/UART.h:27:7: note:   no known conversion for argument 1 from 'UART_HandleTypeDef*' {aka '__UART_HandleTypeDef*'} to 'const UART&'
+../Src/main.cpp:64:31: error: no matching function for call to 'UART::UART(UART_HandleTypeDef*)'
+   64 | UART usb(&huart3), ble(&huart2);
+      |                               ^
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:774:9: error: '_Destroy' is not a member of 'std'
+  774 |    std::_Destroy(__result, __cur);
+      |         ^~~~~~~~
+In file included from ../Src/main.cpp:31:
+../Src/UART.h:27:7: note: candidate: 'UART::UART()'
+   27 | class UART {
+      |       ^~~~
+../Src/UART.h:27:7: note:   candidate expects 0 arguments, 1 provided
+../Src/UART.h:27:7: note: candidate: 'UART::UART(const UART&)'
+../Src/UART.h:27:7: note:   no known conversion for argument 1 from 'UART_HandleTypeDef*' {aka '__UART_HandleTypeDef*'} to 'const UART&'
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h: In function 'std::pair<_InputIterator, _ForwardIterator> std::__uninitialized_copy_n_pair(_InputIterator, _Size, _ForwardIterator, std::input_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:797:11: error: '_Construct' is not a member of 'std'
+  797 |      std::_Construct(std::__addressof(*__cur), *__first);
+      |           ^~~~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_uninitialized.h:802:9: error: '_Destroy' is not a member of 'std'
+  802 |    std::_Destroy(__result, __cur);
+      |         ^~~~~~~~
+../Src/main.cpp: In function 'void StartTask02(void*)':
+../Src/main.cpp:493:1: error: version control conflict marker in file
+  493 | <<<<<<< HEAD
+      | ^~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:67,
+                 from ../Src/UART.h:17,
+                 from ../Src/UART.cpp:8:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h: In destructor 'std::vector<_Tp, _Alloc>::~vector()':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h:677:7: error: '_Destroy' is not a member of 'std'
+  677 |  std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |       ^~~~~~~~
+../Src/main.cpp:501:27: error: 'buff' was not declared in this scope
+  501 |     int len = usb.getData(buff);
+      |                           ^~~~
+../Src/main.cpp:507:1: error: version control conflict marker in file
+  507 | =======
+      | ^~~~~~~
+../Src/main.cpp:508:9: error: expected primary-expression before ')' token
+  508 |   for(;;)
+      |         ^
+../Src/main.cpp:518:1: error: version control conflict marker in file
+  518 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h: In member function 'void std::vector<_Tp, _Alloc>::_M_erase_at_end(std::vector<_Tp, _Alloc>::pointer)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\stl_vector.h:1793:11: error: '_Destroy' is not a member of 'std'
+ 1793 |      std::_Destroy(__pos, this->_M_impl._M_finish,
+      |           ^~~~~~~~
+In file included from c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\vector:72,
+                 from ../Src/UART.h:17,
+                 from ../Src/UART.cpp:8:
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::reserve(std::vector<_Tp, _Alloc>::size_type)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:88:13: error: '_Destroy' is not a member of 'std'
+   88 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:228:13: error: '_Destroy' is not a member of 'std'
+  228 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:238:13: error: '_Destroy' is not a member of 'std'
+  238 |        std::_Destroy(std::copy(__x.begin(), __x.end(), begin()),
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_assign_aux(_ForwardIterator, _ForwardIterator, std::forward_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:310:11: error: '_Destroy' is not a member of 'std'
+  310 |      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |           ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:491:11: error: '_Destroy' is not a member of 'std'
+  491 |      std::_Destroy(__new_start, __new_finish, _M_get_Tp_allocator());
+      |           ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:498:7: error: '_Destroy' is not a member of 'std'
+  498 |  std::_Destroy(__old_start, __old_finish, _M_get_Tp_allocator());
+      |       ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_fill_insert(std::vector<_Tp, _Alloc>::iterator, std::vector<_Tp, _Alloc>::size_type, const value_type&)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:586:12: error: '_Destroy' is not a member of 'std'
+  586 |       std::_Destroy(__new_start + __elems_before,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:590:12: error: '_Destroy' is not a member of 'std'
+  590 |       std::_Destroy(__new_start, __new_finish,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:595:13: error: '_Destroy' is not a member of 'std'
+  595 |        std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |             ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_default_append(std::vector<_Tp, _Alloc>::size_type)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:666:9: error: '_Destroy' is not a member of 'std'
+  666 |    std::_Destroy(__destroy_from, __destroy_from + __n,
+      |         ^~~~~~~~
+make: *** [Src/subdir.mk:65: Src/main.o] Error 1
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:671:10: error: '_Destroy' is not a member of 'std'
+  671 |     std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |          ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_range_insert(std::vector<_Tp, _Alloc>::iterator, _ForwardIterator, _ForwardIterator, std::forward_iterator_tag)':
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:788:12: error: '_Destroy' is not a member of 'std'
+  788 |       std::_Destroy(__new_start, __new_finish,
+      |            ^~~~~~~~
+c:\st\stm32cubeide_1.0.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\c++\9.3.1\bits\vector.tcc:793:8: error: '_Destroy' is not a member of 'std'
+  793 |   std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |        ^~~~~~~~
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h: At global scope:
+../Src/UART.h:18:1: error: version control conflict marker in file
+   18 | =======
+      | ^~~~~~~
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:29:1: error: version control conflict marker in file
+   29 | <<<<<<< HEAD
+      | ^~~~~~~
+../Src/UART.h:46:1: error: version control conflict marker in file
+   46 | =======
+      | ^~~~~~~
+../Src/UART.h:52:6: error: 'int UART::init(USART_TypeDef*, int, int)' cannot be overloaded with 'int UART::init(USART_TypeDef*, int, int)'
+   52 |  int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
+      |      ^~~~
+../Src/UART.h:33:6: note: previous declaration 'int UART::init(USART_TypeDef*, int, int)'
+   33 |  int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
+      |      ^~~~
+../Src/UART.h:53:7: error: 'bool UART::hasData()' cannot be overloaded with 'bool UART::hasData()'
+   53 |  bool hasData();
+      |       ^~~~~~~
+../Src/UART.h:34:7: note: previous declaration 'bool UART::hasData()'
+   34 |  bool hasData();
+      |       ^~~~~~~
+../Src/UART.h:56:7: error: 'void UART::memberIRQ()' cannot be overloaded with 'void UART::memberIRQ()'
+   56 |  void memberIRQ();
+      |       ^~~~~~~~~
+../Src/UART.h:37:7: note: previous declaration 'void UART::memberIRQ()'
+   37 |  void memberIRQ();
+      |       ^~~~~~~~~
+../Src/UART.h:57:10: error: 'virtual UART::~UART()' cannot be overloaded with 'virtual UART::~UART()'
+   57 |  virtual ~UART();
+      |          ^
+../Src/UART.h:38:10: note: previous declaration 'virtual UART::~UART()'
+   38 |  virtual ~UART();
+      |          ^
+../Src/UART.h:59:21: error: redeclaration of 'UART_HandleTypeDef UART::handle'
+   59 |  UART_HandleTypeDef handle;
+      |                     ^~~~~~
+../Src/UART.h:40:22: note: previous declaration 'UART_HandleTypeDef* UART::handle'
+   40 |  UART_HandleTypeDef *handle;
+      |                      ^~~~~~
+../Src/UART.h:60:41: error: redeclaration of 'std::map<USART_TypeDef*, UART*> UART::objectMap'
+   60 |  static std::map<USART_TypeDef*, UART*> objectMap;
+      |                                         ^~~~~~~~~
+../Src/UART.h:41:41: note: previous declaration 'std::map<USART_TypeDef*, UART*> UART::objectMap'
+   41 |  static std::map<USART_TypeDef*, UART*> objectMap;
+      |                                         ^~~~~~~~~
+../Src/UART.h:64:1: error: version control conflict marker in file
+   64 | <<<<<<< HEAD
+      | ^~~~~~~
+../Src/UART.cpp:15:1: error: version control conflict marker in file
+   15 | <<<<<<< HEAD
+      | ^~~~~~~
+../Src/UART.cpp: In destructor 'virtual UART::~UART()':
+../Src/UART.cpp:30:1: error: version control conflict marker in file
+   30 | =======
+      | ^~~~~~~
+../Src/UART.cpp:31:3: error: expected primary-expression before '==' token
+   31 | =======
+      |   ^~
+../Src/UART.cpp:31:5: error: expected primary-expression before '==' token
+   31 | =======
+      |     ^~
+../Src/UART.cpp:31:7: error: expected primary-expression before '=' token
+   31 | =======
+      |       ^
+../Src/UART.cpp:32:1: error: version control conflict marker in file
+   32 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+../Src/UART.cpp:33:3: error: expected primary-expression before '==' token
+   33 | =======
+      |   ^~
+../Src/UART.cpp:33:5: error: expected primary-expression before '==' token
+   33 | =======
+      |     ^~
+../Src/UART.cpp:33:7: error: expected primary-expression before '=' token
+   33 | =======
+      |       ^
+../Src/UART.cpp:34:1: error: version control conflict marker in file
+   34 | >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+      | ^~~~~~~
+../Src/UART.cpp:40:13: error: no matching function for call to 'UART::~UART()'
+   40 | UART::~UART() {
+      |             ^
+../Src/UART.cpp:23:1: note: candidate: 'virtual UART::~UART()'
+   23 | UART::~UART() {
+      | ^~~~
+../Src/UART.cpp:23:1: note:   candidate expects 1 argument, 0 provided
+../Src/UART.cpp:59:15: error: qualified-id in declaration before '(' token
+   59 | int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
+      |               ^
+../Src/UART.cpp:142:19: error: qualified-id in declaration before '(' token
+  142 | bool UART::hasData() {
+      |                   ^
+../Src/UART.cpp:152:18: error: qualified-id in declaration before '(' token
+  152 | int UART::getData(uint8_t *buff) {
+      |                  ^
+../Src/UART.cpp:165:21: error: qualified-id in declaration before '(' token
+  165 | short UART::sendData(uint8_t *data, int numBytes, int timeout) {
+      |                     ^
+../Src/UART.cpp:178:23: error: qualified-id in declaration before '(' token
+  178 | uint8_t* UART::getData() {
+      |                       ^
+../Src/UART.cpp:186:21: error: qualified-id in declaration before '(' token
+  186 | short UART::sendData(uint8_t *data, int timeout) {
+      |                     ^
+../Src/UART.cpp:199:21: error: qualified-id in declaration before '(' token
+  199 | void UART::memberIRQ() {
+      |                     ^
+../Src/UART.cpp:226:1: error: expected '}' at end of input
+  226 | }
+      | ^
+../Src/UART.cpp:23:15: note: to match this '{'
+   23 | UART::~UART() {
+      |               ^
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:55:09 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+make: *** No rule to make target '../Src/main.cpp', needed by 'Src/main.o'.  Stop.
+make: *** Waiting for unfinished jobs....
+../ThreadSafe/newlib_lock_glue.c:38:10: fatal error: cmsis_compiler.h: No such file or directory
+   38 | #include <cmsis_compiler.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [ThreadSafe/subdir.mk:19: ThreadSafe/newlib_lock_glue.o] Error 1
+In file included from ../Src/fatfs.c:19:
+../Inc/fatfs.h:26:10: fatal error: ff.h: No such file or directory
+   26 | #include "ff.h"
+      |          ^~~~~~
+compilation terminated.
+../Src/freertos.c:22:10: fatal error: FreeRTOS.h: No such file or directory
+   22 | #include "FreeRTOS.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:11:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   11 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+make: *** [Src/subdir.mk:67: Src/fatfs.o] Error 1
+make: *** [Src/subdir.mk:67: Src/freertos.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:55:28 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+../ThreadSafe/newlib_lock_glue.c:38:10: fatal error: cmsis_compiler.h: No such file or directory
+   38 | #include <cmsis_compiler.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [ThreadSafe/subdir.mk:19: ThreadSafe/newlib_lock_glue.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/fatfs.c:19:
+../Inc/fatfs.h:26:10: fatal error: ff.h: No such file or directory
+   26 | #include "ff.h"
+      |          ^~~~~~
+compilation terminated.
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:11:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   11 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/fatfs.o] Error 1
+../Src/freertos.c:22:10: fatal error: FreeRTOS.h: No such file or directory
+   22 | #include "FreeRTOS.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/main.cpp:21:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+In file included from ../Src/stm32f7xx_hal_msp.c:23:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+../Src/stm32f7xx_hal_timebase_tim.c:22:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   22 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/freertos.o] Error 1
+In file included from ../Src/stm32f7xx_it.c:22:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_it.o] Error 1
+make: *** [Src/subdir.mk:65: Src/main.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_msp.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_timebase_tim.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:55:37 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+../ThreadSafe/newlib_lock_glue.c:38:10: fatal error: cmsis_compiler.h: No such file or directory
+   38 | #include <cmsis_compiler.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:11:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   11 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/fatfs.c:19:
+../Inc/fatfs.h:26:10: fatal error: ff.h: No such file or directory
+   26 | #include "ff.h"
+      |          ^~~~~~
+compilation terminated.
+make: *** [ThreadSafe/subdir.mk:19: ThreadSafe/newlib_lock_glue.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+make: *** [Src/subdir.mk:67: Src/fatfs.o] Error 1
+In file included from ../Src/main.cpp:21:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_hal_msp.c:23:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_msp.o] Error 1
+make: *** [Src/subdir.mk:65: Src/main.o] Error 1
+../Src/freertos.c:22:10: fatal error: FreeRTOS.h: No such file or directory
+   22 | #include "FreeRTOS.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_it.c:22:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/freertos.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_it.o] Error 1
+../Src/stm32f7xx_hal_timebase_tim.c:22:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   22 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_timebase_tim.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:57:09 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j8 all 
+arm-none-eabi-gcc "../ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ThreadSafe/newlib_lock_glue.d" -MT"ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Src/UART.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/UART.d" -MT"Src/UART.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/UART.o"
+arm-none-eabi-gcc "../Src/fatfs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/fatfs.d" -MT"Src/fatfs.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/fatfs.o"
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_msp.d" -MT"Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_hal_timebase_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_hal_timebase_tim.d" -MT"Src/stm32f7xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Inc -I../ThreadSafe -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f7xx_it.d" -MT"Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f7xx_it.o"
+../ThreadSafe/newlib_lock_glue.c:38:10: fatal error: cmsis_compiler.h: No such file or directory
+   38 | #include <cmsis_compiler.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/UART.cpp:8:
+../Src/UART.h:11:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   11 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/fatfs.c:19:
+../Inc/fatfs.h:26:10: fatal error: ff.h: No such file or directory
+   26 | #include "ff.h"
+      |          ^~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_hal_msp.c:23:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/fatfs.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:65: Src/UART.o] Error 1
+make: *** [ThreadSafe/subdir.mk:19: ThreadSafe/newlib_lock_glue.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_msp.o] Error 1
+../Src/stm32f7xx_hal_timebase_tim.c:22:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   22 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/stm32f7xx_it.c:22:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+../Src/freertos.c:22:10: fatal error: task.h: No such file or directory
+   22 | #include "task.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:67: Src/freertos.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_hal_timebase_tim.o] Error 1
+make: *** [Src/subdir.mk:67: Src/stm32f7xx_it.o] Error 1
+In file included from ../Src/main.cpp:21:
+../Inc/main.h:31:10: fatal error: stm32f7xx_hal.h: No such file or directory
+   31 | #include "stm32f7xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:65: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

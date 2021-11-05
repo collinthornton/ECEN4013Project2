@@ -7,8 +7,14 @@ HeaderPath=Drivers\STM32F7xx_HAL_Driver\Inc;Drivers\STM32F7xx_HAL_Driver\Inc\Leg
 CDefines=USE_HAL_DRIVER;STM32F746xx;USE_HAL_DRIVER;USE_HAL_DRIVER;
 
 [PreviousGenFiles]
-HeaderPath=C:/Users/Nick/Desktop/school/fall 2021/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
+<<<<<<< HEAD
+HeaderPath=C:/Users/loeff/Downloads/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
 HeaderFiles=FreeRTOSConfig.h;ffconf.h;user_diskio.h;fatfs.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_cdc_if.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;
-SourcePath=C:/Users/Nick/Desktop/school/fall 2021/ECEN4013Project2/EmbeddedCode/BackupPlan/Src
+SourcePath=C:/Users/loeff/Downloads/ECEN4013Project2/EmbeddedCode/BackupPlan/Src
+=======
+HeaderPath=E:/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Inc
+HeaderFiles=FreeRTOSConfig.h;ffconf.h;user_diskio.h;fatfs.h;usb_device.h;usbd_conf.h;usbd_desc.h;usbd_cdc_if.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;
+SourcePath=E:/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/BackupPlan/Src
+>>>>>>> parent of d0a4466 (uart working well)
 SourceFiles=freertos.c;user_diskio.c;fatfs.c;usb_device.c;usbd_conf.c;usbd_desc.c;usbd_cdc_if.c;stm32f7xx_it.c;stm32f7xx_hal_msp.c;stm32f7xx_hal_timebase_tim.c;main.c;
 
