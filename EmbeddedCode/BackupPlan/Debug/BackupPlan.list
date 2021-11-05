@@ -40,11 +40,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
  17 .debug_line   0002dc7f  00000000  00000000  000a4b37  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 <<<<<<< HEAD
+<<<<<<< HEAD
  18 .debug_str    001053d3  00000000  00000000  000b8d36  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  19 .comment      00000053  00000000  00000000  001be109  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00009200  00000000  00000000  001be15c  2**2
+=======
+ 18 .debug_str    00116045  00000000  00000000  000d27b6  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .comment      00000053  00000000  00000000  001e87fb  2**0
+                  CONTENTS, READONLY
+ 20 .debug_frame  0000aaf8  00000000  00000000  001e8850  2**2
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
  18 .debug_str    00116045  00000000  00000000  000d27b6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -9610,6 +9618,98 @@ HAL_StatusTypeDef HAL_UART_Init(UART_HandleTypeDef *huart)
     return HAL_ERROR;
  8003b2e:	2301      	movs	r3, #1
  8003b30:	e022      	b.n	8003b78 <HAL_UART_Init+0x94>
+<<<<<<< HEAD
+  }
+
+  if (huart->AdvancedInit.AdvFeatureInit != UART_ADVFEATURE_NO_INIT)
+ 8003b32:	687b      	ldr	r3, [r7, #4]
+ 8003b34:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 8003b36:	2b00      	cmp	r3, #0
+ 8003b38:	d002      	beq.n	8003b40 <HAL_UART_Init+0x5c>
+  {
+    UART_AdvFeatureConfig(huart);
+ 8003b3a:	6878      	ldr	r0, [r7, #4]
+ 8003b3c:	f000 fde8 	bl	8004710 <UART_AdvFeatureConfig>
+  }
+
+  /* In asynchronous mode, the following bits must be kept cleared:
+  - LINEN and CLKEN bits in the USART_CR2 register,
+  - SCEN, HDSEL and IREN  bits in the USART_CR3 register.*/
+  CLEAR_BIT(huart->Instance->CR2, (USART_CR2_LINEN | USART_CR2_CLKEN));
+ 8003b40:	687b      	ldr	r3, [r7, #4]
+ 8003b42:	681b      	ldr	r3, [r3, #0]
+ 8003b44:	685a      	ldr	r2, [r3, #4]
+ 8003b46:	687b      	ldr	r3, [r7, #4]
+ 8003b48:	681b      	ldr	r3, [r3, #0]
+ 8003b4a:	f422 4290 	bic.w	r2, r2, #18432	; 0x4800
+ 8003b4e:	605a      	str	r2, [r3, #4]
+  CLEAR_BIT(huart->Instance->CR3, (USART_CR3_SCEN | USART_CR3_HDSEL | USART_CR3_IREN));
+ 8003b50:	687b      	ldr	r3, [r7, #4]
+ 8003b52:	681b      	ldr	r3, [r3, #0]
+ 8003b54:	689a      	ldr	r2, [r3, #8]
+ 8003b56:	687b      	ldr	r3, [r7, #4]
+ 8003b58:	681b      	ldr	r3, [r3, #0]
+ 8003b5a:	f022 022a 	bic.w	r2, r2, #42	; 0x2a
+ 8003b5e:	609a      	str	r2, [r3, #8]
+
+  __HAL_UART_ENABLE(huart);
+ 8003b60:	687b      	ldr	r3, [r7, #4]
+ 8003b62:	681b      	ldr	r3, [r3, #0]
+ 8003b64:	681a      	ldr	r2, [r3, #0]
+ 8003b66:	687b      	ldr	r3, [r7, #4]
+ 8003b68:	681b      	ldr	r3, [r3, #0]
+ 8003b6a:	f042 0201 	orr.w	r2, r2, #1
+ 8003b6e:	601a      	str	r2, [r3, #0]
+
+  /* TEACK and/or REACK to check before moving huart->gState and huart->RxState to Ready */
+  return (UART_CheckIdleState(huart));
+ 8003b70:	6878      	ldr	r0, [r7, #4]
+ 8003b72:	f000 fe6f 	bl	8004854 <UART_CheckIdleState>
+ 8003b76:	4603      	mov	r3, r0
+}
+ 8003b78:	4618      	mov	r0, r3
+ 8003b7a:	3708      	adds	r7, #8
+ 8003b7c:	46bd      	mov	sp, r7
+ 8003b7e:	bd80      	pop	{r7, pc}
+
+08003b80 <HAL_UART_Transmit>:
+  * @param Size    Amount of data elements (u8 or u16) to be sent.
+  * @param Timeout Timeout duration.
+  * @retval HAL status
+  */
+HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout)
+{
+ 8003b80:	b580      	push	{r7, lr}
+ 8003b82:	b08a      	sub	sp, #40	; 0x28
+ 8003b84:	af02      	add	r7, sp, #8
+ 8003b86:	60f8      	str	r0, [r7, #12]
+ 8003b88:	60b9      	str	r1, [r7, #8]
+ 8003b8a:	603b      	str	r3, [r7, #0]
+ 8003b8c:	4613      	mov	r3, r2
+ 8003b8e:	80fb      	strh	r3, [r7, #6]
+  uint8_t  *pdata8bits;
+  uint16_t *pdata16bits;
+  uint32_t tickstart;
+
+  /* Check that a Tx process is not already ongoing */
+  if (huart->gState == HAL_UART_STATE_READY)
+ 8003b90:	68fb      	ldr	r3, [r7, #12]
+ 8003b92:	6f9b      	ldr	r3, [r3, #120]	; 0x78
+ 8003b94:	2b20      	cmp	r3, #32
+ 8003b96:	f040 8081 	bne.w	8003c9c <HAL_UART_Transmit+0x11c>
+  {
+    if ((pData == NULL) || (Size == 0U))
+ 8003b9a:	68bb      	ldr	r3, [r7, #8]
+ 8003b9c:	2b00      	cmp	r3, #0
+ 8003b9e:	d002      	beq.n	8003ba6 <HAL_UART_Transmit+0x26>
+ 8003ba0:	88fb      	ldrh	r3, [r7, #6]
+ 8003ba2:	2b00      	cmp	r3, #0
+ 8003ba4:	d101      	bne.n	8003baa <HAL_UART_Transmit+0x2a>
+    {
+      return  HAL_ERROR;
+ 8003ba6:	2301      	movs	r3, #1
+ 8003ba8:	e079      	b.n	8003c9e <HAL_UART_Transmit+0x11e>
+=======
   }
 
   if (huart->AdvancedInit.AdvFeatureInit != UART_ADVFEATURE_NO_INIT)
@@ -10236,6 +10336,544 @@ void HAL_UART_IRQHandler(UART_HandleTypeDef *huart)
       }
       return;
  8003e76:	e1b3      	b.n	80041e0 <HAL_UART_IRQHandler+0x3c0>
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+    }
+
+<<<<<<< HEAD
+    __HAL_LOCK(huart);
+ 8003baa:	68fb      	ldr	r3, [r7, #12]
+ 8003bac:	f893 3074 	ldrb.w	r3, [r3, #116]	; 0x74
+ 8003bb0:	2b01      	cmp	r3, #1
+ 8003bb2:	d101      	bne.n	8003bb8 <HAL_UART_Transmit+0x38>
+ 8003bb4:	2302      	movs	r3, #2
+ 8003bb6:	e072      	b.n	8003c9e <HAL_UART_Transmit+0x11e>
+ 8003bb8:	68fb      	ldr	r3, [r7, #12]
+ 8003bba:	2201      	movs	r2, #1
+ 8003bbc:	f883 2074 	strb.w	r2, [r3, #116]	; 0x74
+
+    huart->ErrorCode = HAL_UART_ERROR_NONE;
+ 8003bc0:	68fb      	ldr	r3, [r7, #12]
+ 8003bc2:	2200      	movs	r2, #0
+ 8003bc4:	f8c3 2080 	str.w	r2, [r3, #128]	; 0x80
+    huart->gState = HAL_UART_STATE_BUSY_TX;
+ 8003bc8:	68fb      	ldr	r3, [r7, #12]
+ 8003bca:	2221      	movs	r2, #33	; 0x21
+ 8003bcc:	679a      	str	r2, [r3, #120]	; 0x78
+
+    /* Init tickstart for timeout management */
+    tickstart = HAL_GetTick();
+ 8003bce:	f7fc fcbd 	bl	800054c <HAL_GetTick>
+ 8003bd2:	6178      	str	r0, [r7, #20]
+
+    huart->TxXferSize  = Size;
+ 8003bd4:	68fb      	ldr	r3, [r7, #12]
+ 8003bd6:	88fa      	ldrh	r2, [r7, #6]
+ 8003bd8:	f8a3 2050 	strh.w	r2, [r3, #80]	; 0x50
+    huart->TxXferCount = Size;
+ 8003bdc:	68fb      	ldr	r3, [r7, #12]
+ 8003bde:	88fa      	ldrh	r2, [r7, #6]
+ 8003be0:	f8a3 2052 	strh.w	r2, [r3, #82]	; 0x52
+
+    /* In case of 9bits/No Parity transfer, pData needs to be handled as a uint16_t pointer */
+    if ((huart->Init.WordLength == UART_WORDLENGTH_9B) && (huart->Init.Parity == UART_PARITY_NONE))
+ 8003be4:	68fb      	ldr	r3, [r7, #12]
+ 8003be6:	689b      	ldr	r3, [r3, #8]
+ 8003be8:	f5b3 5f80 	cmp.w	r3, #4096	; 0x1000
+ 8003bec:	d108      	bne.n	8003c00 <HAL_UART_Transmit+0x80>
+ 8003bee:	68fb      	ldr	r3, [r7, #12]
+ 8003bf0:	691b      	ldr	r3, [r3, #16]
+ 8003bf2:	2b00      	cmp	r3, #0
+ 8003bf4:	d104      	bne.n	8003c00 <HAL_UART_Transmit+0x80>
+    {
+      pdata8bits  = NULL;
+ 8003bf6:	2300      	movs	r3, #0
+ 8003bf8:	61fb      	str	r3, [r7, #28]
+      pdata16bits = (uint16_t *) pData;
+ 8003bfa:	68bb      	ldr	r3, [r7, #8]
+ 8003bfc:	61bb      	str	r3, [r7, #24]
+ 8003bfe:	e003      	b.n	8003c08 <HAL_UART_Transmit+0x88>
+    }
+    else
+    {
+      pdata8bits  = pData;
+ 8003c00:	68bb      	ldr	r3, [r7, #8]
+ 8003c02:	61fb      	str	r3, [r7, #28]
+      pdata16bits = NULL;
+ 8003c04:	2300      	movs	r3, #0
+ 8003c06:	61bb      	str	r3, [r7, #24]
+    }
+
+    __HAL_UNLOCK(huart);
+ 8003c08:	68fb      	ldr	r3, [r7, #12]
+ 8003c0a:	2200      	movs	r2, #0
+ 8003c0c:	f883 2074 	strb.w	r2, [r3, #116]	; 0x74
+
+    while (huart->TxXferCount > 0U)
+ 8003c10:	e02c      	b.n	8003c6c <HAL_UART_Transmit+0xec>
+    {
+      if (UART_WaitOnFlagUntilTimeout(huart, UART_FLAG_TXE, RESET, tickstart, Timeout) != HAL_OK)
+ 8003c12:	683b      	ldr	r3, [r7, #0]
+ 8003c14:	9300      	str	r3, [sp, #0]
+ 8003c16:	697b      	ldr	r3, [r7, #20]
+ 8003c18:	2200      	movs	r2, #0
+ 8003c1a:	2180      	movs	r1, #128	; 0x80
+ 8003c1c:	68f8      	ldr	r0, [r7, #12]
+ 8003c1e:	f000 fe4c 	bl	80048ba <UART_WaitOnFlagUntilTimeout>
+ 8003c22:	4603      	mov	r3, r0
+ 8003c24:	2b00      	cmp	r3, #0
+ 8003c26:	d001      	beq.n	8003c2c <HAL_UART_Transmit+0xac>
+      {
+        return HAL_TIMEOUT;
+ 8003c28:	2303      	movs	r3, #3
+ 8003c2a:	e038      	b.n	8003c9e <HAL_UART_Transmit+0x11e>
+      }
+      if (pdata8bits == NULL)
+ 8003c2c:	69fb      	ldr	r3, [r7, #28]
+ 8003c2e:	2b00      	cmp	r3, #0
+ 8003c30:	d10b      	bne.n	8003c4a <HAL_UART_Transmit+0xca>
+      {
+        huart->Instance->TDR = (uint16_t)(*pdata16bits & 0x01FFU);
+ 8003c32:	69bb      	ldr	r3, [r7, #24]
+ 8003c34:	881b      	ldrh	r3, [r3, #0]
+ 8003c36:	461a      	mov	r2, r3
+ 8003c38:	68fb      	ldr	r3, [r7, #12]
+ 8003c3a:	681b      	ldr	r3, [r3, #0]
+ 8003c3c:	f3c2 0208 	ubfx	r2, r2, #0, #9
+ 8003c40:	629a      	str	r2, [r3, #40]	; 0x28
+        pdata16bits++;
+ 8003c42:	69bb      	ldr	r3, [r7, #24]
+ 8003c44:	3302      	adds	r3, #2
+ 8003c46:	61bb      	str	r3, [r7, #24]
+ 8003c48:	e007      	b.n	8003c5a <HAL_UART_Transmit+0xda>
+      }
+      else
+      {
+        huart->Instance->TDR = (uint8_t)(*pdata8bits & 0xFFU);
+ 8003c4a:	69fb      	ldr	r3, [r7, #28]
+ 8003c4c:	781a      	ldrb	r2, [r3, #0]
+ 8003c4e:	68fb      	ldr	r3, [r7, #12]
+ 8003c50:	681b      	ldr	r3, [r3, #0]
+ 8003c52:	629a      	str	r2, [r3, #40]	; 0x28
+        pdata8bits++;
+ 8003c54:	69fb      	ldr	r3, [r7, #28]
+ 8003c56:	3301      	adds	r3, #1
+ 8003c58:	61fb      	str	r3, [r7, #28]
+      }
+      huart->TxXferCount--;
+ 8003c5a:	68fb      	ldr	r3, [r7, #12]
+ 8003c5c:	f8b3 3052 	ldrh.w	r3, [r3, #82]	; 0x52
+ 8003c60:	b29b      	uxth	r3, r3
+ 8003c62:	3b01      	subs	r3, #1
+ 8003c64:	b29a      	uxth	r2, r3
+ 8003c66:	68fb      	ldr	r3, [r7, #12]
+ 8003c68:	f8a3 2052 	strh.w	r2, [r3, #82]	; 0x52
+    while (huart->TxXferCount > 0U)
+ 8003c6c:	68fb      	ldr	r3, [r7, #12]
+ 8003c6e:	f8b3 3052 	ldrh.w	r3, [r3, #82]	; 0x52
+ 8003c72:	b29b      	uxth	r3, r3
+ 8003c74:	2b00      	cmp	r3, #0
+ 8003c76:	d1cc      	bne.n	8003c12 <HAL_UART_Transmit+0x92>
+    }
+
+    if (UART_WaitOnFlagUntilTimeout(huart, UART_FLAG_TC, RESET, tickstart, Timeout) != HAL_OK)
+ 8003c78:	683b      	ldr	r3, [r7, #0]
+ 8003c7a:	9300      	str	r3, [sp, #0]
+ 8003c7c:	697b      	ldr	r3, [r7, #20]
+ 8003c7e:	2200      	movs	r2, #0
+ 8003c80:	2140      	movs	r1, #64	; 0x40
+ 8003c82:	68f8      	ldr	r0, [r7, #12]
+ 8003c84:	f000 fe19 	bl	80048ba <UART_WaitOnFlagUntilTimeout>
+ 8003c88:	4603      	mov	r3, r0
+ 8003c8a:	2b00      	cmp	r3, #0
+ 8003c8c:	d001      	beq.n	8003c92 <HAL_UART_Transmit+0x112>
+    {
+      return HAL_TIMEOUT;
+ 8003c8e:	2303      	movs	r3, #3
+ 8003c90:	e005      	b.n	8003c9e <HAL_UART_Transmit+0x11e>
+    }
+
+    /* At end of Tx process, restore huart->gState to Ready */
+    huart->gState = HAL_UART_STATE_READY;
+ 8003c92:	68fb      	ldr	r3, [r7, #12]
+ 8003c94:	2220      	movs	r2, #32
+ 8003c96:	679a      	str	r2, [r3, #120]	; 0x78
+
+    return HAL_OK;
+ 8003c98:	2300      	movs	r3, #0
+ 8003c9a:	e000      	b.n	8003c9e <HAL_UART_Transmit+0x11e>
+  }
+  else
+  {
+    return HAL_BUSY;
+ 8003c9c:	2302      	movs	r3, #2
+  }
+}
+ 8003c9e:	4618      	mov	r0, r3
+ 8003ca0:	3720      	adds	r7, #32
+ 8003ca2:	46bd      	mov	sp, r7
+ 8003ca4:	bd80      	pop	{r7, pc}
+
+08003ca6 <HAL_UART_Receive_IT>:
+  * @param pData Pointer to data buffer (u8 or u16 data elements).
+  * @param Size  Amount of data elements (u8 or u16) to be received.
+  * @retval HAL status
+  */
+HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size)
+{
+ 8003ca6:	b580      	push	{r7, lr}
+ 8003ca8:	b084      	sub	sp, #16
+ 8003caa:	af00      	add	r7, sp, #0
+ 8003cac:	60f8      	str	r0, [r7, #12]
+ 8003cae:	60b9      	str	r1, [r7, #8]
+ 8003cb0:	4613      	mov	r3, r2
+ 8003cb2:	80fb      	strh	r3, [r7, #6]
+  /* Check that a Rx process is not already ongoing */
+  if (huart->RxState == HAL_UART_STATE_READY)
+ 8003cb4:	68fb      	ldr	r3, [r7, #12]
+ 8003cb6:	6fdb      	ldr	r3, [r3, #124]	; 0x7c
+ 8003cb8:	2b20      	cmp	r3, #32
+ 8003cba:	d12c      	bne.n	8003d16 <HAL_UART_Receive_IT+0x70>
+  {
+    if ((pData == NULL) || (Size == 0U))
+ 8003cbc:	68bb      	ldr	r3, [r7, #8]
+ 8003cbe:	2b00      	cmp	r3, #0
+ 8003cc0:	d002      	beq.n	8003cc8 <HAL_UART_Receive_IT+0x22>
+ 8003cc2:	88fb      	ldrh	r3, [r7, #6]
+ 8003cc4:	2b00      	cmp	r3, #0
+ 8003cc6:	d101      	bne.n	8003ccc <HAL_UART_Receive_IT+0x26>
+    {
+      return HAL_ERROR;
+ 8003cc8:	2301      	movs	r3, #1
+ 8003cca:	e025      	b.n	8003d18 <HAL_UART_Receive_IT+0x72>
+    }
+
+    __HAL_LOCK(huart);
+ 8003ccc:	68fb      	ldr	r3, [r7, #12]
+ 8003cce:	f893 3074 	ldrb.w	r3, [r3, #116]	; 0x74
+ 8003cd2:	2b01      	cmp	r3, #1
+ 8003cd4:	d101      	bne.n	8003cda <HAL_UART_Receive_IT+0x34>
+ 8003cd6:	2302      	movs	r3, #2
+ 8003cd8:	e01e      	b.n	8003d18 <HAL_UART_Receive_IT+0x72>
+ 8003cda:	68fb      	ldr	r3, [r7, #12]
+ 8003cdc:	2201      	movs	r2, #1
+ 8003cde:	f883 2074 	strb.w	r2, [r3, #116]	; 0x74
+
+    /* Set Reception type to Standard reception */
+    huart->ReceptionType = HAL_UART_RECEPTION_STANDARD;
+ 8003ce2:	68fb      	ldr	r3, [r7, #12]
+ 8003ce4:	2200      	movs	r2, #0
+ 8003ce6:	661a      	str	r2, [r3, #96]	; 0x60
+
+    /* Check that USART RTOEN bit is set */
+    if (READ_BIT(huart->Instance->CR2, USART_CR2_RTOEN) != 0U)
+ 8003ce8:	68fb      	ldr	r3, [r7, #12]
+ 8003cea:	681b      	ldr	r3, [r3, #0]
+ 8003cec:	685b      	ldr	r3, [r3, #4]
+ 8003cee:	f403 0300 	and.w	r3, r3, #8388608	; 0x800000
+ 8003cf2:	2b00      	cmp	r3, #0
+ 8003cf4:	d007      	beq.n	8003d06 <HAL_UART_Receive_IT+0x60>
+    {
+      /* Enable the UART Receiver Timeout Interrupt */
+      SET_BIT(huart->Instance->CR1, USART_CR1_RTOIE);
+ 8003cf6:	68fb      	ldr	r3, [r7, #12]
+ 8003cf8:	681b      	ldr	r3, [r3, #0]
+ 8003cfa:	681a      	ldr	r2, [r3, #0]
+ 8003cfc:	68fb      	ldr	r3, [r7, #12]
+ 8003cfe:	681b      	ldr	r3, [r3, #0]
+ 8003d00:	f042 6280 	orr.w	r2, r2, #67108864	; 0x4000000
+ 8003d04:	601a      	str	r2, [r3, #0]
+    }
+
+    return (UART_Start_Receive_IT(huart, pData, Size));
+ 8003d06:	88fb      	ldrh	r3, [r7, #6]
+ 8003d08:	461a      	mov	r2, r3
+ 8003d0a:	68b9      	ldr	r1, [r7, #8]
+ 8003d0c:	68f8      	ldr	r0, [r7, #12]
+ 8003d0e:	f000 fe51 	bl	80049b4 <UART_Start_Receive_IT>
+ 8003d12:	4603      	mov	r3, r0
+ 8003d14:	e000      	b.n	8003d18 <HAL_UART_Receive_IT+0x72>
+  }
+  else
+  {
+    return HAL_BUSY;
+ 8003d16:	2302      	movs	r3, #2
+  }
+}
+ 8003d18:	4618      	mov	r0, r3
+ 8003d1a:	3710      	adds	r7, #16
+ 8003d1c:	46bd      	mov	sp, r7
+ 8003d1e:	bd80      	pop	{r7, pc}
+
+08003d20 <HAL_UART_AbortReceive_IT>:
+  * @note   This procedure is executed in Interrupt mode, meaning that abort procedure could be
+  *         considered as completed only when user abort complete callback is executed (not when exiting function).
+  * @retval HAL status
+  */
+HAL_StatusTypeDef HAL_UART_AbortReceive_IT(UART_HandleTypeDef *huart)
+{
+ 8003d20:	b580      	push	{r7, lr}
+ 8003d22:	b082      	sub	sp, #8
+ 8003d24:	af00      	add	r7, sp, #0
+ 8003d26:	6078      	str	r0, [r7, #4]
+  /* Disable RXNE, PE and ERR (Frame error, noise error, overrun error) interrupts */
+  CLEAR_BIT(huart->Instance->CR1, (USART_CR1_RXNEIE | USART_CR1_PEIE));
+ 8003d28:	687b      	ldr	r3, [r7, #4]
+ 8003d2a:	681b      	ldr	r3, [r3, #0]
+ 8003d2c:	681a      	ldr	r2, [r3, #0]
+ 8003d2e:	687b      	ldr	r3, [r7, #4]
+ 8003d30:	681b      	ldr	r3, [r3, #0]
+ 8003d32:	f422 7290 	bic.w	r2, r2, #288	; 0x120
+ 8003d36:	601a      	str	r2, [r3, #0]
+  CLEAR_BIT(huart->Instance->CR3, USART_CR3_EIE);
+ 8003d38:	687b      	ldr	r3, [r7, #4]
+ 8003d3a:	681b      	ldr	r3, [r3, #0]
+ 8003d3c:	689a      	ldr	r2, [r3, #8]
+ 8003d3e:	687b      	ldr	r3, [r7, #4]
+ 8003d40:	681b      	ldr	r3, [r3, #0]
+ 8003d42:	f022 0201 	bic.w	r2, r2, #1
+ 8003d46:	609a      	str	r2, [r3, #8]
+
+  /* If Reception till IDLE event was ongoing, disable IDLEIE interrupt */
+  if (huart->ReceptionType == HAL_UART_RECEPTION_TOIDLE)
+ 8003d48:	687b      	ldr	r3, [r7, #4]
+ 8003d4a:	6e1b      	ldr	r3, [r3, #96]	; 0x60
+ 8003d4c:	2b01      	cmp	r3, #1
+ 8003d4e:	d107      	bne.n	8003d60 <HAL_UART_AbortReceive_IT+0x40>
+  {
+    CLEAR_BIT(huart->Instance->CR1, (USART_CR1_IDLEIE));
+ 8003d50:	687b      	ldr	r3, [r7, #4]
+ 8003d52:	681b      	ldr	r3, [r3, #0]
+ 8003d54:	681a      	ldr	r2, [r3, #0]
+ 8003d56:	687b      	ldr	r3, [r7, #4]
+ 8003d58:	681b      	ldr	r3, [r3, #0]
+ 8003d5a:	f022 0210 	bic.w	r2, r2, #16
+ 8003d5e:	601a      	str	r2, [r3, #0]
+  }
+
+  /* Disable the UART DMA Rx request if enabled */
+  if (HAL_IS_BIT_SET(huart->Instance->CR3, USART_CR3_DMAR))
+ 8003d60:	687b      	ldr	r3, [r7, #4]
+ 8003d62:	681b      	ldr	r3, [r3, #0]
+ 8003d64:	689b      	ldr	r3, [r3, #8]
+ 8003d66:	f003 0340 	and.w	r3, r3, #64	; 0x40
+ 8003d6a:	2b40      	cmp	r3, #64	; 0x40
+ 8003d6c:	d13c      	bne.n	8003de8 <HAL_UART_AbortReceive_IT+0xc8>
+  {
+    CLEAR_BIT(huart->Instance->CR3, USART_CR3_DMAR);
+ 8003d6e:	687b      	ldr	r3, [r7, #4]
+ 8003d70:	681b      	ldr	r3, [r3, #0]
+ 8003d72:	689a      	ldr	r2, [r3, #8]
+ 8003d74:	687b      	ldr	r3, [r7, #4]
+ 8003d76:	681b      	ldr	r3, [r3, #0]
+ 8003d78:	f022 0240 	bic.w	r2, r2, #64	; 0x40
+ 8003d7c:	609a      	str	r2, [r3, #8]
+
+    /* Abort the UART DMA Rx channel : use non blocking DMA Abort API (callback) */
+    if (huart->hdmarx != NULL)
+ 8003d7e:	687b      	ldr	r3, [r7, #4]
+ 8003d80:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ 8003d82:	2b00      	cmp	r3, #0
+ 8003d84:	d013      	beq.n	8003dae <HAL_UART_AbortReceive_IT+0x8e>
+    {
+      /* Set the UART DMA Abort callback :
+         will lead to call HAL_UART_AbortCpltCallback() at end of DMA abort procedure */
+      huart->hdmarx->XferAbortCallback = UART_DMARxOnlyAbortCallback;
+ 8003d86:	687b      	ldr	r3, [r7, #4]
+ 8003d88:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ 8003d8a:	4a24      	ldr	r2, [pc, #144]	; (8003e1c <HAL_UART_AbortReceive_IT+0xfc>)
+ 8003d8c:	651a      	str	r2, [r3, #80]	; 0x50
+
+      /* Abort DMA RX */
+      if (HAL_DMA_Abort_IT(huart->hdmarx) != HAL_OK)
+ 8003d8e:	687b      	ldr	r3, [r7, #4]
+ 8003d90:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ 8003d92:	4618      	mov	r0, r3
+ 8003d94:	f7fc fd5c 	bl	8000850 <HAL_DMA_Abort_IT>
+ 8003d98:	4603      	mov	r3, r0
+ 8003d9a:	2b00      	cmp	r3, #0
+ 8003d9c:	d038      	beq.n	8003e10 <HAL_UART_AbortReceive_IT+0xf0>
+      {
+        /* Call Directly huart->hdmarx->XferAbortCallback function in case of error */
+        huart->hdmarx->XferAbortCallback(huart->hdmarx);
+ 8003d9e:	687b      	ldr	r3, [r7, #4]
+ 8003da0:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ 8003da2:	6d1b      	ldr	r3, [r3, #80]	; 0x50
+ 8003da4:	687a      	ldr	r2, [r7, #4]
+ 8003da6:	6f12      	ldr	r2, [r2, #112]	; 0x70
+ 8003da8:	4610      	mov	r0, r2
+ 8003daa:	4798      	blx	r3
+ 8003dac:	e030      	b.n	8003e10 <HAL_UART_AbortReceive_IT+0xf0>
+      }
+    }
+    else
+    {
+      /* Reset Rx transfer counter */
+      huart->RxXferCount = 0U;
+ 8003dae:	687b      	ldr	r3, [r7, #4]
+ 8003db0:	2200      	movs	r2, #0
+ 8003db2:	f8a3 205a 	strh.w	r2, [r3, #90]	; 0x5a
+
+      /* Clear RxISR function pointer */
+      huart->pRxBuffPtr = NULL;
+ 8003db6:	687b      	ldr	r3, [r7, #4]
+ 8003db8:	2200      	movs	r2, #0
+ 8003dba:	655a      	str	r2, [r3, #84]	; 0x54
+
+      /* Clear the Error flags in the ICR register */
+      __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
+ 8003dbc:	687b      	ldr	r3, [r7, #4]
+ 8003dbe:	681b      	ldr	r3, [r3, #0]
+ 8003dc0:	220f      	movs	r2, #15
+ 8003dc2:	621a      	str	r2, [r3, #32]
+
+      /* Discard the received data */
+      __HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
+ 8003dc4:	687b      	ldr	r3, [r7, #4]
+ 8003dc6:	681b      	ldr	r3, [r3, #0]
+ 8003dc8:	699a      	ldr	r2, [r3, #24]
+ 8003dca:	687b      	ldr	r3, [r7, #4]
+ 8003dcc:	681b      	ldr	r3, [r3, #0]
+ 8003dce:	f042 0208 	orr.w	r2, r2, #8
+ 8003dd2:	619a      	str	r2, [r3, #24]
+
+      /* Restore huart->RxState to Ready */
+      huart->RxState = HAL_UART_STATE_READY;
+ 8003dd4:	687b      	ldr	r3, [r7, #4]
+ 8003dd6:	2220      	movs	r2, #32
+ 8003dd8:	67da      	str	r2, [r3, #124]	; 0x7c
+      huart->ReceptionType = HAL_UART_RECEPTION_STANDARD;
+ 8003dda:	687b      	ldr	r3, [r7, #4]
+ 8003ddc:	2200      	movs	r2, #0
+ 8003dde:	661a      	str	r2, [r3, #96]	; 0x60
+#if (USE_HAL_UART_REGISTER_CALLBACKS == 1)
+      /* Call registered Abort Receive Complete Callback */
+      huart->AbortReceiveCpltCallback(huart);
+#else
+      /* Call legacy weak Abort Receive Complete Callback */
+      HAL_UART_AbortReceiveCpltCallback(huart);
+ 8003de0:	6878      	ldr	r0, [r7, #4]
+ 8003de2:	f000 fa1d 	bl	8004220 <HAL_UART_AbortReceiveCpltCallback>
+ 8003de6:	e013      	b.n	8003e10 <HAL_UART_AbortReceive_IT+0xf0>
+    }
+  }
+  else
+  {
+    /* Reset Rx transfer counter */
+    huart->RxXferCount = 0U;
+ 8003de8:	687b      	ldr	r3, [r7, #4]
+ 8003dea:	2200      	movs	r2, #0
+ 8003dec:	f8a3 205a 	strh.w	r2, [r3, #90]	; 0x5a
+
+    /* Clear RxISR function pointer */
+    huart->pRxBuffPtr = NULL;
+ 8003df0:	687b      	ldr	r3, [r7, #4]
+ 8003df2:	2200      	movs	r2, #0
+ 8003df4:	655a      	str	r2, [r3, #84]	; 0x54
+
+    /* Clear the Error flags in the ICR register */
+    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
+ 8003df6:	687b      	ldr	r3, [r7, #4]
+ 8003df8:	681b      	ldr	r3, [r3, #0]
+ 8003dfa:	220f      	movs	r2, #15
+ 8003dfc:	621a      	str	r2, [r3, #32]
+
+    /* Restore huart->RxState to Ready */
+    huart->RxState = HAL_UART_STATE_READY;
+ 8003dfe:	687b      	ldr	r3, [r7, #4]
+ 8003e00:	2220      	movs	r2, #32
+ 8003e02:	67da      	str	r2, [r3, #124]	; 0x7c
+    huart->ReceptionType = HAL_UART_RECEPTION_STANDARD;
+ 8003e04:	687b      	ldr	r3, [r7, #4]
+ 8003e06:	2200      	movs	r2, #0
+ 8003e08:	661a      	str	r2, [r3, #96]	; 0x60
+#if (USE_HAL_UART_REGISTER_CALLBACKS == 1)
+    /* Call registered Abort Receive Complete Callback */
+    huart->AbortReceiveCpltCallback(huart);
+#else
+    /* Call legacy weak Abort Receive Complete Callback */
+    HAL_UART_AbortReceiveCpltCallback(huart);
+ 8003e0a:	6878      	ldr	r0, [r7, #4]
+ 8003e0c:	f000 fa08 	bl	8004220 <HAL_UART_AbortReceiveCpltCallback>
+#endif /* USE_HAL_UART_REGISTER_CALLBACKS */
+  }
+
+  return HAL_OK;
+ 8003e10:	2300      	movs	r3, #0
+}
+ 8003e12:	4618      	mov	r0, r3
+ 8003e14:	3708      	adds	r7, #8
+ 8003e16:	46bd      	mov	sp, r7
+ 8003e18:	bd80      	pop	{r7, pc}
+ 8003e1a:	bf00      	nop
+ 8003e1c:	08004b4f 	.word	0x08004b4f
+
+08003e20 <HAL_UART_IRQHandler>:
+  * @brief Handle UART interrupt request.
+  * @param huart UART handle.
+  * @retval None
+  */
+void HAL_UART_IRQHandler(UART_HandleTypeDef *huart)
+{
+ 8003e20:	b580      	push	{r7, lr}
+ 8003e22:	b088      	sub	sp, #32
+ 8003e24:	af00      	add	r7, sp, #0
+ 8003e26:	6078      	str	r0, [r7, #4]
+  uint32_t isrflags   = READ_REG(huart->Instance->ISR);
+ 8003e28:	687b      	ldr	r3, [r7, #4]
+ 8003e2a:	681b      	ldr	r3, [r3, #0]
+ 8003e2c:	69db      	ldr	r3, [r3, #28]
+ 8003e2e:	61fb      	str	r3, [r7, #28]
+  uint32_t cr1its     = READ_REG(huart->Instance->CR1);
+ 8003e30:	687b      	ldr	r3, [r7, #4]
+ 8003e32:	681b      	ldr	r3, [r3, #0]
+ 8003e34:	681b      	ldr	r3, [r3, #0]
+ 8003e36:	61bb      	str	r3, [r7, #24]
+  uint32_t cr3its     = READ_REG(huart->Instance->CR3);
+ 8003e38:	687b      	ldr	r3, [r7, #4]
+ 8003e3a:	681b      	ldr	r3, [r3, #0]
+ 8003e3c:	689b      	ldr	r3, [r3, #8]
+ 8003e3e:	617b      	str	r3, [r7, #20]
+
+  uint32_t errorflags;
+  uint32_t errorcode;
+
+  /* If no error occurs */
+  errorflags = (isrflags & (uint32_t)(USART_ISR_PE | USART_ISR_FE | USART_ISR_ORE | USART_ISR_NE | USART_ISR_RTOF));
+ 8003e40:	69fa      	ldr	r2, [r7, #28]
+ 8003e42:	f640 030f 	movw	r3, #2063	; 0x80f
+ 8003e46:	4013      	ands	r3, r2
+ 8003e48:	613b      	str	r3, [r7, #16]
+  if (errorflags == 0U)
+ 8003e4a:	693b      	ldr	r3, [r7, #16]
+ 8003e4c:	2b00      	cmp	r3, #0
+ 8003e4e:	d113      	bne.n	8003e78 <HAL_UART_IRQHandler+0x58>
+  {
+    /* UART in mode Receiver ---------------------------------------------------*/
+    if (((isrflags & USART_ISR_RXNE) != 0U)
+ 8003e50:	69fb      	ldr	r3, [r7, #28]
+ 8003e52:	f003 0320 	and.w	r3, r3, #32
+ 8003e56:	2b00      	cmp	r3, #0
+ 8003e58:	d00e      	beq.n	8003e78 <HAL_UART_IRQHandler+0x58>
+        && ((cr1its & USART_CR1_RXNEIE) != 0U))
+ 8003e5a:	69bb      	ldr	r3, [r7, #24]
+ 8003e5c:	f003 0320 	and.w	r3, r3, #32
+ 8003e60:	2b00      	cmp	r3, #0
+ 8003e62:	d009      	beq.n	8003e78 <HAL_UART_IRQHandler+0x58>
+    {
+      if (huart->RxISR != NULL)
+ 8003e64:	687b      	ldr	r3, [r7, #4]
+ 8003e66:	6e5b      	ldr	r3, [r3, #100]	; 0x64
+ 8003e68:	2b00      	cmp	r3, #0
+ 8003e6a:	f000 81b9 	beq.w	80041e0 <HAL_UART_IRQHandler+0x3c0>
+      {
+        huart->RxISR(huart);
+ 8003e6e:	687b      	ldr	r3, [r7, #4]
+ 8003e70:	6e5b      	ldr	r3, [r3, #100]	; 0x64
+ 8003e72:	6878      	ldr	r0, [r7, #4]
+ 8003e74:	4798      	blx	r3
+      }
+      return;
+ 8003e76:	e1b3      	b.n	80041e0 <HAL_UART_IRQHandler+0x3c0>
     }
   }
 
@@ -10306,6 +10944,75 @@ void HAL_UART_IRQHandler(UART_HandleTypeDef *huart)
  8003eea:	f8c3 2080 	str.w	r2, [r3, #128]	; 0x80
     }
 
+=======
+  /* If some errors occur */
+  if ((errorflags != 0U)
+ 8003e78:	693b      	ldr	r3, [r7, #16]
+ 8003e7a:	2b00      	cmp	r3, #0
+ 8003e7c:	f000 80e3 	beq.w	8004046 <HAL_UART_IRQHandler+0x226>
+      && (((cr3its & USART_CR3_EIE) != 0U)
+ 8003e80:	697b      	ldr	r3, [r7, #20]
+ 8003e82:	f003 0301 	and.w	r3, r3, #1
+ 8003e86:	2b00      	cmp	r3, #0
+ 8003e88:	d105      	bne.n	8003e96 <HAL_UART_IRQHandler+0x76>
+          || ((cr1its & (USART_CR1_RXNEIE | USART_CR1_PEIE | USART_CR1_RTOIE)) != 0U)))
+ 8003e8a:	69ba      	ldr	r2, [r7, #24]
+ 8003e8c:	4ba5      	ldr	r3, [pc, #660]	; (8004124 <HAL_UART_IRQHandler+0x304>)
+ 8003e8e:	4013      	ands	r3, r2
+ 8003e90:	2b00      	cmp	r3, #0
+ 8003e92:	f000 80d8 	beq.w	8004046 <HAL_UART_IRQHandler+0x226>
+  {
+    /* UART parity error interrupt occurred -------------------------------------*/
+    if (((isrflags & USART_ISR_PE) != 0U) && ((cr1its & USART_CR1_PEIE) != 0U))
+ 8003e96:	69fb      	ldr	r3, [r7, #28]
+ 8003e98:	f003 0301 	and.w	r3, r3, #1
+ 8003e9c:	2b00      	cmp	r3, #0
+ 8003e9e:	d010      	beq.n	8003ec2 <HAL_UART_IRQHandler+0xa2>
+ 8003ea0:	69bb      	ldr	r3, [r7, #24]
+ 8003ea2:	f403 7380 	and.w	r3, r3, #256	; 0x100
+ 8003ea6:	2b00      	cmp	r3, #0
+ 8003ea8:	d00b      	beq.n	8003ec2 <HAL_UART_IRQHandler+0xa2>
+    {
+      __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_PEF);
+ 8003eaa:	687b      	ldr	r3, [r7, #4]
+ 8003eac:	681b      	ldr	r3, [r3, #0]
+ 8003eae:	2201      	movs	r2, #1
+ 8003eb0:	621a      	str	r2, [r3, #32]
+
+      huart->ErrorCode |= HAL_UART_ERROR_PE;
+ 8003eb2:	687b      	ldr	r3, [r7, #4]
+ 8003eb4:	f8d3 3080 	ldr.w	r3, [r3, #128]	; 0x80
+ 8003eb8:	f043 0201 	orr.w	r2, r3, #1
+ 8003ebc:	687b      	ldr	r3, [r7, #4]
+ 8003ebe:	f8c3 2080 	str.w	r2, [r3, #128]	; 0x80
+    }
+
+    /* UART frame error interrupt occurred --------------------------------------*/
+    if (((isrflags & USART_ISR_FE) != 0U) && ((cr3its & USART_CR3_EIE) != 0U))
+ 8003ec2:	69fb      	ldr	r3, [r7, #28]
+ 8003ec4:	f003 0302 	and.w	r3, r3, #2
+ 8003ec8:	2b00      	cmp	r3, #0
+ 8003eca:	d010      	beq.n	8003eee <HAL_UART_IRQHandler+0xce>
+ 8003ecc:	697b      	ldr	r3, [r7, #20]
+ 8003ece:	f003 0301 	and.w	r3, r3, #1
+ 8003ed2:	2b00      	cmp	r3, #0
+ 8003ed4:	d00b      	beq.n	8003eee <HAL_UART_IRQHandler+0xce>
+    {
+      __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_FEF);
+ 8003ed6:	687b      	ldr	r3, [r7, #4]
+ 8003ed8:	681b      	ldr	r3, [r3, #0]
+ 8003eda:	2202      	movs	r2, #2
+ 8003edc:	621a      	str	r2, [r3, #32]
+
+      huart->ErrorCode |= HAL_UART_ERROR_FE;
+ 8003ede:	687b      	ldr	r3, [r7, #4]
+ 8003ee0:	f8d3 3080 	ldr.w	r3, [r3, #128]	; 0x80
+ 8003ee4:	f043 0204 	orr.w	r2, r3, #4
+ 8003ee8:	687b      	ldr	r3, [r7, #4]
+ 8003eea:	f8c3 2080 	str.w	r2, [r3, #128]	; 0x80
+    }
+
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
     /* UART noise error interrupt occurred --------------------------------------*/
     if (((isrflags & USART_ISR_NE) != 0U) && ((cr3its & USART_CR3_EIE) != 0U))
  8003eee:	69fb      	ldr	r3, [r7, #28]
@@ -10886,6 +11593,7 @@ __weak void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
  8004218:	46bd      	mov	sp, r7
  800421a:	f85d 7b04 	ldr.w	r7, [sp], #4
  800421e:	4770      	bx	lr
+<<<<<<< HEAD
 
 08004220 <HAL_UART_AbortReceiveCpltCallback>:
   * @brief  UART Abort Receive Complete callback.
@@ -10910,6 +11618,32 @@ __weak void HAL_UART_AbortReceiveCpltCallback(UART_HandleTypeDef *huart)
  800422e:	f85d 7b04 	ldr.w	r7, [sp], #4
  8004232:	4770      	bx	lr
 
+=======
+
+08004220 <HAL_UART_AbortReceiveCpltCallback>:
+  * @brief  UART Abort Receive Complete callback.
+  * @param  huart UART handle.
+  * @retval None
+  */
+__weak void HAL_UART_AbortReceiveCpltCallback(UART_HandleTypeDef *huart)
+{
+ 8004220:	b480      	push	{r7}
+ 8004222:	b083      	sub	sp, #12
+ 8004224:	af00      	add	r7, sp, #0
+ 8004226:	6078      	str	r0, [r7, #4]
+  UNUSED(huart);
+
+  /* NOTE : This function should not be modified, when the callback is needed,
+            the HAL_UART_AbortReceiveCpltCallback can be implemented in the user file.
+   */
+}
+ 8004228:	bf00      	nop
+ 800422a:	370c      	adds	r7, #12
+ 800422c:	46bd      	mov	sp, r7
+ 800422e:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8004232:	4770      	bx	lr
+
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 08004234 <HAL_UARTEx_RxEventCallback>:
   * @param  Size  Number of data available in application reception buffer (indicates a position in
   *               reception buffer until which, data are available)
@@ -12286,6 +13020,7 @@ static void UART_DMAAbortOnError(DMA_HandleTypeDef *hdma)
   HAL_UART_ErrorCallback(huart);
  8004b40:	68f8      	ldr	r0, [r7, #12]
  8004b42:	f7ff fb63 	bl	800420c <HAL_UART_ErrorCallback>
+<<<<<<< HEAD
 #endif /* USE_HAL_UART_REGISTER_CALLBACKS */
 }
  8004b46:	bf00      	nop
@@ -12355,6 +13090,77 @@ static void UART_DMARxOnlyAbortCallback(DMA_HandleTypeDef *hdma)
  8004b92:	46bd      	mov	sp, r7
  8004b94:	bd80      	pop	{r7, pc}
 
+=======
+#endif /* USE_HAL_UART_REGISTER_CALLBACKS */
+}
+ 8004b46:	bf00      	nop
+ 8004b48:	3710      	adds	r7, #16
+ 8004b4a:	46bd      	mov	sp, r7
+ 8004b4c:	bd80      	pop	{r7, pc}
+
+08004b4e <UART_DMARxOnlyAbortCallback>:
+  *         and leads to user Rx Abort Complete callback execution).
+  * @param  hdma DMA handle.
+  * @retval None
+  */
+static void UART_DMARxOnlyAbortCallback(DMA_HandleTypeDef *hdma)
+{
+ 8004b4e:	b580      	push	{r7, lr}
+ 8004b50:	b084      	sub	sp, #16
+ 8004b52:	af00      	add	r7, sp, #0
+ 8004b54:	6078      	str	r0, [r7, #4]
+  UART_HandleTypeDef *huart = (UART_HandleTypeDef *)((DMA_HandleTypeDef *)hdma)->Parent;
+ 8004b56:	687b      	ldr	r3, [r7, #4]
+ 8004b58:	6b9b      	ldr	r3, [r3, #56]	; 0x38
+ 8004b5a:	60fb      	str	r3, [r7, #12]
+
+  huart->RxXferCount = 0U;
+ 8004b5c:	68fb      	ldr	r3, [r7, #12]
+ 8004b5e:	2200      	movs	r2, #0
+ 8004b60:	f8a3 205a 	strh.w	r2, [r3, #90]	; 0x5a
+
+  /* Clear the Error flags in the ICR register */
+  __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
+ 8004b64:	68fb      	ldr	r3, [r7, #12]
+ 8004b66:	681b      	ldr	r3, [r3, #0]
+ 8004b68:	220f      	movs	r2, #15
+ 8004b6a:	621a      	str	r2, [r3, #32]
+
+  /* Discard the received data */
+  __HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
+ 8004b6c:	68fb      	ldr	r3, [r7, #12]
+ 8004b6e:	681b      	ldr	r3, [r3, #0]
+ 8004b70:	699a      	ldr	r2, [r3, #24]
+ 8004b72:	68fb      	ldr	r3, [r7, #12]
+ 8004b74:	681b      	ldr	r3, [r3, #0]
+ 8004b76:	f042 0208 	orr.w	r2, r2, #8
+ 8004b7a:	619a      	str	r2, [r3, #24]
+
+  /* Restore huart->RxState to Ready */
+  huart->RxState = HAL_UART_STATE_READY;
+ 8004b7c:	68fb      	ldr	r3, [r7, #12]
+ 8004b7e:	2220      	movs	r2, #32
+ 8004b80:	67da      	str	r2, [r3, #124]	; 0x7c
+  huart->ReceptionType = HAL_UART_RECEPTION_STANDARD;
+ 8004b82:	68fb      	ldr	r3, [r7, #12]
+ 8004b84:	2200      	movs	r2, #0
+ 8004b86:	661a      	str	r2, [r3, #96]	; 0x60
+#if (USE_HAL_UART_REGISTER_CALLBACKS == 1)
+  /* Call registered Abort Receive Complete Callback */
+  huart->AbortReceiveCpltCallback(huart);
+#else
+  /* Call legacy weak Abort Receive Complete Callback */
+  HAL_UART_AbortReceiveCpltCallback(huart);
+ 8004b88:	68f8      	ldr	r0, [r7, #12]
+ 8004b8a:	f7ff fb49 	bl	8004220 <HAL_UART_AbortReceiveCpltCallback>
+#endif /* USE_HAL_UART_REGISTER_CALLBACKS */
+}
+ 8004b8e:	bf00      	nop
+ 8004b90:	3710      	adds	r7, #16
+ 8004b92:	46bd      	mov	sp, r7
+ 8004b94:	bd80      	pop	{r7, pc}
+
+>>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 08004b96 <UART_EndTransmit_IT>:
   * @param  huart pointer to a UART_HandleTypeDef structure that contains
   *                the configuration information for the specified UART module.
