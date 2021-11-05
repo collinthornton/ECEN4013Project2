@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <vector>
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
@@ -21,6 +22,8 @@
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 #include <cstring>
 
 
@@ -29,18 +32,23 @@ public:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	UART(UART_HandleTypeDef *handle);
+=======
+	UART();
+>>>>>>> parent of d0a4466 (uart working well)
 	int init(USART_TypeDef *port, int baud, int packetSize_Bytes);
 	bool hasData();
-	short sendData(uint8_t *data, int numBytes, int timeout=10);
-	int getData(uint8_t *buff);
+	short sendData(uint8_t *data, int timeout=10);
+	uint8_t* getData();
 	void memberIRQ();
 	virtual ~UART();
 
-	UART_HandleTypeDef *handle;
+	UART_HandleTypeDef handle;
 	static std::map<USART_TypeDef*, UART*> objectMap;
 
 private:
+<<<<<<< HEAD
 	std::vector<uint8_t> msgBuff;
 	uint8_t *uartBuff;
 =======
@@ -68,6 +76,9 @@ private:
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+	uint8_t *buff, *safeBuff;
+>>>>>>> parent of d0a4466 (uart working well)
 	int packetSize_Bytes;
 	bool dataReady;
 };

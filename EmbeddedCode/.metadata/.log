@@ -1352,6 +1352,7 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 2 2 2021-11-04 23:56:05.644
 !MESSAGE ST-LINK firmware verification, Check required failed
@@ -1610,3 +1611,5 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)

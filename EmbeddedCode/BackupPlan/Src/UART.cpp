@@ -15,17 +15,25 @@ std::map<USART_TypeDef*, UART*> UART::objectMap = std::map<USART_TypeDef*, UART*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 UART::UART(UART_HandleTypeDef *handle) {
 	this->handle = handle;
 	uartBuff = NULL;
+=======
+UART::UART() {
+	buff = NULL;
+	safeBuff = NULL;
+>>>>>>> parent of d0a4466 (uart working well)
 }
 
 UART::~UART() {
-	if (uartBuff != NULL) free(uartBuff);
+	if (buff != NULL) free(buff);
+	if (safeBuff != NULL) free(buff);
 
-	HAL_UART_AbortReceive_IT(handle);
+	HAL_UART_AbortReceive_IT(&handle);
 
 	std::map<USART_TypeDef*, UART*>::iterator it;
+<<<<<<< HEAD
 	it = objectMap.find(handle->Instance);
 =======
 =======
@@ -52,6 +60,9 @@ UART::~UART() {
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+	it = objectMap.find(handle.Instance);
+>>>>>>> parent of d0a4466 (uart working well)
 	if (it != objectMap.end())
 		objectMap.erase(it);
 }
@@ -60,6 +71,7 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 	// TODO Auto-generated constructor stub
 	this->packetSize_Bytes = packetSize_Bytes;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +93,8 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 	buff = (uint8_t*)calloc(this->packetSize_Bytes, sizeof(uint8_t));
 	safeBuff = (uint8_t*)calloc(this->packetSize_Bytes, sizeof(uint8_t));
 
@@ -97,16 +111,20 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 	if (HAL_UART_Init(&handle) != HAL_OK)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 	{
 		return -1;
 	}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,6 +135,8 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 	if (handle.Instance == USART2) {
 		HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
 		HAL_NVIC_EnableIRQ(USART2_IRQn);
@@ -131,11 +151,14 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 	HAL_UART_Receive_IT(&handle, buff, this->packetSize_Bytes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 	return 0;
 }
 
@@ -143,25 +166,25 @@ bool UART::hasData() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HAL_UART_AbortReceive_IT(handle);
+=======
+	HAL_UART_AbortReceive_IT(&handle);
+>>>>>>> parent of d0a4466 (uart working well)
 	bool tmp = dataReady;
-	HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes);
+	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
 	return tmp;
 }
 
-int UART::getData(uint8_t *buff) {
-	HAL_UART_AbortReceive_IT(handle);
-
-	memset(buff, 0, sizeof(buff));
-	int len = msgBuff.size();
-	std::copy(msgBuff.begin(), msgBuff.end(), buff);
-	msgBuff.clear();
+uint8_t* UART::getData() {
+	HAL_UART_AbortReceive_IT(&handle);
+	std::memcpy(safeBuff, buff, (packetSize_Bytes)*sizeof(uint8_t));
 	dataReady = false;
-
-	HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes);
-	return len;
+	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
+	return safeBuff;
 }
 
+<<<<<<< HEAD
 short UART::sendData(uint8_t *data, int numBytes, int timeout) {
 	HAL_UART_Transmit(handle, data, numBytes, timeout);
 =======
@@ -192,11 +215,16 @@ short UART::sendData(uint8_t *data, int timeout) {
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+short UART::sendData(uint8_t *data, int timeout) {
+	HAL_UART_Transmit(&this->handle, data, packetSize_Bytes, timeout);
+>>>>>>> parent of d0a4466 (uart working well)
 
 	return 0;
 }
 
 void UART::memberIRQ() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,17 +240,22 @@ void UART::memberIRQ() {
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 	//dataReady = true;
 	//std::memset(buff, 0, sizeof(buff));
 	HAL_UART_Transmit(&handle, buff, packetSize_Bytes, 100);
 	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
 =======
 >>>>>>> parent of 2d4b392 (prep for i2c gyro testing)
+=======
+>>>>>>> parent of d0a4466 (uart working well)
 }
 
 
