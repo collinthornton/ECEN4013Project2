@@ -24,11 +24,9 @@
 #include "usb_device.h"
 #include "usb_device.h"
 
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
-#include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,17 +65,7 @@ const osThreadAttr_t blinkLED02_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
-/* Definitions for i2c_gyro */
-osThreadId_t i2c_gyroHandle;
-const osThreadAttr_t i2c_gyro_attributes = {
-  .name = "i2c_gyro",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
 /* USER CODE BEGIN PV */
-static const uint8_t GYRO_ADDR = 0b1101000 <<1; // GYRO  7 bit address (1101001 if SDO =HI)
-static const uint8_t GYRO_CTRL = 0x20; 			//GYRO REGISTERS
-static const uint8_t GYRO_OUT = 0xA8;
 
 /* USER CODE END PV */
 
@@ -89,7 +77,6 @@ static void MX_SPI1_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
 void StartTask02(void *argument);
-void StartGyro(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -161,9 +148,6 @@ int main(void)
 
   /* creation of blinkLED02 */
   blinkLED02Handle = osThreadNew(StartTask02, NULL, &blinkLED02_attributes);
-
-  /* creation of i2c_gyro */
-  i2c_gyroHandle = osThreadNew(StartGyro, NULL, &i2c_gyro_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -477,8 +461,7 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-	  osDelay(500);
+    osDelay(1);
   }
   /* USER CODE END 5 */
 }
@@ -492,66 +475,13 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTask02 */
 void StartTask02(void *argument)
 {
-
   /* USER CODE BEGIN StartTask02 */
-
   /* Infinite loop */
   for(;;)
   {
-  	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-  	  HAL_usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
-  	  uint8_t msg[10] = "hello\r\n";
-  	  HAL_UART_Transmit(&huart3, msg, 10, 1);
-  	  HAL_UART_Transmit(&huart2, msg, 10, 1);
-  	  osDelay(500);
-  	}
-  /* USER CODE END StartTask02 */
-}
-
-/* USER CODE BEGIN Header_StartGyro */
-/**
-* @brief Function implementing the i2c_gyro thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartGyro */
-void StartGyro(void *argument)
-{
-  /* USER CODE BEGIN StartGyro */
-	HAL_StatusTypeDef ret;
-	uint8_t buf[12];
-	uint8_t val[3]; //calculations from gyro
-  /* Infinite loop */
-  for(;;)
-  {
-	  buf[0]=GYRO_OUT;
-	 	  ret = HAL_I2C_Master_Transmit(&hi2c1, GYRO_ADDR, buf, 1, HAL_MAX_DELAY);
-	 	  if ( ret != HAL_OK ) {
-	 		  strcpy((char*)buf, "Error Tx\r\n");
-	 	  }
-	 	  else {
-
-	 	        // Read 1 byte from the  register
-	 	  ret = HAL_I2C_Master_Receive(&hi2c1, GYRO_ADDR, buf, 6, HAL_MAX_DELAY);
-	 	  if ( ret != HAL_OK ) {
-	 		  strcpy((char*)buf, "Error Rx\r\n");
-	 	  }
-	 	  else {
-
-	 	          //Combine the bytes
-	 	          val[0] = ((buf[0]<<4)|buf[1]);
-	 	          val[1] = ((buf[2]<<4)|buf[3]);
-	 	          val[2] = ((buf[4]<<4)|buf[5]);
-
-	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert to rad/s somehow?
-
-
-	 	          	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // Convert temperature to decimal format
-
-	 	      }
-	 	  }
+    osDelay(1);
   }
-  /* USER CODE END StartGyro */
+  /* USER CODE END StartTask02 */
 }
 
 /**
