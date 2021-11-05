@@ -24,11 +24,11 @@ public:
 	void memberIRQ();
 	virtual ~UART();
 
-	static std::map<UART_HandleTypeDef*, UART*> objectMap;
+	UART_HandleTypeDef handle;
+	static std::map<USART_TypeDef*, UART*> objectMap;
 
 private:
 	uint8_t *buff, *safeBuff;
-	UART_HandleTypeDef handle;
 	int packetSize_Bytes;
 	bool dataReady;
 };

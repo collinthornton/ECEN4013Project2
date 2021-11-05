@@ -7,7 +7,6 @@
 C_SRCS += \
 ../Src/fatfs.c \
 ../Src/freertos.c \
-../Src/main.c \
 ../Src/stm32f7xx_hal_msp.c \
 ../Src/stm32f7xx_hal_timebase_tim.c \
 ../Src/stm32f7xx_it.c \
@@ -27,7 +26,6 @@ CPP_SRCS += \
 C_DEPS += \
 ./Src/fatfs.d \
 ./Src/freertos.d \
-./Src/main.d \
 ./Src/stm32f7xx_hal_msp.d \
 ./Src/stm32f7xx_hal_timebase_tim.d \
 ./Src/stm32f7xx_it.d \

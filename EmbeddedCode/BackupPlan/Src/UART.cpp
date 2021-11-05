@@ -9,7 +9,7 @@
 #include "stm32f7xx_hal.h"
 #include "cmsis_os.h"
 
-std::map<UART_HandleTypeDef*, UART*> UART::objectMap = std::map<UART_HandleTypeDef*, UART*>();
+std::map<USART_TypeDef*, UART*> UART::objectMap = std::map<USART_TypeDef*, UART*>();
 
 
 UART::UART() {
@@ -23,8 +23,8 @@ UART::~UART() {
 
 	HAL_UART_AbortReceive_IT(&handle);
 
-	std::map<UART_HandleTypeDef*, UART*>::iterator it;
-	it = objectMap.find(&handle);
+	std::map<USART_TypeDef*, UART*>::iterator it;
+	it = objectMap.find(handle.Instance);
 	if (it != objectMap.end())
 		objectMap.erase(it);
 }
@@ -51,7 +51,18 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 		return -1;
 	}
 
-	objectMap.insert(std::pair<UART_HandleTypeDef*, UART*>(&handle, this));
+
+	if (handle.Instance == USART2) {
+		HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
+		HAL_NVIC_EnableIRQ(USART2_IRQn);
+	}
+	else if(handle.Instance == USART3) {
+		HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+		HAL_NVIC_EnableIRQ(USART3_IRQn);
+	}
+
+
+	objectMap.insert(std::pair<USART_TypeDef*, UART*>(handle.Instance, this));
 	HAL_UART_Receive_IT(&handle, buff, this->packetSize_Bytes);
 	return 0;
 }
@@ -59,26 +70,29 @@ int UART::init(USART_TypeDef *port, int baud, int packetSize_Bytes) {
 bool UART::hasData() {
 	HAL_UART_AbortReceive_IT(&handle);
 	bool tmp = dataReady;
-	HAL_UART_Receive_IT(&handle, buff, this->packetSize_Bytes);
+	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
 	return tmp;
 }
 
 uint8_t* UART::getData() {
 	HAL_UART_AbortReceive_IT(&handle);
-	std::memcpy(safeBuff, buff, (packetSize_Bytes+1)*sizeof(uint8_t));
+	std::memcpy(safeBuff, buff, (packetSize_Bytes)*sizeof(uint8_t));
+	dataReady = false;
 	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
 	return safeBuff;
 }
 
 short UART::sendData(uint8_t *data, int timeout) {
-	HAL_UART_Transmit(&this->handle, data, sizeof(*data)/sizeof(data[0]), timeout);
+	HAL_UART_Transmit(&this->handle, data, packetSize_Bytes, timeout);
 
 	return 0;
 }
 
 void UART::memberIRQ() {
-	dataReady = true;
-	HAL_UART_Receive_IT(&handle, buff, this->packetSize_Bytes);
+	//dataReady = true;
+	//std::memset(buff, 0, sizeof(buff));
+	HAL_UART_Transmit(&handle, buff, packetSize_Bytes, 100);
+	HAL_UART_Receive_IT(&handle, buff, packetSize_Bytes);
 }
 
 

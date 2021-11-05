@@ -50,10 +50,12 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
 
-UART_HandleTypeDef huart3;
-UART_HandleTypeDef huart2;
+
 
 UART usb, ble;
+
+UART_HandleTypeDef huart3;
+UART_HandleTypeDef huart2;
 
 /* Definitions for blinkLED01 */
 osThreadId_t blinkLED01Handle;
@@ -126,8 +128,12 @@ int main(void)
   MX_SPI1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  usb.init(USART3, 115200, 8);
-  ble.init(USART2, 9600, 8);
+
+
+  usb.init(USART3, 115200, 10);
+  ble.init(USART2, 9600, 10);
+  huart3 = usb.handle;
+  huart2 = ble.handle;
 
   /* USER CODE END 2 */
 
@@ -393,9 +399,11 @@ static void MX_USART2_UART_Init(void)
 }
 
 
+
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	std::map<UART_HandleTypeDef*, UART*>::iterator it;
-	it = UART::objectMap.find(huart);
+	std::map<USART_TypeDef*, UART*>::iterator it;
+	it = UART::objectMap.find(huart->Instance);
 	if(it != UART::objectMap.end())
 		it->second->memberIRQ();
 }
@@ -530,18 +538,17 @@ void StartTask02(void *argument)
   /* USER CODE BEGIN StartTask02 */
   /* Infinite loop */
 
-	uint8_t buff[1024] = "";
 	for(;;)
 	{
-	  //HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
 	  //HAL usbStat = HAL_UART_Receive(&huart3, buff, 1024, 100e3);
 
 
-		if(ble.hasData()) {
-			usb.sendData(ble.getData(), 10);
-		}
+	  if(usb.hasData()) {
+		usb.sendData(usb.getData(), 10);
+	  }
 	  //uint8_t msg[10] = "hello\r\n";
-	  //usb.sendData(msg, 1);
+	  //usb.sendData(msg, 10);
 	  //HAL_UART_Transmit(&huart3, msg, 10, 1);
 	  //HAL_UART_Transmit(&huart2, msg, 10, 1);
 	  osDelay(50);
