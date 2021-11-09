@@ -1,0 +1,10 @@
+02:43:15 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54336	    532	  14500	  69368	  10ef8	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+
+02:43:15 Build Finished. 0 errors, 0 warnings. (took 168ms)
+

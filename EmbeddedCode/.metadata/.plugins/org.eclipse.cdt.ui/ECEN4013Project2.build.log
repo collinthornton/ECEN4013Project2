@@ -1,0 +1,10 @@
+02:08:51 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+
+02:08:52 Build Finished. 0 errors, 0 warnings. (took 174ms)
+

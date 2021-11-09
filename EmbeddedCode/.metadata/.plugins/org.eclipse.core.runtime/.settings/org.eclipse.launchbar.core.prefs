@@ -1,7 +1,9 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BackupPlan
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BackupPlan,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ECEN4013Project2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:CustomBoard Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BackupPlan/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BackupPlan/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:CustomBoard\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ECEN4013Project2/activeLaunchMode=debug

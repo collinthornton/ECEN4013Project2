@@ -22,6 +22,7 @@ RM := rm -rf
 -include FATFS/Target/subdir.mk
 -include FATFS/App/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
+-include Core/ThreadSafe/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include subdir.mk
@@ -88,8 +89,8 @@ all: main-build
 main-build: ECEN4013Project2.elf secondary-outputs
 
 # Tool invocations
-ECEN4013Project2.elf: $(OBJS) $(USER_OBJS) /home/cthornton/Desktop/ECEN4013Project2/ECEN4013Project2/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "ECEN4013Project2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/cthornton/Desktop/ECEN4013Project2/ECEN4013Project2/STM32F103C8TX_FLASH.ld" -Wl,-Map="ECEN4013Project2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+ECEN4013Project2.elf: $(OBJS) $(USER_OBJS) /home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project\ 2/ECEN4013Project2/EmbeddedCode/ECEN4013Project2/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "ECEN4013Project2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/ECEN4013Project2/STM32F103C8TX_FLASH.ld" -Wl,-Map="ECEN4013Project2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

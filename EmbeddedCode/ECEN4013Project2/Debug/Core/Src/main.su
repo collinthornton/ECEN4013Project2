@@ -1,13 +1,11 @@
-Sensor.h:11:7:constexpr Sensor::Sensor(const Sensor&)	16	static
-IMU.h:13:7:constexpr IMU::IMU(const IMU&)	16	static
-main.cpp:94:5:int main()	16	static
-main.cpp:180:6:void SystemClock_Config()	88	static
-main.cpp:230:13:void MX_ADC1_Init()	24	static
-main.cpp:275:13:void MX_I2C1_Init()	8	static
-main.cpp:309:13:void MX_RTC_Init()	24	static
-main.cpp:377:13:void MX_SPI1_Init()	8	static
-main.cpp:415:13:void MX_WWDG_Init()	8	static
-main.cpp:445:13:void MX_GPIO_Init()	40	static
-main.cpp:478:6:void StartDefaultTask(void*)	16	static
-main.cpp:499:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
-main.cpp:516:6:void Error_Handler()	4	static,ignoring_inline_asm
+main.c:90:5:main	8	static
+main.c:174:6:SystemClock_Config	88	static
+main.c:221:13:MX_ADC1_Init	24	static
+main.c:266:13:MX_I2C1_Init	8	static
+main.c:300:13:MX_SPI1_Init	8	static
+main.c:338:13:MX_USART1_UART_Init	8	static
+main.c:371:13:MX_USART2_UART_Init	8	static
+main.c:404:13:MX_GPIO_Init	40	static
+main.c:471:6:StartDefaultTask	16	static
+main.c:492:6:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:509:6:Error_Handler	4	static,ignoring_inline_asm

@@ -55,6 +55,10 @@ void UsageFault_Handler(void);
 void DebugMon_Handler(void);
 void USB_LP_CAN1_RX0_IRQHandler(void);
 void TIM4_IRQHandler(void);
+void I2C1_EV_IRQHandler(void);
+void SPI1_IRQHandler(void);
+void USART1_IRQHandler(void);
+void USART2_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

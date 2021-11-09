@@ -58,8 +58,38 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SPI_SD_Sel_Pin GPIO_PIN_0
-#define SPI_SD_Sel_GPIO_Port GPIOB
+#define USB_LED_G_Pin GPIO_PIN_14
+#define USB_LED_G_GPIO_Port GPIOC
+#define BLE_LED_G_Pin GPIO_PIN_15
+#define BLE_LED_G_GPIO_Port GPIOC
+#define PWD_LED_G_Pin GPIO_PIN_0
+#define PWD_LED_G_GPIO_Port GPIOA
+#define PWD_LED_R_Pin GPIO_PIN_1
+#define PWD_LED_R_GPIO_Port GPIOA
+#define V_BAT_P_Pin GPIO_PIN_4
+#define V_BAT_P_GPIO_Port GPIOA
+#define SPI_SD_CS_Pin GPIO_PIN_0
+#define SPI_SD_CS_GPIO_Port GPIOB
+#define V_BAT_M_Pin GPIO_PIN_1
+#define V_BAT_M_GPIO_Port GPIOB
+#define SD_DETECT_Pin GPIO_PIN_2
+#define SD_DETECT_GPIO_Port GPIOB
+#define MLX_RDY_Pin GPIO_PIN_10
+#define MLX_RDY_GPIO_Port GPIOB
+#define MLX_TRIG_Pin GPIO_PIN_11
+#define MLX_TRIG_GPIO_Port GPIOB
+#define SD_LED_G_Pin GPIO_PIN_12
+#define SD_LED_G_GPIO_Port GPIOB
+#define BLE_INT_Pin GPIO_PIN_13
+#define BLE_INT_GPIO_Port GPIOB
+#define BLE_STATUS_Pin GPIO_PIN_14
+#define BLE_STATUS_GPIO_Port GPIOB
+#define BLE_EN_Pin GPIO_PIN_15
+#define BLE_EN_GPIO_Port GPIOB
+#define GPS_LED_G_Pin GPIO_PIN_8
+#define GPS_LED_G_GPIO_Port GPIOA
+#define PWD_LED_B_Pin GPIO_PIN_9
+#define PWD_LED_B_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

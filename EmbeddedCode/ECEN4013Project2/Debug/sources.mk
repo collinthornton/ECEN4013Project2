@@ -32,6 +32,7 @@ CPP_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Core/ThreadSafe \
 Drivers/STM32F1xx_HAL_Driver/Src \
 FATFS/App \
 FATFS/Target \
