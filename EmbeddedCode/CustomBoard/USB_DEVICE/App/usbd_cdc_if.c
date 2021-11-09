@@ -50,7 +50,8 @@
   */
 
 /* USER CODE BEGIN PRIVATE_TYPES */
-extern uint8_t buffer[64];
+uint8_t buffer[64];
+short length = 0;
 /* USER CODE END PRIVATE_TYPES */
 
 /**
@@ -263,11 +264,12 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
 
-  memset(buffer, '\0', 0);
   uint8_t len = (uint8_t) *Len;
 
-  memcpy(buffer, Buf, len);
+  memcpy(buffer+length, Buf, len);
   memset(Buf, '\0', 64);
+
+  length += len;
   return (USBD_OK);
   /* USER CODE END 6 */
 }
@@ -298,6 +300,30 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 }
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
+uint8_t CDC_ReadLine(uint8_t* Buf)
+{
+	memset(Buf, '\0', 64);
+
+	while(buffer[length-1] != '\n') {
+		return 0;
+	}
+
+	memcpy(Buf, buffer, length*sizeof(uint8_t));
+	return length;
+}
+
+uint8_t CDC_ReadBuffer(uint8_t* Buf)
+{
+	memcpy(Buf, buffer, length*sizeof(uint8_t));
+	return length;
+}
+
+
+uint8_t CDC_ClearBuffer()
+{
+	memset(buffer, '\0', 64);
+	length = 0;
+}
 
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 

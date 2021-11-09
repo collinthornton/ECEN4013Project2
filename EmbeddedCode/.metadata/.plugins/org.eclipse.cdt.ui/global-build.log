@@ -1438,3 +1438,783 @@ arm-none-eabi-size   CustomBoard.elf
   54336	    532	  14500	  69368	  10ef8	CustomBoard.elf
 Finished building: default.size.stdout
  
+02:51:34 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  51176	    532	  14484	  66192	  10290	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+02:58:04 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  51160	    532	  14484	  66176	  10280	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:01:39 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:458:9: warning: unused variable 'len' [-Wunused-variable]
+  458 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  51884	    532	  14484	  66900	  10554	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:02:18 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:460:9: warning: unused variable 'len' [-Wunused-variable]
+  460 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  51888	    532	  14484	  66904	  10558	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:02:52 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51888	    532	  14484	  66904	  10558	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:03:16 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:461:9: warning: unused variable 'len' [-Wunused-variable]
+  461 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  51904	    532	  14484	  66920	  10568	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:03:38 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51904	    532	  14484	  66920	  10568	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:04:13 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51904	    532	  14484	  66920	  10568	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:04:36 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51904	    532	  14484	  66920	  10568	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:05:16 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51904	    532	  14484	  66920	  10568	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:35:07 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+03:35:07 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:158:3: error: 'ledDisplayHandle' was not declared in this scope; did you mean 'ledDisplay'?
+  158 |   ledDisplayHandle = osThreadNew(StartLEDDisplay, NULL, &ledDisplay_attributes);
+      |   ^~~~~~~~~~~~~~~~
+      |   ledDisplay
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+../Core/Src/main.cpp: In function 'void StartLEDDisplay(void*)':
+../Core/Src/main.cpp:478:21: error: 'BLE_LED_G_Port' was not declared in this scope; did you mean 'BLE_LED_G_Pin'?
+  478 |  HAL_GPIO_TogglePin(BLE_LED_G_Port, BLE_LED_G_Pin);
+      |                     ^~~~~~~~~~~~~~
+      |                     BLE_LED_G_Pin
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+03:35:08 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+03:35:35 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+03:35:36 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:158:3: error: 'ledDisplayHandle' was not declared in this scope; did you mean 'ledDisplay'?
+  158 |   ledDisplayHandle = osThreadNew(StartLEDDisplay, NULL, &ledDisplay_attributes);
+      |   ^~~~~~~~~~~~~~~~
+      |   ledDisplay
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+03:35:36 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+03:35:41 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:158:3: error: 'ledDisplayHandle' was not declared in this scope; did you mean 'ledDisplay'?
+  158 |   ledDisplayHandle = osThreadNew(StartLEDDisplay, NULL, &ledDisplay_attributes);
+      |   ^~~~~~~~~~~~~~~~
+      |   ledDisplay
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+03:36:10 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+03:36:10 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:36:11 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+03:36:14 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:41:43 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+03:41:44 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:41:45 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+03:41:49 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:42:36 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:45:33 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  52080	    532	  14484	  67096	  10618	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:50:53 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:469:9: warning: unused variable 'len' [-Wunused-variable]
+  469 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55496	    532	  14500	  70528	  11380	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+03:51:37 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55496	    532	  14500	  70528	  11380	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+03:52:49 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:469:9: warning: unused variable 'len' [-Wunused-variable]
+  469 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55512	    532	  14500	  70544	  11390	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+14:21:28 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55512	    532	  14500	  70544	  11390	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:29:25 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ReadLine':
+../USB_DEVICE/App/usbd_cdc_if.c:304:1: warning: control reaches end of non-void function [-Wreturn-type]
+  304 | }
+      | ^
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:469:9: warning: unused variable 'len' [-Wunused-variable]
+  469 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55512	    532	  14500	  70544	  11390	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+14:29:55 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55512	    532	  14500	  70544	  11390	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:45:29 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+14:45:29 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../USB_DEVICE/App/usbd_cdc_if.c:320:1: error: expected identifier or '(' before '}' token
+  320 | }
+      | ^
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ClearBuffer':
+../USB_DEVICE/App/usbd_cdc_if.c:326:1: warning: control reaches end of non-void function [-Wreturn-type]
+  326 | }
+      | ^
+make: *** [USB_DEVICE/App/subdir.mk:25: USB_DEVICE/App/usbd_cdc_if.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:469:9: warning: unused variable 'len' [-Wunused-variable]
+  469 |     int len = ble.getData(buff);
+      |         ^~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+14:45:31 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+14:45:52 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+14:45:52 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ClearBuffer':
+../USB_DEVICE/App/usbd_cdc_if.c:326:1: warning: control reaches end of non-void function [-Wreturn-type]
+  326 | }
+      | ^
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+14:45:54 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+14:46:00 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:46:30 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:49:51 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:51:15 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+14:52:31 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14508	  70712	  11438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:57:04 **** Incremental Build of configuration Debug for project BackupPlan ****
+make -j12 all 
+arm-none-eabi-size   BackupPlan.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58656	    548	  28668	  87872	  15740	BackupPlan.elf
+Finished building: default.size.stdout
+ 
+14:57:04 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:468:9: warning: unused variable 'len' [-Wunused-variable]
+  468 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14572	  70776	  11478	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+14:57:08 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+make -j12 all 
+arm-none-eabi-size   ECEN4013Project2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55084	    512	  14336	  69932	  1112c	ECEN4013Project2.elf
+Finished building: default.size.stdout
+ 
+14:57:14 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14572	  70776	  11478	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+14:59:50 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55672	    532	  14572	  70776	  11478	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+15:01:09 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ClearBuffer':
+../USB_DEVICE/App/usbd_cdc_if.c:326:1: warning: control reaches end of non-void function [-Wreturn-type]
+  326 | }
+      | ^
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55664	    532	  14572	  70768	  11470	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:01:24 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55664	    532	  14572	  70768	  11470	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+15:10:34 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/UART.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/UART.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/UART.cpp: In member function 'int UART::getData(uint8_t*)':
+../Core/Src/UART.cpp:67:21: warning: argument to 'sizeof' in 'void* memset(void*, int, size_t)' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+   67 |  memset(buff, '\0', sizeof(buff));
+      |                     ^~~~~~~~~~~~
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:463:9: warning: unused variable 'len' [-Wunused-variable]
+  463 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55664	    532	  14572	  70768	  11470	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:11:28 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55664	    532	  14572	  70768	  11470	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+15:14:03 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'void StartDefaultTask(void*)':
+../Core/Src/main.cpp:463:9: warning: unused variable 'len' [-Wunused-variable]
+  463 |     int len = ble.getData(buff);
+      |         ^~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55664	    532	  14572	  70768	  11470	CustomBoard.elf
+Finished building: default.size.stdout
+Finished building: CustomBoard.bin
+ 
+ 
+Finished building: CustomBoard.list
+ 
+15:15:51 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55648	    532	  14572	  70752	  11460	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:16:30 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:17:44 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:20:36 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:21:49 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+15:26:01 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+15:27:08 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=4 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  55728	    532	  14572	  70832	  114b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 

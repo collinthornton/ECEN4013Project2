@@ -38,7 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-uint8_t buffer[64];
+uint8_t usbBuffer[64];
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,6 +65,13 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+
+osThreadId_t ledDisplayHandle;
+const osThreadAttr_t ledDisplay_attributes = {
+  .name = "ledDisplay",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -76,6 +83,7 @@ static void MX_ADC_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 void StartDefaultTask(void *argument);
+void StartLEDDisplay(void *arguments);
 
 /* USER CODE BEGIN PFP */
 
@@ -120,7 +128,7 @@ int main(void)
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  buffer[0] = '\0';
+  ble.init(USART1, 9600, 1);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -147,7 +155,7 @@ int main(void)
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+  ledDisplayHandle = osThreadNew(StartLEDDisplay, NULL, &ledDisplay_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -170,11 +178,6 @@ int main(void)
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	//if(huart->Instance == USART3) {
-		//usb.memberIRQ();
-		//HAL_UART_Transmit(&huart3, rxBuff, 1, 10);
-		//HAL_UART_Receive_IT(&huart3, rxBuff, 1);
-	//}
 	std::map<USART_TypeDef*, UART*>::iterator it;
 	it = UART::objectMap.find(huart->Instance);
 	if(it != UART::objectMap.end())
@@ -437,54 +440,42 @@ void StartDefaultTask(void *argument)
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
-  std::vector<uint8_t> msgBuff;
-  uint8_t buff[10] = "Hello!\r\n";//{0};
+  uint8_t buff[10] = "+++";//{0};
 
   HAL_GPIO_WritePin(BLE_EN_GPIO_Port, BLE_EN_Pin, GPIO_PIN_SET);
-  uint8_t tmp[64] = "+++";
-  uint8_t *msg = msgBuff.data();
 
-  ble.sendData(tmp, sizeof(tmp));
-
-  memcpy(tmp, "AT\r\n", sizeof(tmp));
+  HAL_Delay(1000);
+  ble.sendData(buff, sizeof(buff), 100);
+  CDC_Transmit_FS(buff, sizeof(buff));
   /* Infinite loop */
   for(;;)
   {
 	  //CDC_Transmit_FS(buff, sizeof(buff));
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_14);
 
-	  if(buffer[0] != '\0') {
+	  if(CDC_ReadLine(usbBuffer)) {
 		  //int len = usb.getData(buff);
-		  CDC_Transmit_FS(buffer, sizeof(buffer));
+		  CDC_Transmit_FS(usbBuffer, sizeof(usbBuffer));
+		  ble.sendData(usbBuffer, sizeof(usbBuffer), 100);
 
-		  msg = msgBuff.data();
-		  CDC_Transmit_FS(msg, msgBuff.size());
-
-		  //usb.sendData(buff, len, 2);
-		  for(int i=0; buffer[i] != '\0' && i<64; ++i) {
-			  msgBuff.push_back(buffer[i]);
-		  }
-
-		  msg = msgBuff.data();
-		  if(msg[msgBuff.size()-1] == '\n') {
-
-			  memcpy(tmp, "Transmitted: ", 13);
-			  CDC_Transmit_FS(tmp, sizeof(tmp));
-
-			  CDC_Transmit_FS(msg, sizeof(msg));
-			  ble.sendData(msg, sizeof(msg), 2);
-			  msgBuff.clear();
-		  }
-		  memset(buffer, '\0', 64);
+		  CDC_ClearBuffer();
 	  }
 	  if(ble.hasData()) {
-		  //int len = ble.getData(buff);
+		  ble.getData(buff);
 		  CDC_Transmit_FS(buff, sizeof(buff));
 		  //usb.sendData(buff, len, 2);
 	  }
-	  osDelay(100);
+	  osDelay(10);
   }
   /* USER CODE END 5 */
+}
+
+void StartLEDDisplay(void *arguments) {
+  for(;;)
+  {
+	HAL_GPIO_TogglePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin);
+	if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) osDelay(100);
+	else osDelay(500);
+  }
 }
 
 /**

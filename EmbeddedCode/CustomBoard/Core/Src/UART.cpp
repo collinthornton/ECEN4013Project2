@@ -64,7 +64,7 @@ bool UART::hasData() {
 int UART::getData(uint8_t *buff) {
 	HAL_UART_AbortReceive_IT(handle);
 
-	memset(buff, 0, sizeof(buff));
+	memset(buff, '\0', sizeof(buff));
 	int len = msgBuff.size();
 	std::copy(msgBuff.begin(), msgBuff.end(), buff);
 	msgBuff.clear();
