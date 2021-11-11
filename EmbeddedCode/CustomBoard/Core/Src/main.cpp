@@ -9,26 +9,29 @@
   * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "cmsis_os.h"
+#include <main.h>
 #include "fatfs.h"
 #include "usb_device.h"
-#include "usbd_cdc_if.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "usbd_cdc_if.h"
 #include "UART.h"
 #include "string.h"
-#include <vector>
+#include "stdlib.h"
+#include "stdio.h"
+#include <math.h>
+#include <mpu6050.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,7 +41,36 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-uint8_t usbBuffer[64];
+uint8_t usbBuffer[16];
+
+typedef struct {
+	uint16_t UTC_Hour;
+	uint16_t UTC_Min;
+	uint16_t UTC_Sec;
+	uint16_t UTC_MicroSec;
+
+	float	Latitude;
+	double  LatitudeDecimal;
+	char	NS_Indicator;
+
+	float	Longitude;
+	double 	LongitudeDecimal;
+	char	EW_Indicator;
+
+	uint16_t	PositionFixIndicator;
+	uint16_t	SatellitesUsed;
+	float	HDOP;
+	float	MSL_Altitude;
+	char	MSL_Units;
+	float	Geoid_Separation;
+	char	Geoid_Units;
+
+	uint16_t	AgeofDiffCorr;
+	char	DiffRefStationID[4];
+	char	CheckSum[2];
+
+
+} GPGGA;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,6 +80,7 @@ uint8_t usbBuffer[64];
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
+DMA_HandleTypeDef hdma_adc;
 
 I2C_HandleTypeDef hi2c1;
 
@@ -56,24 +89,11 @@ SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
-UART usb(&huart1), ble(&huart2);
-
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-
-osThreadId_t ledDisplayHandle;
-const osThreadAttr_t ledDisplay_attributes = {
-  .name = "ledDisplay",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 /* USER CODE BEGIN PV */
+UART gps(&huart1), ble(&huart2);
+MPU6050_t mpu6050;
 
+uint32_t adcValue[2];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -82,11 +102,9 @@ static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
-void StartDefaultTask(void *argument);
-void StartLEDDisplay(void *arguments);
-
+static void MX_DMA_Init(void);
 /* USER CODE BEGIN PFP */
-
+double convertDegMinToDecDeg (float degMin);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -110,7 +128,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  GPGGA GPSData;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -126,50 +144,129 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_FATFS_Init();
+  MX_DMA_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  ble.init(USART1, 9600, 1);
+  HAL_ADC_Start_DMA(&hadc, adcValue, 2);
+
+  ble.init(USART2, 9600, 1);
+  gps.init(USART1, 9600, 1);
+
+  short attempts = 0;
+  while(MPU6050_Init(&hi2c1) == 1 && attempts < 10){
+	  ++attempts;
+	  HAL_Delay(10);
+  }
   /* USER CODE END 2 */
 
-  /* Init scheduler */
-  osKernelInitialize();
-
-  /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
-
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
-
-  /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
-
-  /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  ledDisplayHandle = osThreadNew(StartLEDDisplay, NULL, &ledDisplay_attributes);
-  /* USER CODE END RTOS_THREADS */
-
-  /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
-  /* USER CODE END RTOS_EVENTS */
-
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint8_t buff[1024] = {0};
+  char msg[100] = {0};
+
+  HAL_GPIO_WritePin(BLE_EN_GPIO_Port, BLE_EN_Pin, GPIO_PIN_SET);
+
+  //HAL_Delay(100);
+  strcpy((char*)buff, "+++");
+  ble.sendData(buff, strlen((char*)buff), 100);
+
+  HAL_Delay(100);
+
+  strcpy((char*)buff, "AT+setConnInt 36 24 2 400\r\n");
+  ble.sendData(buff, strlen((char*)buff), 100);
+
+
+
+  int count = 0, overlap = 10;
+
   while (1)
   {
+
+	  if(CDC_ReadLine(usbBuffer)) {
+		  CDC_Transmit_FS(usbBuffer, sizeof(usbBuffer));
+		  ble.sendData(usbBuffer, sizeof(usbBuffer), 100);
+
+		  CDC_ClearBuffer();
+	  }
+	  if(gps.readLine(buff, sizeof(buff), 50)) {
+
+		  //gps.getData(buff, sizeof(buff));
+		  //CDC_Transmit_FS(buff, sizeof(buff));
+
+		  char *str = strstr((char*)buff, "$GNGGA,");
+		  if(str!=NULL)
+		  {
+			  memset(&GPSData,0,sizeof(GPSData));
+			  sscanf(str,"$GNGGA,%2hu%2hu%2hu.%3hu,%f,%c,%f,%c,%hu,%hu,%f,%f,%c,%f,%c,,*%2s",
+					  &GPSData.UTC_Hour,&GPSData.UTC_Min,&GPSData.UTC_Sec,&GPSData.UTC_MicroSec,&GPSData.Latitude,
+					  &GPSData.NS_Indicator,&GPSData.Longitude,&GPSData.EW_Indicator,&GPSData.PositionFixIndicator,
+					  &GPSData.SatellitesUsed,&GPSData.HDOP,&GPSData.MSL_Altitude,&GPSData.MSL_Units,&GPSData.Geoid_Separation,
+					  &GPSData.Geoid_Units,GPSData.CheckSum);
+
+			  if(GPSData.NS_Indicator==0)
+				  GPSData.NS_Indicator='-';
+			  if(GPSData.EW_Indicator==0)
+				  GPSData.EW_Indicator='-';
+			  if(GPSData.Geoid_Units==0)
+				  GPSData.Geoid_Units='-';
+			  if(GPSData.MSL_Units==0)
+				  GPSData.MSL_Units='-';
+
+			  GPSData.LatitudeDecimal=convertDegMinToDecDeg(GPSData.Latitude);
+			  GPSData.LongitudeDecimal=convertDegMinToDecDeg(GPSData.Longitude);
+
+			  if(GPSData.SatellitesUsed > 3) HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_SET);
+			  else HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_RESET);
+
+			  memset(buff, '\0', sizeof(buff));
+		  }
+	  }
+	  if(ble.readLine(buff, sizeof(buff), 50)) {
+		  //ble.getData(buff, sizeof(buff));
+		  strcpy(msg, (char*)buff);
+		  sprintf((char*)buff, "\r\n\r\nBLE MSG: %s\r\n\r\n",msg);
+		  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  }
+
+
+	  if(++count >= overlap) {
+		  HAL_GPIO_TogglePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin);
+
+		  //strcpy((char*)buff, "AT+getStatus\r\n");
+		  //ble.sendData(buff, strlen((char*)buff));
+
+		  //strcpy((char*)buff, "AT+getPara\r\n");
+		  //ble.sendData(buff, strlen((char*)buff));
+
+		  //strcpy((char*)buff, "AT+getName\r\n");
+		  //ble.sendData(buff, strlen((char*)buff), 100);
+
+		  //strcpy((char*)buff, "AT+getAddr\r\n");
+		  //ble.sendData(buff, strlen((char*)buff), 100);
+
+		  strcpy((char*)buff, "AT+getInfo\r\n");
+		  ble.sendData(buff, strlen((char*)buff), 100);
+		  count = 0;
+	  }
+
+	  if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) overlap = 10;
+	  else overlap = 50;
+
+	  MPU6050_Read_All(&hi2c1, &mpu6050);
+
+	  sprintf((char*)buff, "\u001b[0m\u001b[1mADC1: \u001b[0m%8.3f | \u001b[0m\u001b[1mADC2: \u001b[0m%8.3f                                                                \033[1B\r\u001b[0m\u001b[1m"
+			  "\u001b[0m\u001b[1mRoll: \u001b[0m%8.3f | \u001b[0m\u001b[1mPitch: \u001b[0m%8.3f | \u001b[0m\u001b[1mAX: \u001b[0m%8.3f | \u001b[0m\u001b[1mAY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGX: \u001b[0m%8.3f | \u001b[0m\u001b[1mGY: \u001b[0m%8.3f\033[1B\r\u001b[0m\u001b[1m"
+			  "\u001b[0m\u001b[1mTime: \u001b[0m%hu:%hu:%hu (UTC) | \u001b[0m\u001b[1mLatitude: \u001b[0m%f %c | \u001b[0m\u001b[1mLongitude: \u001b[0m%f %c | \u001b[0m\u001b[1mSatellites Fixed: \u001b[0m%d\033[1A\033[1A\r",
+
+			  adcValue[0]*3.3/4096, adcValue[1]*3.3/4096,
+			  mpu6050.KalmanAngleX, mpu6050.KalmanAngleY, mpu6050.Ax, mpu6050.Ay, mpu6050.Gx, mpu6050.Gy,
+			  GPSData.UTC_Hour, GPSData.UTC_Min, GPSData.UTC_Sec,
+			  GPSData.Latitude, GPSData.NS_Indicator,
+			  GPSData.Longitude, GPSData.EW_Indicator,
+			  GPSData.SatellitesUsed);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+
+	  HAL_Delay(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -177,22 +274,6 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	std::map<USART_TypeDef*, UART*>::iterator it;
-	it = UART::objectMap.find(huart->Instance);
-	if(it != UART::objectMap.end())
-		it->second->memberIRQ();
-}
-
-int _write(int32_t file, uint8_t *ptr, int32_t len)
-{
-/* Implement your write code here, this is used by puts and printf for example */
-int i=0;
-for(i=0 ; i<len ; i++)
-ITM_SendChar((*ptr++));
-return len;
-
-}
 
 /**
   * @brief System Clock Configuration
@@ -264,12 +345,12 @@ static void MX_ADC_Init(void)
   hadc.Init.LowPowerAutoWait = ADC_AUTOWAIT_DISABLE;
   hadc.Init.LowPowerAutoPowerOff = ADC_AUTOPOWEROFF_DISABLE;
   hadc.Init.ChannelsBank = ADC_CHANNELS_BANK_A;
-  hadc.Init.ContinuousConvMode = DISABLE;
-  hadc.Init.NbrOfConversion = 1;
+  hadc.Init.ContinuousConvMode = ENABLE;
+  hadc.Init.NbrOfConversion = 2;
   hadc.Init.DiscontinuousConvMode = DISABLE;
   hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc.Init.DMAContinuousRequests = DISABLE;
+  hadc.Init.DMAContinuousRequests = ENABLE;
   if (HAL_ADC_Init(&hadc) != HAL_OK)
   {
     Error_Handler();
@@ -279,6 +360,14 @@ static void MX_ADC_Init(void)
   sConfig.Channel = ADC_CHANNEL_9;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_4CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_4;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -305,7 +394,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -361,6 +450,22 @@ static void MX_SPI1_Init(void)
 
 }
 
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+}
 
 /**
   * @brief GPIO Initialization Function
@@ -425,58 +530,28 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	std::map<USART_TypeDef*, UART*>::iterator it;
+	it = UART::objectMap.find(huart->Instance);
+	if(it != UART::objectMap.end())
+		it->second->memberIRQ();
+}
 
-/* USER CODE END 4 */
-
-/* USER CODE BEGIN Header_StartDefaultTask */
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+double convertDegMinToDecDeg (float degMin)
 {
-  /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
-  /* USER CODE BEGIN 5 */
-  uint8_t buff[10] = "+++";//{0};
+  double min = 0.0;
+  double decDeg = 0.0;
 
-  HAL_GPIO_WritePin(BLE_EN_GPIO_Port, BLE_EN_Pin, GPIO_PIN_SET);
+  //get the minutes, fmod() requires double
+  min = fmod((double)degMin, 100.0);
 
-  HAL_Delay(1000);
-  ble.sendData(buff, sizeof(buff), 100);
-  CDC_Transmit_FS(buff, sizeof(buff));
-  /* Infinite loop */
-  for(;;)
-  {
-	  //CDC_Transmit_FS(buff, sizeof(buff));
+  //rebuild coordinates in decimal degrees
+  degMin = (int) ( degMin / 100 );
+  decDeg = degMin + ( min / 60 );
 
-	  if(CDC_ReadLine(usbBuffer)) {
-		  //int len = usb.getData(buff);
-		  CDC_Transmit_FS(usbBuffer, sizeof(usbBuffer));
-		  ble.sendData(usbBuffer, sizeof(usbBuffer), 100);
-
-		  CDC_ClearBuffer();
-	  }
-	  if(ble.hasData()) {
-		  ble.getData(buff);
-		  CDC_Transmit_FS(buff, sizeof(buff));
-		  //usb.sendData(buff, len, 2);
-	  }
-	  osDelay(10);
-  }
-  /* USER CODE END 5 */
+  return decDeg;
 }
-
-void StartLEDDisplay(void *arguments) {
-  for(;;)
-  {
-	HAL_GPIO_TogglePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin);
-	if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) osDelay(100);
-	else osDelay(500);
-  }
-}
+/* USER CODE END 4 */
 
 /**
   * @brief  Period elapsed callback in non blocking mode

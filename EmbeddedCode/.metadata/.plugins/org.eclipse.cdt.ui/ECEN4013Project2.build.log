@@ -1,4 +1,4 @@
-14:57:08 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
+02:41:47 **** Incremental Build of configuration Debug for project ECEN4013Project2 ****
 make -j12 all 
 arm-none-eabi-size   ECEN4013Project2.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   ECEN4013Project2.elf
 Finished building: default.size.stdout
  
 
-14:57:08 Build Finished. 0 errors, 0 warnings. (took 485ms)
+02:41:47 Build Finished. 0 errors, 0 warnings. (took 441ms)
 

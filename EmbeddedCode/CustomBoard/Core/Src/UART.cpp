@@ -6,7 +6,7 @@
  */
 
 #include "UART.h"
-#include "cmsis_os.h"
+#include <algorithm>    // std::find
 #include "stm32l1xx_hal.h"
 
 
@@ -15,6 +15,7 @@ std::map<USART_TypeDef*, UART*> UART::objectMap = std::map<USART_TypeDef*, UART*
 
 UART::UART(UART_HandleTypeDef *handle) {
 	this->handle = handle;
+	lastTime = 0;
 	uartBuff = NULL;
 }
 
@@ -61,10 +62,10 @@ bool UART::hasData() {
 	return tmp;
 }
 
-int UART::getData(uint8_t *buff) {
+int UART::getData(uint8_t *buff, int length) {
 	HAL_UART_AbortReceive_IT(handle);
 
-	memset(buff, '\0', sizeof(buff));
+	memset(buff, '\0', length);
 	int len = msgBuff.size();
 	std::copy(msgBuff.begin(), msgBuff.end(), buff);
 	msgBuff.clear();
@@ -74,6 +75,35 @@ int UART::getData(uint8_t *buff) {
 	return len;
 }
 
+int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
+	if(HAL_GetTick() - lastTime < minDelay) return 0;
+
+	if(HAL_UART_AbortReceive_IT(handle) != HAL_OK) {
+		__NOP();
+	}
+
+	memset(buff, '\0', length);
+	std::deque<uint8_t>::iterator it = std::find (msgBuff.begin(), msgBuff.end(), '\n');
+
+	if(it == msgBuff.end()) {
+		if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes) != HAL_OK) {
+			__NOP();
+		}
+		return 0;
+	}
+
+
+	std::copy(msgBuff.begin(), it, buff);
+
+	int len = std::distance(msgBuff.begin(),it);
+	while(msgBuff.begin() != it) msgBuff.pop_front();
+	msgBuff.pop_front();
+
+	if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes != HAL_OK)){
+		__NOP();
+	}
+	return len;
+}
 short UART::sendData(uint8_t *data, int numBytes, int timeout) {
 	HAL_UART_Transmit(handle, data, numBytes, timeout);
 
@@ -86,6 +116,9 @@ void UART::memberIRQ() {
 	for (int i=0; i<packetSize_Bytes; ++i) {
 		msgBuff.push_back(uartBuff[i]);
 	}
+	while(msgBuff.size() > 512) msgBuff.pop_front();
+
+	lastTime = HAL_GetTick();
 
 	HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes);
 }

@@ -1,7 +1,7 @@
 newlib_lock_glue.c:45:13:Error_Handler	4	static
-stm32_lock.h:280:20:stm32_lock_init	24	static,ignoring_inline_asm
-stm32_lock.h:294:20:stm32_lock_acquire	24	static,ignoring_inline_asm
-stm32_lock.h:305:20:stm32_lock_release	24	static,ignoring_inline_asm
+stm32_lock.h:150:20:stm32_lock_init	16	static,ignoring_inline_asm
+stm32_lock.h:161:20:stm32_lock_acquire	24	static,ignoring_inline_asm
+stm32_lock.h:183:20:stm32_lock_release	16	static,ignoring_inline_asm
 lock.h:41:13:__retarget_lock_init	16	static
 lock.h:43:13:__retarget_lock_init_recursive	16	static,ignoring_inline_asm
 lock.h:45:13:__retarget_lock_close	16	static

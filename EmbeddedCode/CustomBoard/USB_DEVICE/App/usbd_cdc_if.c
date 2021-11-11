@@ -23,6 +23,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
+#include "stm32l1xx_hal.h"
 
 /* USER CODE END INCLUDE */
 
@@ -50,7 +51,7 @@
   */
 
 /* USER CODE BEGIN PRIVATE_TYPES */
-uint8_t buffer[64];
+uint8_t buffer[16];
 short length = 0;
 /* USER CODE END PRIVATE_TYPES */
 
@@ -267,7 +268,9 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   uint8_t len = (uint8_t) *Len;
 
   memcpy(buffer+length, Buf, len);
-  memset(Buf, '\0', 64);
+  memset(Buf, '\0', 16);
+
+  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_14);
 
   length += len;
   return (USBD_OK);
@@ -295,6 +298,8 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
   }
   USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
   result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);
+  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_14);
+
   /* USER CODE END 7 */
   return result;
 }
@@ -302,7 +307,7 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
 uint8_t CDC_ReadLine(uint8_t* Buf)
 {
-	memset(Buf, '\0', 64);
+	memset(Buf, '\0', 16);
 
 	while(buffer[length-1] != '\n') {
 		return 0;
@@ -321,7 +326,7 @@ uint8_t CDC_ReadBuffer(uint8_t* Buf)
 
 uint8_t CDC_ClearBuffer()
 {
-	memset(buffer, '\0', 64);
+	memset(buffer, '\0', 16);
 	length = 0;
 }
 

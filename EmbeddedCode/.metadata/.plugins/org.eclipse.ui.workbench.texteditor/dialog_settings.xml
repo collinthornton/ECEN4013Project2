@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="PinState"/>
+		<item key="selection" value="\n"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="\n"/>
+			<item value="\033[0;31m|"/>
+			<item value="msgBuff"/>
 			<item value="pinstate"/>
 			<item value="pin"/>
 			<item value="libc_init_array"/>
@@ -20,11 +23,9 @@
 			<item value="RXCPLT"/>
 			<item value="HAL_UART_IRQ"/>
 			<item value="huart"/>
-			<item value="HANDLER"/>
-			<item value="UART_TypeDef"/>
-			<item value="objectMap"/>
 		</list>
 		<list key="replacehistory">
+			<item value="|"/>
 			<item value="this-&gt;handle"/>
 			<item value="handle"/>
 			<item value="handle-&gt;"/>
