@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="\n"/>
+		<item key="selection" value="user"/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="false"/>
+		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="user_diskio.h"/>
+			<item value="user"/>
+			<item value="GPSData"/>
+			<item value="mpu6050"/>
 			<item value="\n"/>
 			<item value="\033[0;31m|"/>
 			<item value="msgBuff"/>
@@ -19,12 +23,10 @@
 			<item value="this-&gt;handle"/>
 			<item value="&amp;this-&gt;handle"/>
 			<item value="&amp;handle"/>
-			<item value="handle."/>
-			<item value="RXCPLT"/>
-			<item value="HAL_UART_IRQ"/>
-			<item value="huart"/>
 		</list>
 		<list key="replacehistory">
+			<item value="gpsData"/>
+			<item value="MPU6050"/>
 			<item value="|"/>
 			<item value="this-&gt;handle"/>
 			<item value="handle"/>

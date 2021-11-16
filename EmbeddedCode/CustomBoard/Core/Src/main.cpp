@@ -25,11 +25,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#define CSV_OUTPUT  1
+
 #include "usbd_cdc_if.h"
 #include "UART.h"
 #include "string.h"
 #include "stdlib.h"
 #include "stdio.h"
+#include "stdarg.h"
 #include <math.h>
 #include <mpu6050.h>
 /* USER CODE END Includes */
@@ -86,6 +89,7 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
 
+
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
@@ -128,7 +132,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  GPGGA GPSData;
+  GPGGA gpsData;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -152,11 +156,21 @@ int main(void)
   ble.init(USART2, 9600, 1);
   gps.init(USART1, 9600, 1);
 
-  short attempts = 0;
-  while(MPU6050_Init(&hi2c1) == 1 && attempts < 10){
-	  ++attempts;
-	  HAL_Delay(10);
-  }
+  MPU6050_Init(&hi2c1);
+
+  memset(&gpsData,0,sizeof(gpsData));
+  gpsData.LatitudeDecimal = 0.0;
+  gpsData.LongitudeDecimal = 0.0;
+  if(gpsData.NS_Indicator==0)
+	  gpsData.NS_Indicator='-';
+  if(gpsData.EW_Indicator==0)
+	  gpsData.EW_Indicator='-';
+  if(gpsData.Geoid_Units==0)
+	  gpsData.Geoid_Units='-';
+  if(gpsData.MSL_Units==0)
+	  gpsData.MSL_Units='-';
+
+  //while (MPU6050_Init(&hi2c1) == 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -164,16 +178,78 @@ int main(void)
   uint8_t buff[1024] = {0};
   char msg[100] = {0};
 
+  uint32_t elapsedTime = 0;
+  uint32_t prevTime = HAL_GetTick();
+
   HAL_GPIO_WritePin(BLE_EN_GPIO_Port, BLE_EN_Pin, GPIO_PIN_SET);
 
-  //HAL_Delay(100);
-  strcpy((char*)buff, "+++");
-  ble.sendData(buff, strlen((char*)buff), 100);
+  HAL_Delay(1000);
+  //strcpy((char*)buff, "+++");
+  //ble.sendData(buff, strlen((char*)buff), 1000);
+  //CDC_Transmit_FS(buff, strlen((char*)buff));
 
-  HAL_Delay(100);
+  //HAL_Delay(1000);
 
-  strcpy((char*)buff, "AT+setConnInt 36 24 2 400\r\n");
-  ble.sendData(buff, strlen((char*)buff), 100);
+  //strcpy((char*)buff, "AT+reStore\r\n");
+  //ble.sendData(buff, strlen((char*)buff), 1000);
+  //CDC_Transmit_FS(buff, strlen((char*)buff));
+
+  //ble.init(USART2, 115200, 1);
+
+  FATFS FatFS;
+  FIL fil;
+  FRESULT fres;
+
+  fres = f_mount(&FatFS, "", 1);
+  if(fres != FR_OK) {
+	  sprintf((char*)buff, "f_mount error (%i)\r\n", fres);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff));
+	  while(1);
+  }
+
+  DWORD free_clusters, free_sectors, total_sectors;
+  FATFS *getFreeFS;
+
+  fres = f_getfree("", &free_clusters, &getFreeFS);
+  if(fres != FR_OK) {
+	  sprintf((char*)buff, "f_getfree error (%i)\r\n", fres);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff));
+	  while(1);
+  }
+
+  total_sectors = (getFreeFS->n_fatent -2)*getFreeFS->csize;
+  free_sectors = free_clusters*getFreeFS->csize;
+
+  sprintf((char*)buff, "SD card stats: (%10lu / %10lu) KiB (avail./total)", free_sectors/2, total_sectors/2);
+  CDC_Transmit_FS(buff, strlen((char*)buff));
+  ble.sendData(buff, strlen((char*)buff));
+
+  fres = f_open(&fil, "log.csv", FA_WRITE | FA_OPEN_ALWAYS | FA_CREATE_ALWAYS);
+  fres = f_getfree("", &free_clusters, &getFreeFS);
+  if(fres != FR_OK) {
+	  sprintf((char*)buff, "f_open error (%i)\r\n", fres);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff));
+	  while(1);
+  }
+
+  sprintf((char*)buff, "This is a test\r\n");
+
+  UINT bytesWrote;
+  fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote);
+  if(fres != FR_OK) {
+	  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff));
+  } else {
+	  sprintf((char*)buff, "f_write wrote (%i) bytes\r\n", bytesWrote);
+	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff));
+  }
+  f_close(&fil);
+  f_mount(NULL, "", 0);
 
 
 
@@ -188,40 +264,37 @@ int main(void)
 
 		  CDC_ClearBuffer();
 	  }
-	  if(gps.readLine(buff, sizeof(buff), 50)) {
-
-		  //gps.getData(buff, sizeof(buff));
-		  //CDC_Transmit_FS(buff, sizeof(buff));
+	  if(gps.readLine(buff, sizeof(buff))) {
 
 		  char *str = strstr((char*)buff, "$GNGGA,");
 		  if(str!=NULL)
 		  {
-			  memset(&GPSData,0,sizeof(GPSData));
+			  memset(&gpsData,0,sizeof(gpsData));
 			  sscanf(str,"$GNGGA,%2hu%2hu%2hu.%3hu,%f,%c,%f,%c,%hu,%hu,%f,%f,%c,%f,%c,,*%2s",
-					  &GPSData.UTC_Hour,&GPSData.UTC_Min,&GPSData.UTC_Sec,&GPSData.UTC_MicroSec,&GPSData.Latitude,
-					  &GPSData.NS_Indicator,&GPSData.Longitude,&GPSData.EW_Indicator,&GPSData.PositionFixIndicator,
-					  &GPSData.SatellitesUsed,&GPSData.HDOP,&GPSData.MSL_Altitude,&GPSData.MSL_Units,&GPSData.Geoid_Separation,
-					  &GPSData.Geoid_Units,GPSData.CheckSum);
+					  &gpsData.UTC_Hour,&gpsData.UTC_Min,&gpsData.UTC_Sec,&gpsData.UTC_MicroSec,&gpsData.Latitude,
+					  &gpsData.NS_Indicator,&gpsData.Longitude,&gpsData.EW_Indicator,&gpsData.PositionFixIndicator,
+					  &gpsData.SatellitesUsed,&gpsData.HDOP,&gpsData.MSL_Altitude,&gpsData.MSL_Units,&gpsData.Geoid_Separation,
+					  &gpsData.Geoid_Units,gpsData.CheckSum);
 
-			  if(GPSData.NS_Indicator==0)
-				  GPSData.NS_Indicator='-';
-			  if(GPSData.EW_Indicator==0)
-				  GPSData.EW_Indicator='-';
-			  if(GPSData.Geoid_Units==0)
-				  GPSData.Geoid_Units='-';
-			  if(GPSData.MSL_Units==0)
-				  GPSData.MSL_Units='-';
+			  if(gpsData.NS_Indicator==0)
+				  gpsData.NS_Indicator='-';
+			  if(gpsData.EW_Indicator==0)
+				  gpsData.EW_Indicator='-';
+			  if(gpsData.Geoid_Units==0)
+				  gpsData.Geoid_Units='-';
+			  if(gpsData.MSL_Units==0)
+				  gpsData.MSL_Units='-';
 
-			  GPSData.LatitudeDecimal=convertDegMinToDecDeg(GPSData.Latitude);
-			  GPSData.LongitudeDecimal=convertDegMinToDecDeg(GPSData.Longitude);
+			  gpsData.LatitudeDecimal=convertDegMinToDecDeg(gpsData.Latitude);
+			  gpsData.LongitudeDecimal=convertDegMinToDecDeg(gpsData.Longitude);
 
-			  if(GPSData.SatellitesUsed > 3) HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_SET);
+			  if(gpsData.SatellitesUsed > 3) HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_SET);
 			  else HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_RESET);
 
 			  memset(buff, '\0', sizeof(buff));
 		  }
 	  }
-	  if(ble.readLine(buff, sizeof(buff), 50)) {
+	  if(ble.readLine(buff, sizeof(buff))) {
 		  //ble.getData(buff, sizeof(buff));
 		  strcpy(msg, (char*)buff);
 		  sprintf((char*)buff, "\r\n\r\nBLE MSG: %s\r\n\r\n",msg);
@@ -234,9 +307,10 @@ int main(void)
 
 		  //strcpy((char*)buff, "AT+getStatus\r\n");
 		  //ble.sendData(buff, strlen((char*)buff));
+		  //CDC_Transmit_FS(buff, strlen((char*)buff));
 
 		  //strcpy((char*)buff, "AT+getPara\r\n");
-		  //ble.sendData(buff, strlen((char*)buff));
+		  //ble.sendData(buff, strlen((char*)buff), 1000);
 
 		  //strcpy((char*)buff, "AT+getName\r\n");
 		  //ble.sendData(buff, strlen((char*)buff), 100);
@@ -244,33 +318,73 @@ int main(void)
 		  //strcpy((char*)buff, "AT+getAddr\r\n");
 		  //ble.sendData(buff, strlen((char*)buff), 100);
 
-		  strcpy((char*)buff, "AT+getInfo\r\n");
-		  ble.sendData(buff, strlen((char*)buff), 100);
+		  //strcpy((char*)buff, "AT+getInfo\r\n");
+		  //ble.sendData(buff, strlen((char*)buff), 100);
 		  count = 0;
 	  }
 
-	  if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) overlap = 10;
-	  else overlap = 50;
+	  if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) {
+		  overlap = 2;
+	  }
+	  else {
+		  overlap = 5;
+	  }
 
 	  MPU6050_Read_All(&hi2c1, &mpu6050);
 
-	  sprintf((char*)buff, "\u001b[0m\u001b[1mADC1: \u001b[0m%8.3f | \u001b[0m\u001b[1mADC2: \u001b[0m%8.3f                                                                \033[1B\r\u001b[0m\u001b[1m"
-			  "\u001b[0m\u001b[1mRoll: \u001b[0m%8.3f | \u001b[0m\u001b[1mPitch: \u001b[0m%8.3f | \u001b[0m\u001b[1mAX: \u001b[0m%8.3f | \u001b[0m\u001b[1mAY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGX: \u001b[0m%8.3f | \u001b[0m\u001b[1mGY: \u001b[0m%8.3f\033[1B\r\u001b[0m\u001b[1m"
-			  "\u001b[0m\u001b[1mTime: \u001b[0m%hu:%hu:%hu (UTC) | \u001b[0m\u001b[1mLatitude: \u001b[0m%f %c | \u001b[0m\u001b[1mLongitude: \u001b[0m%f %c | \u001b[0m\u001b[1mSatellites Fixed: \u001b[0m%d\033[1A\033[1A\r",
+	#if CSV_OUTPUT == 1
+	sprintf((char*)buff,
+	  "%hu:%hu:%hu,%ld,%.5f,%c,%.5f,%c,%.1f,%c,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\r\n",
 
-			  adcValue[0]*3.3/4096, adcValue[1]*3.3/4096,
-			  mpu6050.KalmanAngleX, mpu6050.KalmanAngleY, mpu6050.Ax, mpu6050.Ay, mpu6050.Gx, mpu6050.Gy,
-			  GPSData.UTC_Hour, GPSData.UTC_Min, GPSData.UTC_Sec,
-			  GPSData.Latitude, GPSData.NS_Indicator,
-			  GPSData.Longitude, GPSData.EW_Indicator,
-			  GPSData.SatellitesUsed);
+	  gpsData.UTC_Hour, gpsData.UTC_Min, gpsData.UTC_Sec, elapsedTime,
+	  gpsData.LatitudeDecimal, gpsData.NS_Indicator, gpsData.LongitudeDecimal, gpsData.EW_Indicator,
+	  gpsData.MSL_Altitude, gpsData.MSL_Units, gpsData.SatellitesUsed,
+	  mpu6050.Ax, mpu6050.Ay, mpu6050.Az,
+	  mpu6050.Gx, mpu6050.Gy, mpu6050.Gz
+	);
+	#elif
+	sprintf((char*)buff,
+			  "\u001b[0m\u001b[1mAX: \u001b[0m%8.3f | \u001b[0m\u001b[1mAY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGZ: \u001b[0m%8.3f | \u001b[0m\u001b[1mGX: \u001b[0m%8.3f | \u001b[0m\u001b[1mGY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGZ: \u001b[0m%8.3f                         \r\n"
+			  "\u001b[0m\u001b[1mTime: \u001b[0m%hu:%hu:%hu (UTC) | \u001b[0m\u001b[1mLatitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mLongitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mAltitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mSatellites Fixed: \u001b[0m%d                                   \r\n"
+		"\u001b[0m\u001b[1mLoop Time: \u001b[0m%4lu                                                     \033[2A\r",
+
+		mpu6050.Ax, mpu6050.Ay, mpu6050.Az,
+		mpu6050.Gx, mpu6050.Gy, mpu6050.Gz,
+			  gpsData.UTC_Hour, gpsData.UTC_Min, gpsData.UTC_Sec,
+			  gpsData.LatitudeDecimal, gpsData.NS_Indicator,
+			  gpsData.LongitudeDecimal, gpsData.EW_Indicator,
+		gpsData.MSL_Altitude, gpsData.MSL_Units,
+			  gpsData.SatellitesUsed, elapsedTime);
+	#endif
+
+
+
 	  CDC_Transmit_FS(buff, strlen((char*)buff));
+	  ble.sendData(buff, strlen((char*)buff), 50000);
+	  /*
+	  UINT bytesWrote;
+	  fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote);
+	  if(fres != FR_OK) {
+		  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
+		  CDC_Transmit_FS(buff, strlen((char*)buff));
+		  ble.sendData(buff, strlen((char*)buff));
+	  } else {
+		  sprintf((char*)buff, "f_write wrote (%i) bytes\r\n", bytesWrote);
+		  CDC_Transmit_FS(buff, strlen((char*)buff));
+		  ble.sendData(buff, strlen((char*)buff));
+	  }*/
 
-	  HAL_Delay(10);
+
+	  elapsedTime = HAL_GetTick() - prevTime;
+	  prevTime = HAL_GetTick();
+
+	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
+  f_close(&fil);
+  f_mount(NULL, "", 0);
   /* USER CODE END 3 */
 }
 

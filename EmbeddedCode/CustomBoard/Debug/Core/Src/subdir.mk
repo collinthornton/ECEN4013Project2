@@ -5,7 +5,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/main.c \
 ../Core/Src/stm32l1xx_hal_msp.c \
 ../Core/Src/stm32l1xx_hal_timebase_tim.c \
 ../Core/Src/stm32l1xx_it.c \
@@ -19,7 +18,6 @@ CPP_SRCS += \
 ../Core/Src/mpu6050.cpp 
 
 C_DEPS += \
-./Core/Src/main.d \
 ./Core/Src/stm32l1xx_hal_msp.d \
 ./Core/Src/stm32l1xx_hal_timebase_tim.d \
 ./Core/Src/stm32l1xx_it.d \

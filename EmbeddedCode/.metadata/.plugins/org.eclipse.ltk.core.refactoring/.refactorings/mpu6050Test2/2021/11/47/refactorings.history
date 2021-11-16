@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;mpu6050Test2/Core/Src/main.c&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/main.c" name="main.cpp" stamp="1637088064644" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;mpu6050Test2/Core/Src/mpu6050.c&apos; to &apos;mpu6050.cpp&apos;" description="Rename resource &apos;mpu6050.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/mpu6050.c" name="mpu6050.cpp" stamp="1637088364862" updateReferences="true"/>
+</session>

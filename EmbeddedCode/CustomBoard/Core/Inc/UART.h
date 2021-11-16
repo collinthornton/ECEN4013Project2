@@ -30,7 +30,7 @@ public:
 	static std::map<USART_TypeDef*, UART*> objectMap;
 
 private:
-	std::deque<uint8_t> msgBuff;
+	std::string msgBuff;
 	uint8_t *uartBuff;
 	int packetSize_Bytes;
 	uint32_t lastTime;

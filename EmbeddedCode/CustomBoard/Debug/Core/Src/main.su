@@ -1,15 +1,15 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-main.cpp:119:5:int main()	1432	static
-main.cpp:282:6:void SystemClock_Config()	80	static
-main.cpp:325:13:void MX_ADC_Init()	24	static
-main.cpp:386:13:void MX_I2C1_Init()	8	static
-main.cpp:420:13:void MX_SPI1_Init()	8	static
-main.cpp:457:13:void MX_DMA_Init()	16	static
-main.cpp:475:13:void MX_GPIO_Init()	48	static
-main.cpp:533:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	24	static
-main.cpp:540:8:double convertDegMinToDecDeg(float)	40	static
-main.cpp:564:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
-main.cpp:581:6:void Error_Handler()	4	static,ignoring_inline_asm
+main.cpp:123:5:int main()	2576	static
+main.cpp:396:6:void SystemClock_Config()	80	static
+main.cpp:439:13:void MX_ADC_Init()	24	static
+main.cpp:500:13:void MX_I2C1_Init()	8	static
+main.cpp:534:13:void MX_SPI1_Init()	8	static
+main.cpp:571:13:void MX_DMA_Init()	16	static
+main.cpp:589:13:void MX_GPIO_Init()	48	static
+main.cpp:647:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	24	static
+main.cpp:654:8:double convertDegMinToDecDeg(float)	40	static
+main.cpp:678:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
+main.cpp:695:6:void Error_Handler()	4	static,ignoring_inline_asm
 stl_tree.h:269:7:std::_Rb_tree_iterator<_Tp>::_Rb_tree_iterator() [with _Tp = std::pair<USART_TypeDef* const, UART*>]	16	static
 stl_map.h:1168:7:std::map<_Key, _Tp, _Compare, _Alloc>::iterator std::map<_Key, _Tp, _Compare, _Alloc>::find(const key_type&) [with _Key = USART_TypeDef*; _Tp = UART*; _Compare = std::less<USART_TypeDef*>; _Alloc = std::allocator<std::pair<USART_TypeDef* const, UART*> >]	16	static
 stl_map.h:372:7:std::map<_Key, _Tp, _Compare, _Alloc>::iterator std::map<_Key, _Tp, _Compare, _Alloc>::end() [with _Key = USART_TypeDef*; _Tp = UART*; _Compare = std::less<USART_TypeDef*>; _Alloc = std::allocator<std::pair<USART_TypeDef* const, UART*> >]	16	static
@@ -34,6 +34,6 @@ stl_tree.h:238:7:const _Val* std::_Rb_tree_node<_Val>::_M_valptr() const [with _
 stl_function.h:1155:7:const typename _Pair::first_type& std::_Select1st<_Pair>::operator()(const _Pair&) const [with _Pair = std::pair<USART_TypeDef* const, UART*>]	16	static
 aligned_buffer.h:76:7:const _Tp* __gnu_cxx::__aligned_membuf<_Tp>::_M_ptr() const [with _Tp = std::pair<USART_TypeDef* const, UART*>]	16	static
 aligned_buffer.h:68:7:const void* __gnu_cxx::__aligned_membuf<_Tp>::_M_addr() const [with _Tp = std::pair<USART_TypeDef* const, UART*>]	16	static
-main.cpp:590:1:void __static_initialization_and_destruction_0(int, int)	16	static
-main.cpp:590:1:cpp)	8	static
-main.cpp:590:1:cpp)	8	static
+main.cpp:704:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:704:1:cpp)	8	static
+main.cpp:704:1:cpp)	8	static

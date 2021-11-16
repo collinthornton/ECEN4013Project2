@@ -8,6 +8,7 @@
 #include "UART.h"
 #include <algorithm>    // std::find
 #include "stm32l1xx_hal.h"
+#include <string.h>
 
 
 std::map<USART_TypeDef*, UART*> UART::objectMap = std::map<USART_TypeDef*, UART*>();
@@ -76,6 +77,29 @@ int UART::getData(uint8_t *buff, int length) {
 }
 
 int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
+	if(HAL_UART_AbortReceive_IT(handle) != HAL_OK) {
+		__NOP();
+	}
+	memset(buff, '\0', length);
+
+	std::size_t pos = msgBuff.find('\n');
+	if(pos != std::string::npos) {
+		const char* tmp = msgBuff.substr(0,pos+1).c_str();
+		const char* tmp1 = msgBuff.c_str();
+		strcpy((char*)buff, msgBuff.substr(0, pos+1).c_str());
+		msgBuff.clear();
+		if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes) != HAL_OK) {
+			__NOP();
+		}
+		return pos+1;
+	}
+	if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes) != HAL_OK) {
+		__NOP();
+	}
+	return 0;
+}
+/*
+int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
 	if(HAL_GetTick() - lastTime < minDelay) return 0;
 
 	if(HAL_UART_AbortReceive_IT(handle) != HAL_OK) {
@@ -84,6 +108,11 @@ int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
 
 	memset(buff, '\0', length);
 	std::deque<uint8_t>::iterator it = std::find (msgBuff.begin(), msgBuff.end(), '\n');
+
+	char tmp[512];
+	memset(tmp, '\0', sizeof(tmp));
+	int size = msgBuff.size();
+	std::copy(msgBuff.begin(), it, tmp);
 
 	if(it == msgBuff.end()) {
 		if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes) != HAL_OK) {
@@ -104,6 +133,7 @@ int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
 	}
 	return len;
 }
+*/
 short UART::sendData(uint8_t *data, int numBytes, int timeout) {
 	HAL_UART_Transmit(handle, data, numBytes, timeout);
 
@@ -113,13 +143,10 @@ short UART::sendData(uint8_t *data, int numBytes, int timeout) {
 void UART::memberIRQ() {
 	dataReady = true;
 
-	for (int i=0; i<packetSize_Bytes; ++i) {
-		msgBuff.push_back(uartBuff[i]);
-	}
-	while(msgBuff.size() > 512) msgBuff.pop_front();
+	msgBuff += (char*)uartBuff;
+	while(msgBuff.size() > 1024) msgBuff.erase(0, msgBuff.size()-1024);
 
 	lastTime = HAL_GetTick();
-
 	HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes);
 }
 

@@ -1,4 +1,4 @@
-02:41:43 **** Incremental Build of configuration Debug for project BackupPlan ****
+16:37:51 **** Incremental Build of configuration Debug for project BackupPlan ****
 make -j12 all 
 arm-none-eabi-size   BackupPlan.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   BackupPlan.elf
 Finished building: default.size.stdout
  
 
-02:41:44 Build Finished. 0 errors, 0 warnings. (took 404ms)
+16:37:52 Build Finished. 0 errors, 0 warnings. (took 338ms)
 

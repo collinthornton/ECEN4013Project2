@@ -1,0 +1,14 @@
+{
+    "target_overrides": {
+      "*": {
+        "target.c_lib": "std",
+        "target.printf_lib": "std",
+        "target.components_add" : ["SD"],
+
+        "sd.SPI_MOSI": "PE_6",
+        "sd.SPI_MISO": "PE_5",
+        "sd.SPI_CLK" : "PE_2",
+        "sd.SPI_CS"  : "PE_4"
+      }
+    }
+}
