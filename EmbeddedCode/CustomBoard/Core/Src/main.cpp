@@ -171,6 +171,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc, adcValue, 2);
 
+  // Setup UART devices at 9600 baud
   ble.init(USART2, 9600, 1);
   gps.init(USART1, 9600, 1);
 
@@ -208,6 +209,8 @@ int main(void)
   FIL fil;
   FRESULT fres;
 
+
+  // Check SD card detect pin and attemp to mount/dismount file system accordingly
   GPIO_PinState sdValue = HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin);
 
   if(sdValue == GPIO_PIN_SET) {
@@ -235,17 +238,23 @@ int main(void)
 	  }
   }
 
+
+  // Setup timer IRQ
   HAL_TIM_Base_Start_IT(&SD_TIMER_HANDLE);
   HAL_TIM_Base_Start_IT(&BLE_TIMER_HANDLE);
 
 
+  // Make CSV header
   sprintf((char*)buff,
     "UTC Time, Loop Time, Lat (Deg), NS, Long. (Deg), EW, MSL Alt., Units, Sats., ax (m/s^2), ay (m/s^2), az (m/s^2), gx (deg/s), gy (deg/s), gz (deg/s)\r\n"
   );
 
+  // Transmit CSV header over USB and BLE
   CDC_Transmit_FS(buff, strlen((char*)buff));
   ble.sendData(buff, strlen((char*)buff), 50000);
 
+
+  // Attempt to open file and write CSV header to SD card
   if(sdState == MOUNTED) {
 	  fres = f_open(&fil, "log.csv", FA_CREATE_ALWAYS | FA_WRITE | FA_READ);
 	  if(fres != FR_OK) {
@@ -272,17 +281,14 @@ int main(void)
   while (1)
   {
 
-	  if(CDC_ReadLine(usbBuffer)) {
-		  CDC_Transmit_FS(usbBuffer, sizeof(usbBuffer));
-		  ble.sendData(usbBuffer, sizeof(usbBuffer), 100);
-
-		  CDC_ClearBuffer();
-	  }
+	  // Get a line from the GPS buffer if available
 	  if(gps.readLine(buff, sizeof(buff))) {
 
+		  // Check for the GNGGA message
 		  char *str = strstr((char*)buff, "$GNGGA,");
 		  if(str!=NULL)
 		  {
+			  // Parse if available
 			  memset(&gpsData,0,sizeof(gpsData));
 			  sscanf(str,"$GNGGA,%2hu%2hu%2hu.%3hu,%f,%c,%f,%c,%hu,%hu,%f,%f,%c,%f,%c,,*%2s",
 					  &gpsData.UTC_Hour,&gpsData.UTC_Min,&gpsData.UTC_Sec,&gpsData.UTC_MicroSec,&gpsData.Latitude,
@@ -302,19 +308,16 @@ int main(void)
 			  gpsData.LatitudeDecimal=convertDegMinToDecDeg(gpsData.Latitude);
 			  gpsData.LongitudeDecimal=convertDegMinToDecDeg(gpsData.Longitude);
 
+			  // Set status LED
 			  if(gpsData.SatellitesUsed > 3) HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_SET);
 			  else HAL_GPIO_WritePin(GPS_LED_G_GPIO_Port, GPS_LED_G_Pin, GPIO_PIN_RESET);
 
 			  memset(buff, '\0', sizeof(buff));
 		  }
 	  }
-	  if(ble.readLine(buff, sizeof(buff))) {
-		  //ble.getData(buff, sizeof(buff));
-		  strcpy(msg, (char*)buff);
-		  sprintf((char*)buff, "\r\n\r\nBLE MSG: %s\r\n\r\n",msg);
-		  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  }
 
+
+	 // Check value of SD chip detect pin and mount/dismount file system as necessary
 	 GPIO_PinState sdValue = HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin);
 
 	 if(sdValue == GPIO_PIN_SET) {
@@ -344,9 +347,11 @@ int main(void)
 	 }
 
 
-
+	  // Update IMU
 	  MPU6050_Read_All(&hi2c1, &mpu6050);
 
+
+	  // Format output string
 	  sprintf((char*)buff,
 			  "%hu:%hu:%hu,%ld,%.5f,%c,%.5f,%c,%.1f,%c,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\r\n",
 
@@ -357,9 +362,13 @@ int main(void)
 		mpu6050.Gx, mpu6050.Gy, mpu6050.Gz
 	  );
 
+
+	  // Transmit output string via USB and BLE
 	  CDC_Transmit_FS(buff, strlen((char*)buff));
 	  ble.sendData(buff, strlen((char*)buff), 50000);
 
+
+	  // Attempt to open file and write output string to SD card
 	  if(sdState == MOUNTED) {
 		  fres = f_open(&fil, "log.csv", FA_OPEN_APPEND | FA_WRITE | FA_READ);
 		  if(fres != FR_OK) {
@@ -382,6 +391,8 @@ int main(void)
 			  sdState = MOUNTED;
 		  }
 	  }
+
+	  // Compute elapsed time
 	  elapsedTime = HAL_GetTick() - prevTime;
 	  prevTime = HAL_GetTick();
 
