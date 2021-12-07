@@ -98,42 +98,7 @@ int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
 	}
 	return 0;
 }
-/*
-int UART::readLine(uint8_t *buff, int length, uint32_t minDelay) {
-	if(HAL_GetTick() - lastTime < minDelay) return 0;
 
-	if(HAL_UART_AbortReceive_IT(handle) != HAL_OK) {
-		__NOP();
-	}
-
-	memset(buff, '\0', length);
-	std::deque<uint8_t>::iterator it = std::find (msgBuff.begin(), msgBuff.end(), '\n');
-
-	char tmp[512];
-	memset(tmp, '\0', sizeof(tmp));
-	int size = msgBuff.size();
-	std::copy(msgBuff.begin(), it, tmp);
-
-	if(it == msgBuff.end()) {
-		if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes) != HAL_OK) {
-			__NOP();
-		}
-		return 0;
-	}
-
-
-	std::copy(msgBuff.begin(), it, buff);
-
-	int len = std::distance(msgBuff.begin(),it);
-	while(msgBuff.begin() != it) msgBuff.pop_front();
-	msgBuff.pop_front();
-
-	if(HAL_UART_Receive_IT(handle, uartBuff, packetSize_Bytes != HAL_OK)){
-		__NOP();
-	}
-	return len;
-}
-*/
 short UART::sendData(uint8_t *data, int numBytes, int timeout) {
 	HAL_UART_Transmit(handle, data, numBytes, timeout);
 

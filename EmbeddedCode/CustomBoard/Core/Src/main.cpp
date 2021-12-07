@@ -25,8 +25,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define CSV_OUTPUT  1
-
 #include "usbd_cdc_if.h"
 #include "UART.h"
 #include "string.h"
@@ -35,6 +33,9 @@
 #include "stdarg.h"
 #include <math.h>
 #include <mpu6050.h>
+
+#define SD_TIMER_HANDLE htim6
+#define BLE_TIMER_HANDLE htim7
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +45,18 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+extern Disk_drvTypeDef  disk;
+
 uint8_t usbBuffer[16];
+
+enum SDSTATE {
+	DISCONNECTED,
+	CONNECTED,
+	MOUNTED,
+	FILE_OPEN
+};
+SDSTATE sdState;
+volatile uint8_t sdCount=0, sdOverlap=15;
 
 typedef struct {
 	uint16_t UTC_Hour;
@@ -89,6 +101,8 @@ I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
 
+TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim7;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -107,6 +121,8 @@ static void MX_ADC_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_DMA_Init(void);
+static void MX_TIM6_Init(void);
+static void MX_TIM7_Init(void);
 /* USER CODE BEGIN PFP */
 double convertDegMinToDecDeg (float degMin);
 /* USER CODE END PFP */
@@ -150,6 +166,8 @@ int main(void)
   MX_FATFS_Init();
   MX_DMA_Init();
   MX_USB_DEVICE_Init();
+  MX_TIM6_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc, adcValue, 2);
 
@@ -170,7 +188,6 @@ int main(void)
   if(gpsData.MSL_Units==0)
 	  gpsData.MSL_Units='-';
 
-  //while (MPU6050_Init(&hi2c1) == 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -184,76 +201,73 @@ int main(void)
   HAL_GPIO_WritePin(BLE_EN_GPIO_Port, BLE_EN_Pin, GPIO_PIN_SET);
 
   HAL_Delay(1000);
-  //strcpy((char*)buff, "+++");
-  //ble.sendData(buff, strlen((char*)buff), 1000);
-  //CDC_Transmit_FS(buff, strlen((char*)buff));
 
-  //HAL_Delay(1000);
-
-  //strcpy((char*)buff, "AT+reStore\r\n");
-  //ble.sendData(buff, strlen((char*)buff), 1000);
-  //CDC_Transmit_FS(buff, strlen((char*)buff));
-
-  //ble.init(USART2, 115200, 1);
 
   FATFS FatFS;
+
   FIL fil;
   FRESULT fres;
 
-  fres = f_mount(&FatFS, "", 1);
-  if(fres != FR_OK) {
-	  sprintf((char*)buff, "f_mount error (%i)\r\n", fres);
-	  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  ble.sendData(buff, strlen((char*)buff));
-	  while(1);
+  GPIO_PinState sdValue = HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin);
+
+  if(sdValue == GPIO_PIN_SET) {
+	 if(sdState == FILE_OPEN) {
+		 f_close(&fil);
+		 sdState = MOUNTED;
+	 }
+	 if(sdState == MOUNTED) {
+		 f_mount(NULL, "", 1);
+	 }
+
+	 disk.is_initialized[0] = 0;
+	 sdState = DISCONNECTED;
+	}
+	else if(sdValue == GPIO_PIN_RESET) {
+	  fres = f_mount(&FatFS, "", 1);
+	  if(fres != FR_OK) {
+		  sprintf((char*)buff, "f_mount error (%i)\r\n", fres);
+		  CDC_Transmit_FS(buff, strlen((char*)buff));
+		  ble.sendData(buff, strlen((char*)buff));
+		  sdState = CONNECTED;
+	  }
+	  else {
+		  sdState = MOUNTED;
+	  }
   }
 
-  DWORD free_clusters, free_sectors, total_sectors;
-  FATFS *getFreeFS;
+  HAL_TIM_Base_Start_IT(&SD_TIMER_HANDLE);
+  HAL_TIM_Base_Start_IT(&BLE_TIMER_HANDLE);
 
-  fres = f_getfree("", &free_clusters, &getFreeFS);
-  if(fres != FR_OK) {
-	  sprintf((char*)buff, "f_getfree error (%i)\r\n", fres);
-	  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  ble.sendData(buff, strlen((char*)buff));
-	  while(1);
-  }
 
-  total_sectors = (getFreeFS->n_fatent -2)*getFreeFS->csize;
-  free_sectors = free_clusters*getFreeFS->csize;
+  sprintf((char*)buff,
+    "UTC Time, Loop Time, Lat (Deg), NS, Long. (Deg), EW, MSL Alt., Units, Sats., ax (m/s^2), ay (m/s^2), az (m/s^2), gx (deg/s), gy (deg/s), gz (deg/s)\r\n"
+  );
 
-  sprintf((char*)buff, "SD card stats: (%10lu / %10lu) KiB (avail./total)", free_sectors/2, total_sectors/2);
   CDC_Transmit_FS(buff, strlen((char*)buff));
-  ble.sendData(buff, strlen((char*)buff));
+  ble.sendData(buff, strlen((char*)buff), 50000);
 
-  fres = f_open(&fil, "log.csv", FA_WRITE | FA_OPEN_ALWAYS | FA_CREATE_ALWAYS);
-  fres = f_getfree("", &free_clusters, &getFreeFS);
-  if(fres != FR_OK) {
-	  sprintf((char*)buff, "f_open error (%i)\r\n", fres);
-	  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  ble.sendData(buff, strlen((char*)buff));
-	  while(1);
+  if(sdState == MOUNTED) {
+	  fres = f_open(&fil, "log.csv", FA_CREATE_ALWAYS | FA_WRITE | FA_READ);
+	  if(fres != FR_OK) {
+		  sprintf((char*)buff, "f_open error (%i)\r\n", fres);
+		  CDC_Transmit_FS(buff, strlen((char*)buff));
+		  ble.sendData(buff, strlen((char*)buff));
+	  }
+	  else {
+		  sdState = FILE_OPEN;
+		  UINT bytesWrote;
+
+		  if(f_write(&fil, buff, strlen((char*)buff), &bytesWrote) != FR_OK) {
+			  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
+			  CDC_Transmit_FS(buff, strlen((char*)buff));
+			  ble.sendData(buff, strlen((char*)buff));
+			  //while(1);
+		  }
+		  	  f_close(&fil);
+		  	  sdState = MOUNTED;
+	  }
   }
 
-  sprintf((char*)buff, "This is a test\r\n");
-
-  UINT bytesWrote;
-  fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote);
-  if(fres != FR_OK) {
-	  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
-	  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  ble.sendData(buff, strlen((char*)buff));
-  } else {
-	  sprintf((char*)buff, "f_write wrote (%i) bytes\r\n", bytesWrote);
-	  CDC_Transmit_FS(buff, strlen((char*)buff));
-	  ble.sendData(buff, strlen((char*)buff));
-  }
-  f_close(&fil);
-  f_mount(NULL, "", 0);
-
-
-
-  int count = 0, overlap = 10;
 
   while (1)
   {
@@ -301,93 +315,125 @@ int main(void)
 		  CDC_Transmit_FS(buff, strlen((char*)buff));
 	  }
 
+	 GPIO_PinState sdValue = HAL_GPIO_ReadPin(SD_DETECT_GPIO_Port, SD_DETECT_Pin);
 
-	  if(++count >= overlap) {
-		  HAL_GPIO_TogglePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin);
+	 if(sdValue == GPIO_PIN_SET) {
+		 if(sdState == FILE_OPEN) {
+			 f_close(&fil);
+			 sdState = MOUNTED;
+		 }
+		 if(sdState == MOUNTED) {
+			 f_mount(NULL, "", 1);
+		 }
 
-		  //strcpy((char*)buff, "AT+getStatus\r\n");
-		  //ble.sendData(buff, strlen((char*)buff));
-		  //CDC_Transmit_FS(buff, strlen((char*)buff));
+		 disk.is_initialized[0] = 0;
+		 sdState = DISCONNECTED;
+	 }
+	 else if(sdValue == GPIO_PIN_RESET && sdState == DISCONNECTED) {
 
-		  //strcpy((char*)buff, "AT+getPara\r\n");
-		  //ble.sendData(buff, strlen((char*)buff), 1000);
+		  fres = f_mount(&FatFS, "", 1);
+		  if(fres != FR_OK) {
+			  sprintf((char*)buff, "f_mount error (%i)\r\n", fres);
+			  CDC_Transmit_FS(buff, strlen((char*)buff));
+			  ble.sendData(buff, strlen((char*)buff));
+			  sdState = CONNECTED;
+		  }
+		  else {
+			  sdState = MOUNTED;
+		  }
+	 }
 
-		  //strcpy((char*)buff, "AT+getName\r\n");
-		  //ble.sendData(buff, strlen((char*)buff), 100);
 
-		  //strcpy((char*)buff, "AT+getAddr\r\n");
-		  //ble.sendData(buff, strlen((char*)buff), 100);
-
-		  //strcpy((char*)buff, "AT+getInfo\r\n");
-		  //ble.sendData(buff, strlen((char*)buff), 100);
-		  count = 0;
-	  }
-
-	  if(HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin) == GPIO_PIN_SET) {
-		  overlap = 2;
-	  }
-	  else {
-		  overlap = 5;
-	  }
 
 	  MPU6050_Read_All(&hi2c1, &mpu6050);
 
-	#if CSV_OUTPUT == 1
-	sprintf((char*)buff,
-	  "%hu:%hu:%hu,%ld,%.5f,%c,%.5f,%c,%.1f,%c,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\r\n",
+	  sprintf((char*)buff,
+			  "%hu:%hu:%hu,%ld,%.5f,%c,%.5f,%c,%.1f,%c,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\r\n",
 
-	  gpsData.UTC_Hour, gpsData.UTC_Min, gpsData.UTC_Sec, elapsedTime,
-	  gpsData.LatitudeDecimal, gpsData.NS_Indicator, gpsData.LongitudeDecimal, gpsData.EW_Indicator,
-	  gpsData.MSL_Altitude, gpsData.MSL_Units, gpsData.SatellitesUsed,
-	  mpu6050.Ax, mpu6050.Ay, mpu6050.Az,
-	  mpu6050.Gx, mpu6050.Gy, mpu6050.Gz
-	);
-	#elif
-	sprintf((char*)buff,
-			  "\u001b[0m\u001b[1mAX: \u001b[0m%8.3f | \u001b[0m\u001b[1mAY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGZ: \u001b[0m%8.3f | \u001b[0m\u001b[1mGX: \u001b[0m%8.3f | \u001b[0m\u001b[1mGY: \u001b[0m%8.3f | \u001b[0m\u001b[1mGZ: \u001b[0m%8.3f                         \r\n"
-			  "\u001b[0m\u001b[1mTime: \u001b[0m%hu:%hu:%hu (UTC) | \u001b[0m\u001b[1mLatitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mLongitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mAltitude: \u001b[0m%10.5f %c | \u001b[0m\u001b[1mSatellites Fixed: \u001b[0m%d                                   \r\n"
-		"\u001b[0m\u001b[1mLoop Time: \u001b[0m%4lu                                                     \033[2A\r",
-
-		mpu6050.Ax, mpu6050.Ay, mpu6050.Az,
-		mpu6050.Gx, mpu6050.Gy, mpu6050.Gz,
-			  gpsData.UTC_Hour, gpsData.UTC_Min, gpsData.UTC_Sec,
-			  gpsData.LatitudeDecimal, gpsData.NS_Indicator,
-			  gpsData.LongitudeDecimal, gpsData.EW_Indicator,
-		gpsData.MSL_Altitude, gpsData.MSL_Units,
-			  gpsData.SatellitesUsed, elapsedTime);
-	#endif
-
-
+			  gpsData.UTC_Hour, gpsData.UTC_Min, gpsData.UTC_Sec, elapsedTime,
+			  gpsData.LatitudeDecimal, gpsData.NS_Indicator, gpsData.LongitudeDecimal, gpsData.EW_Indicator,
+			  gpsData.MSL_Altitude, gpsData.MSL_Units, gpsData.SatellitesUsed,
+	 	mpu6050.Ax, mpu6050.Ay, mpu6050.Az,
+		mpu6050.Gx, mpu6050.Gy, mpu6050.Gz
+	  );
 
 	  CDC_Transmit_FS(buff, strlen((char*)buff));
 	  ble.sendData(buff, strlen((char*)buff), 50000);
-	  /*
-	  UINT bytesWrote;
-	  fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote);
-	  if(fres != FR_OK) {
-		  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
-		  CDC_Transmit_FS(buff, strlen((char*)buff));
-		  ble.sendData(buff, strlen((char*)buff));
-	  } else {
-		  sprintf((char*)buff, "f_write wrote (%i) bytes\r\n", bytesWrote);
-		  CDC_Transmit_FS(buff, strlen((char*)buff));
-		  ble.sendData(buff, strlen((char*)buff));
-	  }*/
 
+	  if(sdState == MOUNTED) {
+		  fres = f_open(&fil, "log.csv", FA_OPEN_APPEND | FA_WRITE | FA_READ);
+		  if(fres != FR_OK) {
+			  sprintf((char*)buff, "f_open error (%i)\r\n", fres);
+			  CDC_Transmit_FS(buff, strlen((char*)buff));
+			  ble.sendData(buff, strlen((char*)buff));
+		  }
+		  else {
+			  sdState = FILE_OPEN;
 
+			  UINT bytesWrote;
+			  fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote);
+			  if(fres != FR_OK) {
+				  sprintf((char*)buff, "f_write error (%i)\r\n", fres);
+				  CDC_Transmit_FS(buff, strlen((char*)buff));
+				  ble.sendData(buff, strlen((char*)buff));
+			  }
+			  f_close(&fil);
+
+			  sdState = MOUNTED;
+		  }
+	  }
 	  elapsedTime = HAL_GetTick() - prevTime;
 	  prevTime = HAL_GetTick();
 
-	  HAL_Delay(100);
+	  HAL_Delay(900);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
-  f_close(&fil);
   f_mount(NULL, "", 0);
   /* USER CODE END 3 */
 }
 
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+    if (htim->Instance == TIM11) {
+    	HAL_IncTick();
+    }
+    else if(htim->Instance == BLE_TIMER_HANDLE.Instance) {
+    	GPIO_PinState bleState = HAL_GPIO_ReadPin(BLE_STATUS_GPIO_Port, BLE_STATUS_Pin);
+		if(bleState == GPIO_PIN_RESET) {
+			HAL_GPIO_TogglePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin);
+		}
+		else {
+			HAL_GPIO_WritePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin, GPIO_PIN_RESET);
+		}
+	}
+	else if(htim->Instance == SD_TIMER_HANDLE.Instance) {
+		switch(sdState) {
+		case DISCONNECTED:
+			HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, GPIO_PIN_RESET);
+			sdCount = 0;
+			break;
+
+		case CONNECTED:
+			HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, GPIO_PIN_SET);
+			sdCount = 0;
+			break;
+
+		case MOUNTED:
+			if(++sdCount >= sdOverlap) {
+				HAL_GPIO_TogglePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin);
+				sdCount = 0;
+			}
+			break;
+
+		case FILE_OPEN:
+			HAL_GPIO_TogglePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin);
+			sdCount = 0;
+			break;
+		}
+	}
+}
 
 /**
   * @brief System Clock Configuration
@@ -566,6 +612,81 @@ static void MX_SPI1_Init(void)
 
 
 /**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_Init(void)
+{
+
+  /* USER CODE BEGIN TIM6_Init 0 */
+
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 20;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 65535;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
+
+}
+
+/**
+  * @brief TIM7 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM7_Init(void)
+{
+
+  /* USER CODE BEGIN TIM7_Init 0 */
+
+  /* USER CODE END TIM7_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM7_Init 1 */
+
+  /* USER CODE END TIM7_Init 1 */
+  htim7.Instance = TIM7;
+  htim7.Init.Prescaler = 120;
+  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim7.Init.Period = 65535;
+  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM7_Init 2 */
+
+  /* USER CODE END TIM7_Init 2 */
+
+}
+/**
   * Enable DMA controller clock
   */
 static void MX_DMA_Init(void)
@@ -628,15 +749,21 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : SPI_SD_CS_Pin MLX_TRIG_Pin SD_LED_G_Pin BLE_STATUS_Pin
                            BLE_EN_Pin PWR_LED_B_Pin */
-  GPIO_InitStruct.Pin = SPI_SD_CS_Pin|MLX_TRIG_Pin|SD_LED_G_Pin|BLE_STATUS_Pin
+  GPIO_InitStruct.Pin = SPI_SD_CS_Pin|MLX_TRIG_Pin|SD_LED_G_Pin
                           |BLE_EN_Pin|PWR_LED_B_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SD_DETECT_Pin MLX_RDY_Pin BLE_INT_Pin */
-  GPIO_InitStruct.Pin = SD_DETECT_Pin|MLX_RDY_Pin|BLE_INT_Pin;
+  /*Configure GPIO pin : SD_DETECT_Pin */
+  GPIO_InitStruct.Pin = SD_DETECT_Pin|BLE_STATUS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : MLX_RDY_Pin BLE_INT_Pin */
+  GPIO_InitStruct.Pin = MLX_RDY_Pin|BLE_INT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -666,27 +793,6 @@ double convertDegMinToDecDeg (float degMin)
   return decDeg;
 }
 /* USER CODE END 4 */
-
-/**
-  * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM11 interrupt took place, inside
-  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
-  * a global variable "uwTick" used as application time base.
-  * @param  htim : TIM handle
-  * @retval None
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  /* USER CODE BEGIN Callback 0 */
-
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM11) {
-    HAL_IncTick();
-  }
-  /* USER CODE BEGIN Callback 1 */
-
-  /* USER CODE END Callback 1 */
-}
 
 /**
   * @brief  This function is executed in case of error occurrence.

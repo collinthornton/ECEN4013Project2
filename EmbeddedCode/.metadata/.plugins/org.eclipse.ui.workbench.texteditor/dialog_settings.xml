@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="user"/>
+		<item key="selection" value="FatFS"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="FatFS"/>
+			<item value="f_mount"/>
+			<item value="FatFs"/>
+			<item value="malloc"/>
+			<item value="&amp;FatFS"/>
+			<item value="BLE_EN"/>
+			<item value="BLE_STATUS"/>
+			<item value="SD_TIMER_HANDLE"/>
+			<item value="BLE_TIMER_CB"/>
+			<item value="SD_TIMER_CB"/>
+			<item value="count"/>
 			<item value="user_diskio.h"/>
 			<item value="user"/>
 			<item value="GPSData"/>
 			<item value="mpu6050"/>
-			<item value="\n"/>
-			<item value="\033[0;31m|"/>
-			<item value="msgBuff"/>
-			<item value="pinstate"/>
-			<item value="pin"/>
-			<item value="libc_init_array"/>
-			<item value="SYSTEMINIT"/>
-			<item value="HAL_UART_IRQHandler"/>
-			<item value="this-&gt;handle"/>
-			<item value="&amp;this-&gt;handle"/>
-			<item value="&amp;handle"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&amp;FatFS"/>
+			<item value="FatFS"/>
+			<item value="BLE_TIMER_HANDLE"/>
+			<item value="SD_TIMER_HANDLE"/>
 			<item value="gpsData"/>
 			<item value="MPU6050"/>
 			<item value="|"/>
@@ -35,8 +39,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1273"/>
-		<item key="DIALOG_Y_ORIGIN" value="258"/>
+		<item key="DIALOG_X_ORIGIN" value="1444"/>
+		<item key="DIALOG_Y_ORIGIN" value="265"/>
 		<item key="DIALOG_WIDTH" value="332"/>
 		<item key="DIALOG_HEIGHT" value="438"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>

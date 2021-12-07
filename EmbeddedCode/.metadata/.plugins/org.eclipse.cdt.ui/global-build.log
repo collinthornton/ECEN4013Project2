@@ -595,3 +595,907 @@ Finished building: CustomBoard.bin
  
 Finished building: CustomBoard.list
  
+19:24:10 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:352:7: warning: init-statement in selection statements only available with '-std=c++17' or '-std=gnu++17'
+  352 |    if(f_write(&fil, buff, strlen((char*)buff), &bytesWrote); != FR_OK) {
+      |       ^~~~~~~
+../Core/Src/main.cpp:352:62: error: expected primary-expression before '!=' token
+  352 |    if(f_write(&fil, buff, strlen((char*)buff), &bytesWrote); != FR_OK) {
+      |                                                              ^~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:24:30 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97504	   1040	   8040	 106584	  1a058	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:29:46 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97504	   1040	   8040	 106584	  1a058	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:30:11 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97448	   1040	   8040	 106528	  1a020	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:32:05 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97448	   1040	   8040	 106528	  1a020	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:34:35 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97448	   1040	   8040	 106528	  1a020	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+19:39:06 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: variable 'free_sectors' set but not used [-Wunused-but-set-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: variable 'total_sectors' set but not used [-Wunused-but-set-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97704	   1040	   8040	 106784	  1a120	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:45:40 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/mpu6050.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/mpu6050.d" -MT"Core/Src/mpu6050.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/mpu6050.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97728	   1040	   8040	 106808	  1a138	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:46:36 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97728	   1040	   8040	 106808	  1a138	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:48:45 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97696	   1040	   8040	 106776	  1a118	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:51:16 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97704	   1040	   8040	 106784	  1a120	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:52:07 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97704	   1040	   8040	 106784	  1a120	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:55:24 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:337:7: error: #elif with no expression
+  337 |  #elif
+      |       ^
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:55:58 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98104	   1040	   8040	 107184	  1a2b0	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+19:57:41 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:211:24: warning: unused variable 'free_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.cpp:211:38: warning: unused variable 'total_sectors' [-Wunused-variable]
+  211 |   DWORD free_clusters, free_sectors, total_sectors;
+      |                                      ^~~~~~~~~~~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97704	   1040	   8040	 106784	  1a120	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+20:05:01 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97704	   1040	   8040	 106784	  1a120	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+20:15:42 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:358:65: error: expected ';' before 'if'
+  358 |     fres = f_write(&fil, buff, strlen((char*)buff), &bytesWrote)
+      |                                                                 ^
+      |                                                                 ;
+  359 |     if(fres != FR_OK) {
+      |     ~~                                                           
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:15:55 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97232	   1040	   8040	 106312	  19f48	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+20:16:02 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97232	   1040	   8040	 106312	  19f48	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+20:22:28 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97232	   1040	   8040	 106312	  19f48	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+20:22:38 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97232	   1040	   8040	 106312	  19f48	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+20:25:26 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  97232	   1040	   8040	 106312	  19f48	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+20:27:26 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_desc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_desc.d" -MT"USB_DEVICE/App/usbd_desc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_desc.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/syscall.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/syscall.d" -MT"Middlewares/Third_Party/FatFs/src/option/syscall.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/option/syscall.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/diskio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/diskio.d" -MT"Middlewares/Third_Party/FatFs/src/diskio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/diskio.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff.d" -MT"Middlewares/Third_Party/FatFs/src/ff.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/ff.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff_gen_drv.d" -MT"Middlewares/Third_Party/FatFs/src/ff_gen_drv.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/ff_gen_drv.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ClearBuffer':
+../USB_DEVICE/App/usbd_cdc_if.c:331:1: warning: control reaches end of non-void function [-Wreturn-type]
+  331 | }
+      | ^
+arm-none-eabi-gcc "../FATFS/Target/user_diskio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/Target/user_diskio.d" -MT"FATFS/Target/user_diskio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/Target/user_diskio.o"
+arm-none-eabi-gcc "../FATFS/Target/user_diskio_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/Target/user_diskio_spi.d" -MT"FATFS/Target/user_diskio_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/Target/user_diskio_spi.o"
+arm-none-eabi-gcc "../FATFS/App/fatfs.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/App/fatfs.d" -MT"FATFS/App/fatfs.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/App/fatfs.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o"
+arm-none-eabi-gcc "../Core/ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/ThreadSafe/newlib_lock_glue.d" -MT"Core/ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Core/Src/UART.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/UART.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/mpu6050.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/mpu6050.d" -MT"Core/Src/mpu6050.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/mpu6050.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_timebase_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_timebase_tim.d" -MT"Core/Src/stm32l1xx_hal_timebase_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+../Core/Src/UART.cpp: In member function 'int UART::readLine(uint8_t*, int, uint32_t)':
+../Core/Src/UART.cpp:87:15: warning: unused variable 'tmp' [-Wunused-variable]
+   87 |   const char* tmp = msgBuff.substr(0,pos+1).c_str();
+      |               ^~~
+../Core/Src/UART.cpp:88:15: warning: unused variable 'tmp1' [-Wunused-variable]
+   88 |   const char* tmp1 = msgBuff.c_str();
+      |               ^~~~
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  97256	   1040	   8040	 106336	  19f60	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:26:19 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_desc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"USB_DEVICE/App/usbd_desc.d" -MT"USB_DEVICE/App/usbd_desc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_desc.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/syscall.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/syscall.d" -MT"Middlewares/Third_Party/FatFs/src/option/syscall.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/option/syscall.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/diskio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/diskio.d" -MT"Middlewares/Third_Party/FatFs/src/diskio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/diskio.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff.d" -MT"Middlewares/Third_Party/FatFs/src/ff.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/ff.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff_gen_drv.d" -MT"Middlewares/Third_Party/FatFs/src/ff_gen_drv.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/ff_gen_drv.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_ClearBuffer':
+../USB_DEVICE/App/usbd_cdc_if.c:331:1: warning: control reaches end of non-void function [-Wreturn-type]
+  331 | }
+      | ^
+arm-none-eabi-gcc "../FATFS/Target/user_diskio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/Target/user_diskio.d" -MT"FATFS/Target/user_diskio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/Target/user_diskio.o"
+arm-none-eabi-gcc "../FATFS/Target/user_diskio_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/Target/user_diskio_spi.d" -MT"FATFS/Target/user_diskio_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/Target/user_diskio_spi.o"
+arm-none-eabi-gcc "../FATFS/App/fatfs.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"FATFS/App/fatfs.d" -MT"FATFS/App/fatfs.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "FATFS/App/fatfs.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o"
+arm-none-eabi-gcc "../Core/ThreadSafe/newlib_lock_glue.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/ThreadSafe/newlib_lock_glue.d" -MT"Core/ThreadSafe/newlib_lock_glue.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/ThreadSafe/newlib_lock_glue.o"
+arm-none-eabi-g++ "../Core/Src/UART.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/UART.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/mpu6050.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/mpu6050.d" -MT"Core/Src/mpu6050.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/mpu6050.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_timebase_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_timebase_tim.d" -MT"Core/Src/stm32l1xx_hal_timebase_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:261:7: warning: variable 'overlap' set but not used [-Wunused-but-set-variable]
+  261 |   int overlap = 10;
+      |       ^~~~~~~
+../Core/Src/main.cpp: In function 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)':
+../Core/Src/main.cpp:393:23: error: switch quantity not an integer
+  393 |  switch(htim->Instance) {
+      |                       ^
+../Core/Src/main.cpp:394:24: error: the value of 'htim7' is not usable in a constant expression
+  394 |  case BLE_TIMER_HANDLE.Instance:
+      |                        ^~~~~~~~
+../Core/Src/main.cpp:103:19: note: 'htim7' was not declared 'constexpr'
+  103 | TIM_HandleTypeDef htim7;
+      |                   ^~~~~
+../Core/Src/main.cpp:399:58: error: 'PIN_STATE_RESET' was not declared in this scope; did you mean 'HAL_PCD_STATE_RESET'?
+  399 |    HAL_GPIO_WritePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin, PIN_STATE_RESET);
+      |                                                          ^~~~~~~~~~~~~~~
+      |                                                          HAL_PCD_STATE_RESET
+../Core/Src/main.cpp:403:23: error: the value of 'htim6' is not usable in a constant expression
+  403 |  case SD_TIMER_HANDLE.Instance:
+      |                       ^~~~~~~~
+../Core/Src/main.cpp:102:19: note: 'htim6' was not declared 'constexpr'
+  102 | TIM_HandleTypeDef htim6;
+      |                   ^~~~~
+../Core/Src/main.cpp:406:56: error: 'PIN_STATE_RESET' was not declared in this scope; did you mean 'HAL_PCD_STATE_RESET'?
+  406 |    HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, PIN_STATE_RESET);
+      |                                                        ^~~~~~~~~~~~~~~
+      |                                                        HAL_PCD_STATE_RESET
+../Core/Src/main.cpp:411:56: error: 'PIN_STATE_SET' was not declared in this scope
+  411 |    HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, PIN_STATE_SET);
+      |                                                        ^~~~~~~~~~~~~
+../Core/Src/main.cpp:423:4: error: 'HAL_GPIO_Toggle_pin' was not declared in this scope; did you mean 'HAL_GPIO_TogglePin'?
+  423 |    HAL_GPIO_Toggle_pin(SD_LED_G_GPIO_Port, SD_LED_G_Pin);
+      |    ^~~~~~~~~~~~~~~~~~~
+      |    HAL_GPIO_TogglePin
+../Core/Src/main.cpp: At global scope:
+../Core/Src/main.cpp:798:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  798 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:392:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  392 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UART.cpp: In member function 'int UART::readLine(uint8_t*, int, uint32_t)':
+../Core/Src/UART.cpp:87:15: warning: unused variable 'tmp' [-Wunused-variable]
+   87 |   const char* tmp = msgBuff.substr(0,pos+1).c_str();
+      |               ^~~
+../Core/Src/UART.cpp:88:15: warning: unused variable 'tmp1' [-Wunused-variable]
+   88 |   const char* tmp1 = msgBuff.c_str();
+      |               ^~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:27:43 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:261:7: warning: variable 'overlap' set but not used [-Wunused-but-set-variable]
+  261 |   int overlap = 10;
+      |       ^~~~~~~
+../Core/Src/main.cpp: In function 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)':
+../Core/Src/main.cpp:398:58: error: 'PIN_STATE_RESET' was not declared in this scope; did you mean 'HAL_PCD_STATE_RESET'?
+  398 |    HAL_GPIO_WritePin(BLE_LED_G_GPIO_Port, BLE_LED_G_Pin, PIN_STATE_RESET);
+      |                                                          ^~~~~~~~~~~~~~~
+      |                                                          HAL_PCD_STATE_RESET
+../Core/Src/main.cpp:404:56: error: 'PIN_STATE_RESET' was not declared in this scope; did you mean 'HAL_PCD_STATE_RESET'?
+  404 |    HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, PIN_STATE_RESET);
+      |                                                        ^~~~~~~~~~~~~~~
+      |                                                        HAL_PCD_STATE_RESET
+../Core/Src/main.cpp:409:56: error: 'PIN_STATE_SET' was not declared in this scope
+  409 |    HAL_GPIO_WritePin(SD_LED_G_GPIO_Port, SD_LED_G_Pin, PIN_STATE_SET);
+      |                                                        ^~~~~~~~~~~~~
+../Core/Src/main.cpp:421:4: error: 'HAL_GPIO_Toggle_pin' was not declared in this scope; did you mean 'HAL_GPIO_TogglePin'?
+  421 |    HAL_GPIO_Toggle_pin(SD_LED_G_GPIO_Port, SD_LED_G_Pin);
+      |    ^~~~~~~~~~~~~~~~~~~
+      |    HAL_GPIO_TogglePin
+../Core/Src/main.cpp: At global scope:
+../Core/Src/main.cpp:795:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  795 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:392:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  392 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:28:19 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:261:7: warning: variable 'overlap' set but not used [-Wunused-but-set-variable]
+  261 |   int overlap = 10;
+      |       ^~~~~~~
+../Core/Src/main.cpp: In function 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)':
+../Core/Src/main.cpp:421:4: error: 'HAL_GPIO_Toggle_pin' was not declared in this scope; did you mean 'HAL_GPIO_TogglePin'?
+  421 |    HAL_GPIO_Toggle_pin(SD_LED_G_GPIO_Port, SD_LED_G_Pin);
+      |    ^~~~~~~~~~~~~~~~~~~
+      |    HAL_GPIO_TogglePin
+../Core/Src/main.cpp: At global scope:
+../Core/Src/main.cpp:795:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  795 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:392:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  392 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:28:27 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:261:7: warning: variable 'overlap' set but not used [-Wunused-but-set-variable]
+  261 |   int overlap = 10;
+      |       ^~~~~~~
+../Core/Src/main.cpp: At global scope:
+../Core/Src/main.cpp:795:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  795 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:392:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  392 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:29:32 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/UART.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/UART.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/mpu6050.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/mpu6050.d" -MT"Core/Src/mpu6050.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/mpu6050.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_timebase_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_timebase_tim.d" -MT"Core/Src/stm32l1xx_hal_timebase_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:308:5: error: 'overlap' was not declared in this scope; did you mean 'sdOverlap'?
+  308 |     overlap = 2;
+      |     ^~~~~~~
+      |     sdOverlap
+../Core/Src/main.cpp:311:5: error: 'overlap' was not declared in this scope; did you mean 'sdOverlap'?
+  311 |     overlap = 5;
+      |     ^~~~~~~
+      |     sdOverlap
+../Core/Src/main.cpp: At global scope:
+../Core/Src/main.cpp:793:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  793 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:390:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  390 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UART.cpp: In member function 'int UART::readLine(uint8_t*, int, uint32_t)':
+../Core/Src/UART.cpp:87:15: warning: unused variable 'tmp' [-Wunused-variable]
+   87 |   const char* tmp = msgBuff.substr(0,pos+1).c_str();
+      |               ^~~
+../Core/Src/UART.cpp:88:15: warning: unused variable 'tmp1' [-Wunused-variable]
+   88 |   const char* tmp1 = msgBuff.c_str();
+      |               ^~~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:29:52 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:787:6: error: redefinition of 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)'
+  787 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:384:6: note: 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)' previously defined here
+  384 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:31:06 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98328	   1048	   8176	 107552	  1a420	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:31:30 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98328	   1048	   8176	 107552	  1a420	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+21:34:12 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98352	   1048	   8176	 107576	  1a438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:39:46 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98360	   1048	   8176	 107584	  1a440	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:41:16 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98352	   1048	   8176	 107576	  1a438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:43:33 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98352	   1048	   8176	 107576	  1a438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:48:34 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98352	   1048	   8176	 107576	  1a438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:52:47 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98352	   1048	   8176	 107576	  1a438	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:56:44 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98360	   1048	   8176	 107584	  1a440	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+21:58:06 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98344	   1048	   8176	 107568	  1a430	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+22:01:09 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98344	   1048	   8176	 107568	  1a430	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+22:20:24 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98344	   1048	   8176	 107568	  1a430	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+22:32:11 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:204:24: error: invalid conversion from 'void*' to 'FATFS*' [-fpermissive]
+  204 |   FATFS *FatFS = malloc(sizeof(FATFS));
+      |                  ~~~~~~^~~~~~~~~~~~~~~
+      |                        |
+      |                        void*
+../Core/Src/main.cpp:229:19: error: invalid conversion from 'void*' to 'FATFS*' [-fpermissive]
+  229 |     FatFS = malloc(sizeof(FATFS));
+      |             ~~~~~~^~~~~~~~~~~~~~~
+      |                   |
+      |                   void*
+../Core/Src/main.cpp:343:20: error: invalid conversion from 'void*' to 'FATFS*' [-fpermissive]
+  343 |      FatFS = malloc(sizeof(FATFS));
+      |              ~~~~~~^~~~~~~~~~~~~~~
+      |                    |
+      |                    void*
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:33:09 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98448	   1048	   8176	 107672	  1a498	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+22:33:15 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98448	   1048	   8176	 107672	  1a498	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+22:37:41 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98448	   1048	   8176	 107672	  1a498	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+22:58:37 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/ff.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/ff.d" -MT"Middlewares/Third_Party/FatFs/src/ff.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/Third_Party/FatFs/src/ff.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xB -DSTM32_THREAD_SAFE_STRATEGY=2 -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Core/ThreadSafe -I../FATFS/Target -I../FATFS/App -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "CustomBoard.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/cthornton/data/local/college/classes/2021bF/ECEN4013/Project 2/ECEN4013Project2/EmbeddedCode/CustomBoard/STM32L151CBTX_FLASH.ld" -Wl,-Map="CustomBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: CustomBoard.elf
+ 
+arm-none-eabi-size   CustomBoard.elf 
+arm-none-eabi-objdump -h -S  CustomBoard.elf  > "CustomBoard.list"
+arm-none-eabi-objcopy  -O binary  CustomBoard.elf  "CustomBoard.bin"
+   text	   data	    bss	    dec	    hex	filename
+  98368	   1048	   8176	 107592	  1a448	CustomBoard.elf
+Finished building: default.size.stdout
+ 
+Finished building: CustomBoard.bin
+ 
+Finished building: CustomBoard.list
+ 
+22:58:40 **** Incremental Build of configuration Debug for project CustomBoard ****
+make -j12 all 
+arm-none-eabi-size   CustomBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  98368	   1048	   8176	 107592	  1a448	CustomBoard.elf
+Finished building: default.size.stdout
+ 

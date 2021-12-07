@@ -182,9 +182,9 @@ void MPU6050_Read_All(I2C_HandleTypeDef *I2Cx, MPU6050_t *DataStruct)
     DataStruct->Gyro_Y_RAW = (int16_t)(Rec_Data[10] << 8 | Rec_Data[11]);
     DataStruct->Gyro_Z_RAW = (int16_t)(Rec_Data[12] << 8 | Rec_Data[13]);
 
-    DataStruct->Ax = DataStruct->Accel_X_RAW / 16384.0;
-    DataStruct->Ay = DataStruct->Accel_Y_RAW / 16384.0;
-    DataStruct->Az = DataStruct->Accel_Z_RAW / Accel_Z_corrector;
+    DataStruct->Ax = DataStruct->Accel_X_RAW / 16384.0 * 9.8;
+    DataStruct->Ay = DataStruct->Accel_Y_RAW / 16384.0 * 9.8;
+    DataStruct->Az = DataStruct->Accel_Z_RAW / Accel_Z_corrector * 9.8;
     DataStruct->Temperature = (float)((int16_t)temp / (float)340.0 + (float)36.53);
     DataStruct->Gx = DataStruct->Gyro_X_RAW / 131.0;
     DataStruct->Gy = DataStruct->Gyro_Y_RAW / 131.0;
